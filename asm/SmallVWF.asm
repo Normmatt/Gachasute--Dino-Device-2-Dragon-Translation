@@ -14,12 +14,15 @@ here:
 	.endif
 .endmacro
 
+.org 0x0800BF40
+	bl FixBoxEnd
+
 .org 0x0800D244
 	bl putChar
 	b 0x0800D26C
 	
-.org 0x0800D2A8
-	.word unkCmd0
+;.org 0x0800D2A8
+;	.word unkCmdE0
 	
 .org 0x0800D308
 	.word NewLine       ; New Line function address
@@ -216,9 +219,9 @@ ResetOverflow:
 	bx lr
 
  ;Reset overflow on unkCmd0 call
-unkCmd0:
+unkCmdE0:
 	bl ResetOverflow
-	ldr r0, [unkCmd0_returnAdr]
+	ldr r0, [unkCmdE0_returnAdr]
 	bx r0
 	
  ;Reset overflow on new textbox call
@@ -258,12 +261,20 @@ NewLine:
 	
 	ldr r0, [NewLine_returnAdr]
 	bx r0
+	
+FixBoxEnd:
+	LDR     R1, [R5,#0x34]
+	ADD		R1, R1, #1
+	STR     R1, [R5,#0x34]
+	LSL     R1, R1, #5
+	bx lr
+
     
 .align 4
 EndText_returnAdr:      .word 0x0800D328+1
 EndTextBox_returnAdr:   .word 0x0800D34A+1
 NewLine_returnAdr:      .word 0x0800D340+1
-unkCmd0_returnAdr:      .word 0x0800D350+1
+unkCmdE0_returnAdr:     .word 0x0800D350+1
 overflow:  .word 0x03000000  ; my notes say this is free
 mask:      .word 0x11111111  ; mask
 .pool

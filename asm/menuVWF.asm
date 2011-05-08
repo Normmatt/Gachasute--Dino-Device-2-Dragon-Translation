@@ -46,9 +46,9 @@ putChar:
 	mov     r7, r2 ;store bg color
     BL      Copy1BppCharacter
 	
-	;mov r2, #5	; r2 = width, replace this with lookup table
-	ldr r2, =WidthTable
-	ldrb r2, [r2,r6]
+	mov r2, #8	; r2 = width, replace this with lookup table
+	;ldr r2, =WidthTable
+	;ldrb r2, [r2,r6]
 	
 	LDRH    R0, [R4,#0xC]
 	LSL     R0, R0, #5
@@ -70,7 +70,7 @@ putChar:
 	mov r0, r4
 	
 	ldr r2, [mask]
-	mul r2, r7 ; times 0x11111111 by the bg color pallete index
+	mul r2, r7 ; multiply 0x11111111 by the bg color pallete index
 	str r2, [r0, #0]
 	str r2, [r0, #4]
 	str r2, [r0, #8]
@@ -155,26 +155,11 @@ ResetOverflow:
 	str r0, [r1]
 	bx lr
 	
- ;Reset overflow on new textbox call
-NewTextBox:
-	bl ResetOverflow	
-	ldr r0, [NewTextBox_returnAdr]
-	bx r0
-	
  ;Reset overflow on end textbox call	
 EndTextBox:
 	bl ResetOverflow
 	POP     {R0}
 	BX      R0
-
-	;ldr r0, [EndTextBox_returnAdr]
-	;bx r0
-	
- ;Reset overflow on wait for timer
-WaitForTimer:
-	bl ResetOverflow
-	ldr r0, [WaitForTimer_returnAdr]
-	bx r0
 	
  ;Handle New Line
  ;r0 and r1 are free
@@ -190,16 +175,12 @@ NewLine:
 	bx lr
     
 .align 4
-EndTextBox_returnAdr:   .word 0x0800D34A+1
-WaitForTimer_returnAdr: .word 0x08016100+1 ;is this even in this game?
-NewTextBox_returnAdr:   .word 0x08016106+1 ;is this even in this game?
-NewLine_returnAdr:      .word 0x0800D340+1
 overflow:  .word 0x03000000  ; my notes say this is free
 mask:      .word 0x11111111  ; mask
 .pool
 
-WidthTable:
-.incbin asm/bin/menuWidthTable.bin
+;WidthTable:
+;.incbin asm/bin/menuWidthTable.bin
 
 .close
 
