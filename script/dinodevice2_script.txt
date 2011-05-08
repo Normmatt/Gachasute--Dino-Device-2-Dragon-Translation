@@ -1,0 +1,80 @@
+// Define a TABLE
+#VAR(Table, TABLE)
+#VAR(engTable, TABLE)
+
+// Load and activate the table
+#ADDTBL("script/table.tbl", Table)
+#ACTIVETBL(Table)
+
+// Setup GBA pointers and Pointer Table
+#VAR(GBA, CUSTOMPOINTER)
+// Create our pointer type
+#CREATEPTR(GBA, "LINEAR", $-08000000, 32)
+
+#JMP($400000)
+
+//GAME NAME:		Dino Device 2 (GBA)
+
+//BLOCK #000 NAME:		Block 1 - Opening Movie (POINTER)
+//Block Range: $4BE9D - $4C28B
+
+#WRITE(GBA,$54710)
+<$E0><$32><$00><$4E><$04><$35><$E0><$31><$00><$59><$01><$07><$E0><$31><$00><$54><$02><$4B><$E0><$31><$00><$57><$01><$07><$E0><$31><$00><$0E><$02><$37><$E0><$31><$00><$55><$02><$4A><$E0><$31><$00><$12><$02><$49><$E0><$31><$00><$03><$01><$0F><$E0><$31><$00><$58><$02><$48><$E0><$31><$00><$01><$02><$38>
+//<HERO_LEFT_PORTRAIT>ここが ダイナバトラーのとうりゅうもん<LINE>
+<HERO_LEFT_PORTRAIT>Hello World!<LINE>
+<COLOR><$08>ダイナシティ</COLOR>かぁ・・・<NEWBOX>
+よーし おれも<LINE>
+ダイナマスターめざして がんばるぞー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>ん？・・・<NEWBOX>
+えっと だれだっけ？<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はじめまして わたし みさりっていいます<LINE>
+<COLOR><$0A>ひいらぎ みさり</COLOR> です<NEWBOX>
+いとこなのに あうの はじめてなんだよね<LINE>
+おばさんから きょうダイナシティに<LINE>
+くるって きいてたから<LINE>
+むかえにきたの よろしくね<NEWBOX>
+<HERO_LEFT_PORTRAIT>そっかー よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>でも きみって すごいよね<LINE>
+ダイナバトラーになりたくて<LINE>
+ひとりで でてきたんでしょ？<NEWBOX>
+<HERO_LEFT_PORTRAIT>ああ しばらくのあいだ<LINE>
+きみんちで せわになるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まかせといて<$F0>!<NEWBOX>
+きみは もうしってるかもしれないけど<LINE>
+ダイナバトルについて せつめいするね<NEWBOX>
+ダイナバトルは ダイナとよばれる<LINE>
+モンスターがたの おもちゃを<LINE>
+つかっておこなう バトルのことよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>そのダイナバトルを するひとたちを<LINE>
+ダイナバトラーって いうんだよな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そう で そのダイナを つくってる<LINE>
+かいしゃが このダイナシティにある<LINE>
+ディノモしゃ ってわけ<NEWBOX>
+<HERO_LEFT_PORTRAIT>だから ダイナバトラーに<LINE>
+なりたいやつは ダイナシティから<LINE>
+しゅぎょうを はじめるのか~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そういうこと はい これ わたしの<LINE>
+おとうさんから プレゼントよ<NEWBOX>
+<$E0><$61><COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<NEWBOX>
+<$E0><$8B><$00><CHANGE_RIGHT_PORTRAIT><$01>それが ダイナチャージャーよ<LINE>
+ダイナを そうさするための<LINE>
+モバイルツールなの<NEWBOX>
+これに バッテリーが ないぞうしてあって<LINE>
+バトルするとき エントリーしたダイナに<LINE>
+じゅうでんするのよ<LINE>
+ダイナは バッテリーがきれたら<LINE>
+うごけないから そこで そのダイナの<LINE>
+まけになっちゃうから きをつけてね<LINE>
+あと ダイナチャージャーは <COLOR><$0A>ガチャステ</COLOR>を<LINE>
+するときの でんしマネーの きのうも<LINE>
+もっているから これがあると<LINE>
+いろいろべんりよ<NEWBOX>
+とりあえず このダイナチャージャーは<LINE>
+ずっとつかっていくものだから<NEWBOX>
+まずは なまえを とうろくしてね<NEWBOX>
+<$E0><$61><OPEN_NAME_SELECTION_SCREEN><CHANGE_RIGHT_PORTRAIT><$01><HERO_NAME>くんっていうんだ<LINE>
+いいなまえだね~<NEWBOX>
+あ あと はい これ・・・<NEWBOX>
+<$E0><$61><$E0><$30><$02><$15>

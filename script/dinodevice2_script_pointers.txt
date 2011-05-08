@@ -1,0 +1,6638 @@
+// Define a TABLE
+#VAR(Table, TABLE)
+#VAR(engTable, TABLE)
+
+// Load and activate the table
+#ADDTBL("script/table.tbl", Table)
+#ACTIVETBL(Table)
+
+// Setup GBA pointers and Pointer Table
+#VAR(GBA, CUSTOMPOINTER)
+// Create our pointer type
+#CREATEPTR(GBA, "LINEAR", $-08000000, 32)
+
+#JMP($400000)
+
+//GAME NAME:		Dino Device 2 (GBA)
+
+//BLOCK #000 NAME:		Block 1 - Opening Movie (POINTER)
+
+//POINTER #0 @ $54710 - STRING #0 @ $4BE9D
+
+#WRITE(GBA,$54710)
+<$E0><$32><$00><$4E><$04><$35><$E0><$31><$00><$59><$01><$07><$E0><$31><$00><$54><$02><$4B><$E0><$31><$00><$57><$01><$07><$E0><$31><$00><$0E><$02><$37><$E0><$31><$00><$55><$02><$4A><$E0><$31><$00><$12><$02><$49><$E0><$31><$00><$03><$01><$0F><$E0><$31><$00><$58><$02><$48><$E0><$31><$00><$01><$02><$38>
+//<HERO_LEFT_PORTRAIT>ここが ダイナバトラーのとうりゅうもん<LINE>
+//<COLOR><$08>ダイナシティ</COLOR>かぁ・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>So, this is <COLOR><$08>Dino City</COLOR><NEWBOX>
+よーし おれも<LINE>
+ダイナマスターめざして がんばるぞー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>ん?・・・<NEWBOX>
+えっと だれだっけ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はじめまして わたし みさりっていいます<LINE>
+<COLOR><$0A>ひいらぎ みさり</COLOR> です<NEWBOX>
+いとこなのに あうの はじめてなんだよね<LINE>
+おばさんから きょうダイナシティに<LINE>
+くるって きいてたから<LINE>
+むかえにきたの よろしくね<NEWBOX>
+<HERO_LEFT_PORTRAIT>そっかー よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>でも きみって すごいよね<LINE>
+ダイナバトラーになりたくて<LINE>
+ひとりで でてきたんでしょ?<NEWBOX>
+<HERO_LEFT_PORTRAIT>ああ しばらくのあいだ<LINE>
+きみんちで せわになるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まかせといて!<NEWBOX>
+きみは もうしってるかもしれないけど<LINE>
+ダイナバトルについて せつめいするね<NEWBOX>
+ダイナバトルは ダイナとよばれる<LINE>
+モンスターがたの おもちゃを<LINE>
+つかっておこなう バトルのことよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>そのダイナバトルを するひとたちを<LINE>
+ダイナバトラーって いうんだよな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そう で そのダイナを つくってる<LINE>
+かいしゃが このダイナシティにある<LINE>
+ディノモしゃ ってわけ<NEWBOX>
+<HERO_LEFT_PORTRAIT>だから ダイナバトラーに<LINE>
+なりたいやつは ダイナシティから<LINE>
+しゅぎょうを はじめるのか~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そういうこと はい これ わたしの<LINE>
+おとうさんから プレゼントよ<NEWBOX>
+<REMOVE_PORTRAITS><COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<NEWBOX>
+<$E0><$8B><$00><CHANGE_RIGHT_PORTRAIT><$01>それが ダイナチャージャーよ<LINE>
+ダイナを そうさするための<LINE>
+モバイルツールなの<NEWBOX>
+これに バッテリーが ないぞうしてあって<LINE>
+バトルするとき エントリーしたダイナに<LINE>
+じゅうでんするのよ<LINE>
+ダイナは バッテリーがきれたら<LINE>
+うごけないから そこで そのダイナの<LINE>
+まけになっちゃうから きをつけてね<LINE>
+あと ダイナチャージャーは <COLOR><$0A>ガチャステ</COLOR>を<LINE>
+するときの でんしマネーの きのうも<LINE>
+もっているから これがあると<LINE>
+いろいろべんりよ<NEWBOX>
+とりあえず このダイナチャージャーは<LINE>
+ずっとつかっていくものだから<NEWBOX>
+まずは なまえを とうろくしてね<NEWBOX>
+<REMOVE_PORTRAITS><OPEN_NAME_SELECTION_SCREEN><CHANGE_RIGHT_PORTRAIT><$01><HERO_NAME>くんっていうんだ<LINE>
+いいなまえだね~<NEWBOX>
+あ あと はい これ・・・<NEWBOX>
+<REMOVE_PORTRAITS><GOTO_SCRIPT><$02><$15><CHANGE_RIGHT_PORTRAIT><$01>ダイナは そのままでは つよくならないわ<LINE>
+たしかに <HERO_NAME>くんが<LINE>
+ダイナの そうさが うまくなれば<LINE>
+バトルも ゆうりに すすめられるけど<LINE>
+それよりも <COLOR><$0A>デバイス</COLOR>で ダイナを<LINE>
+カスタムしないと つよくならないのよ<LINE>
+<HERO_LEFT_PORTRAIT>そのデバイスっていうのは<LINE>
+どこで てにいれるんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>さっきいった ガチャステパークよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>ガチャステパークって とこは<LINE>
+なんでもあるんだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね つよいダイナバトラーほど<LINE>
+ガチャステパークへ なんども<LINE>
+かよっているって きいたことあるわ<NEWBOX>
+それから デバイスに ついてだけど<LINE>
+デバイスは たくさんのしゅるいが<LINE>
+あるから<LINE>
+いろいろ あつめてみると いいわ<NEWBOX>
+でも きぼうした デバイスは<LINE>
+なかなか でないのよね~<LINE>
+とくにつよい デバイスは レアの<LINE>
+デバイスだから ガチャステのなかに<LINE>
+たくさん はいっていないのよ<LINE>
+だから ガチャステを なんかいも<LINE>
+やらないと ほしいデバイスは<LINE>
+てにはいらないわ<LINE>
+<HERO_LEFT_PORTRAIT>そんなの おれなら いっぱつで<LINE>
+レアを だしてみせるぜ!!<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ~ いったな~<LINE>
+そんなつよがって あとで<LINE>
+こうかいしても しらないから~<NEWBOX>
+それじゃあ ダイナマスターを めざして<LINE>
+ついでに まぼろしの デバイスも<LINE>
+みつけちゃおう!<NEWBOX>
+<HERO_LEFT_PORTRAIT>まぼろしの デバイス?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そう このせかいの どこかにねむる<LINE>
+せかいさいきょうの デバイスのことよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>さいきょうか・・・<LINE>
+なんかワクワクしてきた!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>でしょ! じゃあ まずは<LINE>
+さっきのメダルで ダイナを<LINE>
+ゲットしにいかなくちゃ<NEWBOX>
+さあ ガチャゲートにいきましょ!<$E0><$20><$00><$01><END>
+
+//POINTER #1 @ $54714 - STRING #1 @ $4C28B
+
+#WRITE(GBA,$54714)
+<CHANGE_RIGHT_PORTRAIT><$01>ダイナは そのままでは つよくならないわ<LINE>
+たしかに <HERO_NAME>くんが<LINE>
+ダイナの そうさが うまくなれば<LINE>
+バトルも ゆうりに すすめられるけど<LINE>
+それよりも <COLOR><$0A>デバイス</COLOR>で ダイナを<LINE>
+カスタムしないと つよくならないのよ<LINE>
+<HERO_LEFT_PORTRAIT>そのデバイスっていうのは<LINE>
+どこで てにいれるんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>さっきいった ガチャステパークよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>ガチャステパークって とこは<LINE>
+なんでもあるんだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね つよいダイナバトラーほど<LINE>
+ガチャステパークへ なんども<LINE>
+かよっているって きいたことあるわ<NEWBOX>
+それから デバイスに ついてだけど<LINE>
+デバイスは たくさんのしゅるいが<LINE>
+あるから<LINE>
+いろいろ あつめてみると いいわ<NEWBOX>
+でも きぼうした デバイスは<LINE>
+なかなか でないのよね~<LINE>
+とくにつよい デバイスは レアの<LINE>
+デバイスだから ガチャステのなかに<LINE>
+たくさん はいっていないのよ<LINE>
+だから ガチャステを なんかいも<LINE>
+やらないと ほしいデバイスは<LINE>
+てにはいらないわ<LINE>
+<HERO_LEFT_PORTRAIT>そんなの おれなら いっぱつで<LINE>
+レアを だしてみせるぜ!!<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ~ いったな~<LINE>
+そんなつよがって あとで<LINE>
+こうかいしても しらないから~<NEWBOX>
+それじゃあ ダイナマスターを めざして<LINE>
+ついでに まぼろしの デバイスも<LINE>
+みつけちゃおう!<NEWBOX>
+<HERO_LEFT_PORTRAIT>まぼろしの デバイス?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そう このせかいの どこかにねむる<LINE>
+せかいさいきょうの デバイスのことよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>さいきょうか・・・<LINE>
+なんかワクワクしてきた!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>でしょ! じゃあ まずは<LINE>
+さっきのメダルで ダイナを<LINE>
+ゲットしにいかなくちゃ<NEWBOX>
+さあ ガチャゲートにいきましょ!<$E0><$20><$00><$01><END>
+
+//POINTER #2 @ $54718 - STRING #2 @ $4C546
+
+#WRITE(GBA,$54718)
+<$E0><$20><$00><$01><END>
+
+//POINTER #3 @ $5471C - STRING #3 @ $4C546
+
+#WRITE(GBA,$5471C)
+<$E0><$20><$00><$01><END>
+
+//POINTER #4 @ $54720 - STRING #4 @ $4C54B
+
+#WRITE(GBA,$54720)
+<CHANGE_RIGHT_PORTRAIT><$01>どこか べつのばしょに いきましょうよ<END>
+
+//POINTER #5 @ $54724 - STRING #5 @ $4C562
+
+#WRITE(GBA,$54724)
+<CHANGE_RIGHT_PORTRAIT><$09>やあ みさりちゃん<LINE>
+きょうは とくに じけんもなく<LINE>
+へいわな 1にちだよ<END>
+
+//POINTER #6 @ $54728 - STRING #6 @ $4C58A
+
+#WRITE(GBA,$54728)
+<$E0><$31><$00><$35><$01><$08><$E0><$31><$00><$59><$02><$4C><GOTO_SCRIPT><$01><$08><$E0><$32><$00><$4E><$04><$32><$E0><$31><$00><$0E><$01><$0D><$E0><$31><$00><$0C><$01><$25><$E0><$31><$00><$07><$01><$21><$E0><$31><$00><$03><$01><$0D><$E0><$31><$00><$02><$01><$0B><$E0><$31><$00><$0F><$02><$12><$E0><$32><$00><$58><$02><$43><CHANGE_RIGHT_PORTRAIT><$01>こんにちはー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>ああ みさりちゃん<LINE>
+こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あのー なにか おしごと ありませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>ちょっとまってね・・・<NEWBOX>
+・・・!<LINE>
+ちょうどいいのがあるよ<NEWBOX>
+じつは だいしきゅう<LINE>
+にもつを とどけなきゃいけない<LINE>
+ところがあるんだけど<LINE>
+ちょっとてがはなせなくて<LINE>
+とどけられないんだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>それ おれに やらせてください!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>きみは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしの いとこなの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>そうなんだ それじゃあ わるいけど<LINE>
+おねがいするね<LINE>
+<HERO_LEFT_PORTRAIT>ありがとうございます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>はいたつさきは ここにかいてある<LINE>
+じゅうしょだから すぐにわかるよ<NEWBOX>
+<REMOVE_PORTRAITS><PLAY_SFX><$26><COLOR><$0D>おおきなにもつ</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>じゃあ おねがいするよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい いってきます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えっと はいたつさきは<LINE>
+・・・<NEWBOX>
+なんだ わたしのうちの おとなりだわ<$E0><$20><$00><$0F><END>
+
+//POINTER #7 @ $5472C - STRING #7 @ $4C59A
+
+#WRITE(GBA,$5472C)
+<$E0><$32><$00><$4E><$04><$32><$E0><$31><$00><$0E><$01><$0D><$E0><$31><$00><$0C><$01><$25><$E0><$31><$00><$07><$01><$21><$E0><$31><$00><$03><$01><$0D><$E0><$31><$00><$02><$01><$0B><$E0><$31><$00><$0F><$02><$12><$E0><$32><$00><$58><$02><$43><CHANGE_RIGHT_PORTRAIT><$01>こんにちはー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>ああ みさりちゃん<LINE>
+こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あのー なにか おしごと ありませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>ちょっとまってね・・・<NEWBOX>
+・・・!<LINE>
+ちょうどいいのがあるよ<NEWBOX>
+じつは だいしきゅう<LINE>
+にもつを とどけなきゃいけない<LINE>
+ところがあるんだけど<LINE>
+ちょっとてがはなせなくて<LINE>
+とどけられないんだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>それ おれに やらせてください!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>きみは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしの いとこなの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>そうなんだ それじゃあ わるいけど<LINE>
+おねがいするね<LINE>
+<HERO_LEFT_PORTRAIT>ありがとうございます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>はいたつさきは ここにかいてある<LINE>
+じゅうしょだから すぐにわかるよ<NEWBOX>
+<REMOVE_PORTRAITS><PLAY_SFX><$26><COLOR><$0D>おおきなにもつ</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>じゃあ おねがいするよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい いってきます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えっと はいたつさきは<LINE>
+・・・<NEWBOX>
+なんだ わたしのうちの おとなりだわ<$E0><$20><$00><$0F><END>
+
+//POINTER #8 @ $54730 - STRING #8 @ $4C747
+
+#WRITE(GBA,$54730)
+<CHANGE_RIGHT_PORTRAIT><$01>ただいまー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>おかえり<LINE>
+たすかったよ ありがとう<NEWBOX>
+<HERO_LEFT_PORTRAIT>またなにかあったら<LINE>
+おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>はい じゃこれは<LINE>
+はいたつの おれいだよ<NEWBOX>
+<REMOVE_PORTRAITS><$E0>ィ こ<HERO_NAME>は<LINE>
+<PLAY_SFX><$21><COLOR><$0A>200ビット</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<HERO_LEFT_PORTRAIT><$E0><$20><$00><$50><$E0><$20><$00><$12>ありがとう<NEWBOX>
+<$E0><$20><$00><$03><CHANGE_RIGHT_PORTRAIT><$01>ゆうびんきょくで もらった おかねで<LINE>
+ガチャステをしに いきましょう<END>
+
+//POINTER #9 @ $54734 - STRING #9 @ $4C7F1
+
+#WRITE(GBA,$54734)
+<$E0><$31><$00><$07><$01><$1E><$E0><$31><$00><$57><$01><$13><$E0><$31><$00><$02><$01><$0E><$E0><$32><$00><$0F><$01><$0E><$E0><$32><$00><$01><$01><$0E><CHANGE_RIGHT_PORTRAIT><$01>ここのおうちに わたしとおなじ<LINE>
+がくねんのこが いるんだけど<LINE>
+ちがうがっこうだから<LINE>
+あまり はなしたことないんだー<NEWBOX>
+あっと いけない<LINE>
+おしごとで きたんだっけ<NEWBOX>
+こんにちはー はいたつで~す<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1D>はい<LINE>
+どちらさまからの ものでしょうか?<LINE>
+ふしんなものは うけとれませんよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えっと どこだろ ちょっとまってください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1D>あ ぼっちゃん まってください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ん?<LINE>
+・・・わっ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>おそかったな だいぶまったんだぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ご ごめんなさい<LINE>
+これでも いそいできたんだけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>も もういいよ<LINE>
+にもつは そこにおいといて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>では かくにんのため おなまえを<LINE>
+おしえてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>オッケー<LINE>
+じゃあ ちゃんと ボクのなまえを<LINE>
+にゅうりょくしてくれよ<$E0><$20><$00><$02><NEWBOX>
+<REMOVE_PORTRAITS><$E0>ぞ<CHANGE_RIGHT_PORTRAIT><$01><$E0>さくんって いうんだ~<LINE>
+いままでしらなかったよ~<NEWBOX>
+ありがとう<LINE>
+じゃあねー<NEWBOX>
+さてと にもつを ぶじ<LINE>
+とどけたことを ゆうびんきょくに<LINE>
+もどって つたえましょう<END>
+
+//POINTER #10 @ $54738 - STRING #10 @ $4C9C7
+
+#WRITE(GBA,$54738)
+<CHANGE_RIGHT_PORTRAIT><$1E>いまのところ おねがいするおしごとは<LINE>
+なにもないねー<LINE>
+またこんど きてくれないか?<END>
+
+//POINTER #11 @ $5473C - STRING #11 @ $4C9F6
+
+#WRITE(GBA,$5473C)
+<CHANGE_RIGHT_PORTRAIT><$1D>いまは みなさま おでかけになって<LINE>
+いらっしゃいますので<LINE>
+あらためて おこしください<END>
+
+//POINTER #12 @ $54740 - STRING #12 @ $4CA24
+
+#WRITE(GBA,$54740)
+<$E0><$31><$00><$55><$01><$07><$E0><$31><$00><$51><$02><$44><CHANGE_RIGHT_PORTRAIT><$01>ゆうびんきょくで もらった おかねで<LINE>
+<COLOR><$0A>ガチャステ</COLOR>をしに いきましょう<LINE>
+ガチャステは <COLOR><$08>ガチャステパーク</COLOR>っていう<LINE>
+ところにあるのよ<LINE>
+ガチャステパークは <COLOR><$08>ガチャゲート</COLOR>から<LINE>
+いけるのよ<END>
+
+//POINTER #13 @ $54744 - STRING #13 @ $4CA9E
+
+#WRITE(GBA,$54744)
+<$E0><$32><$00><$01><$01><$1A><CHANGE_RIGHT_PORTRAIT><$01>ここが <COLOR><$08>ガチャゲート</COLOR>っていって<LINE>
+<COLOR><$08>ガチャステパーク</COLOR>か <COLOR><$08>べつのまち</COLOR>に<LINE>
+てんそうしてくれる ばしょよ<LINE>
+じゃ なかにはいりましょう<LINE>
+<GOTO_SCRIPT><$01><$FA><$E0><$31><$00><$52><$04><$10><$E0><$32><$00><$04><$04><$0F><$E0><$32><$00><$55><$02><$40><$E0><$31><$00><$42><$03><$48><$E0>ん2ゅ<$E0><$31><$00><$06><$02><$20><$E0><$31><$00><$04><$01><$18><$E0><$31><$00><$33><$02><$20><CHANGE_RIGHT_PORTRAIT><$01>ここが バトルをするばしょよ<NEWBOX>
+<$E0><$31><$00><$50><$02><$41><$E0><$20><$00><$33><GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$01>それじゃ ほかのひとに あって<LINE>
+なにか はなしを ききましょう<LINE>
+じゃあ ここのいえのひとに しよう<LINE>
+・・・<LINE>
+あれ おるすみたい<END>
+
+//POINTER #14 @ $54748 - STRING #14 @ $4CAFA
+
+#WRITE(GBA,$54748)
+<$E0><$31><$00><$52><$04><$10><$E0><$32><$00><$04><$04><$0F><$E0><$32><$00><$55><$02><$40><$E0><$31><$00><$42><$03><$48><$E0>ん2ゅ<$E0><$31><$00><$06><$02><$20><$E0><$31><$00><$04><$01><$18><$E0><$31><$00><$33><$02><$20><CHANGE_RIGHT_PORTRAIT><$01>ここが バトルをするばしょよ<NEWBOX>
+<$E0><$31><$00><$50><$02><$41><$E0><$20><$00><$33><GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$01>それじゃ ほかのひとに あって<LINE>
+なにか はなしを ききましょう<LINE>
+じゃあ ここのいえのひとに しよう<LINE>
+・・・<LINE>
+あれ おるすみたい<END>
+
+//POINTER #15 @ $5474C - STRING #15 @ $4CB48
+
+#WRITE(GBA,$5474C)
+<CHANGE_RIGHT_PORTRAIT><$01>それじゃ ほかのひとに あって<LINE>
+なにか はなしを ききましょう<LINE>
+じゃあ ここのいえのひとに しよう<LINE>
+・・・<LINE>
+あれ おるすみたい<END>
+
+//POINTER #16 @ $54750 - STRING #16 @ $4CB8E
+
+#WRITE(GBA,$54750)
+<$E0><$31><$00><$06><$01><$17><$E0><$31><$00><$04><$02><$52><$E0><$31><$00><$05><$01><$16><CHANGE_RIGHT_PORTRAIT><$02>あれ?<LINE>
+いつかの はいたついんじゃないか<LINE>
+きょうは なんのはいたつだい?<LINE>
+ファンレターでも もってきたの?<LINE>
+<HERO_LEFT_PORTRAIT>ちがうよ<LINE>
+おれは ダイナバトラーなんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうよ ダイナチャージャーだって<LINE>
+ダイナだって もってるんだから<LINE>
+1たいだけだけど<LINE>
+このまえは デバイスをかう おかねを<LINE>
+かせいでた だけなんだから<LINE>
+<CHANGE_RIGHT_PORTRAIT><$02>へえー そーなんだ<LINE>
+じゃ きみとボクは ライバルってことだ<NEWBOX>
+だけど ダイナ1たいで<LINE>
+デバイスも すくないんじゃ<LINE>
+ボクの あいてには ならないけどね<NEWBOX>
+ま いいや うでだめにしに 1たい1の<LINE>
+プラクティスバトルでも やろうぜ!<LINE>
+  はい  いいえ<$E0> 040こ0さ<CHANGE_RIGHT_PORTRAIT><$02>おお いいねえ<LINE>
+じゃ <COLOR><$08>バトルプレイス</COLOR>でまってるぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はじめての じっせん だけど<LINE>
+おちついていけば だいじょうぶよ<$E0><$20><$00><$04><END>
+
+//POINTER #17 @ $54754 - STRING #17 @ $4CCCC
+
+#WRITE(GBA,$54754)
+<CHANGE_RIGHT_PORTRAIT><$02>おお いいねえ<LINE>
+じゃ <COLOR><$08>バトルプレイス</COLOR>でまってるぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はじめての じっせん だけど<LINE>
+おちついていけば だいじょうぶよ<$E0><$20><$00><$04><END>
+
+//POINTER #18 @ $54758 - STRING #18 @ $4CD14
+
+#WRITE(GBA,$54758)
+<CHANGE_RIGHT_PORTRAIT><$02>ちぇ いくじがねえな<LINE>
+ま きがむいたら またきなよ<LINE>
+いつだって あいてしてやるからさ<$E0><$20><$00><$05><END>
+
+//POINTER #19 @ $5475C - STRING #19 @ $4CD46
+
+#WRITE(GBA,$5475C)
+<CHANGE_RIGHT_PORTRAIT><$02>お たたかう ゆうきがでてきたかい<LINE>
+じゅんびは できた?<LINE>
+  はい  いいえ<$E0> 040こ0さ<CHANGE_RIGHT_PORTRAIT><$02>やあ さっそく きたんだな<LINE>
+わるいんだけど こんどの<LINE>
+たいかいに しゅうちゅうしたいんだ<NEWBOX>
+そこで ゆうしょうして<LINE>
+<$F0><$EA>サンカルロ<$F0><$EB>へ いくための<LINE>
+にんていしょうを もらうんだ<NEWBOX>
+きみも <$F0><$EA>サンカルロ<$F0><$EB>へ いきたいなら<LINE>
+たいかいで ゆうしょうするんだな<LINE>
+ま がんばれよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>そういえば たいかいって いつあるんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>おいおい<LINE>
+そんなことも しらなかったのか?<LINE>
+Bボタンを おすと システムメニューと<LINE>
+いっしょに ひだりうえにでるのが<LINE>
+タイマーで やじるしが あかいところに<LINE>
+あると たいかいが かいさいされるぞ<NEWBOX>
+それから タイマーは ひとのはなしを<LINE>
+きいている ときは きのうしないから<LINE>
+きをつけないと ダメだからな<NEWBOX>
+<HERO_LEFT_PORTRAIT>そうか ありがとうな<END>
+
+//POINTER #20 @ $54760 - STRING #20 @ $4CD78
+
+#WRITE(GBA,$54760)
+<CHANGE_RIGHT_PORTRAIT><$02>やあ さっそく きたんだな<LINE>
+わるいんだけど こんどの<LINE>
+たいかいに しゅうちゅうしたいんだ<NEWBOX>
+そこで ゆうしょうして<LINE>
+<$F0><$EA>サンカルロ<$F0><$EB>へ いくための<LINE>
+にんていしょうを もらうんだ<NEWBOX>
+きみも <$F0><$EA>サンカルロ<$F0><$EB>へ いきたいなら<LINE>
+たいかいで ゆうしょうするんだな<LINE>
+ま がんばれよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>そういえば たいかいって いつあるんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>おいおい<LINE>
+そんなことも しらなかったのか?<LINE>
+Bボタンを おすと システムメニューと<LINE>
+いっしょに ひだりうえにでるのが<LINE>
+タイマーで やじるしが あかいところに<LINE>
+あると たいかいが かいさいされるぞ<NEWBOX>
+それから タイマーは ひとのはなしを<LINE>
+きいている ときは きのうしないから<LINE>
+きをつけないと ダメだからな<NEWBOX>
+<HERO_LEFT_PORTRAIT>そうか ありがとうな<END>
+
+//POINTER #21 @ $54764 - STRING #21 @ $4CEC8
+
+#WRITE(GBA,$54764)
+<CHANGE_RIGHT_PORTRAIT><$02>びびらずに ちゃんときたな<LINE>
+そのゆうきは ほめてやるぜ<NEWBOX>
+<HERO_LEFT_PORTRAIT>そうさ おれは にげもかくれもしないぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>だけど ボクは てを ぬかないからな<LINE>
+ほんきのしょうぶだっ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>がんばってー!<NEWBOX>
+<$E0>び1 <GOTO_SCRIPT><$02><$01><CHANGE_RIGHT_PORTRAIT><$01>ここが バトルをするばしょよ<LINE>
+<GOTO_SCRIPT><$01><$FA><CHANGE_RIGHT_PORTRAIT><$01>まず じたくで わたしのはなしを<LINE>
+きいてほしいんだけど<LINE>
+<END>
+
+//POINTER #22 @ $54768 - STRING #22 @ $4CF38
+
+#WRITE(GBA,$54768)
+<CHANGE_RIGHT_PORTRAIT><$01>ここが バトルをするばしょよ<LINE>
+<GOTO_SCRIPT><$01><$FA><CHANGE_RIGHT_PORTRAIT><$01>まず じたくで わたしのはなしを<LINE>
+きいてほしいんだけど<LINE>
+<END>
+
+//POINTER #23 @ $5476C - STRING #23 @ $4CF4E
+
+#WRITE(GBA,$5476C)
+<CHANGE_RIGHT_PORTRAIT><$01>まず じたくで わたしのはなしを<LINE>
+きいてほしいんだけど<LINE>
+<END>
+
+//POINTER #24 @ $54770 - STRING #24 @ $4CF6E
+
+#WRITE(GBA,$54770)
+<$E0><$32><$00><$4E><$04><$30><$E0><$31><$00><$1B><$01><$09><$E0><$31><$00><$1A><$02><$90><$E0><$31><$00><$0E><$01><$09><$E0><$31><$00><$07><$01><$23><$E0><$32><$00><$06><$01><$07><$E0><$32><$00><$01><$01><$1A><CHANGE_RIGHT_PORTRAIT><$09>やあ みさりちゃん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ けいじさん<LINE>
+こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ふー・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>どうしたんですか?<LINE>
+ためいきなんかついて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ん~ じつはね<LINE>
+デバイスを ぬすんだやつがいて<LINE>
+そいつを さがしているところなんだけど<LINE>
+なかなか みつからないんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃ わたしたちが<LINE>
+てつだって あげるわよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ほんとうかい?<LINE>
+でも つかまえるのは きけんだから<NEWBOX>
+もし あやしいやつを みつけたら<LINE>
+おじさんに れんらくしてくれるかい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おやすいごようよ<LINE>
+かならず みつけるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>あぶなかったら にげるんだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい<LINE>
+<$E0><$20><$00><$07><END>
+
+//POINTER #25 @ $54774 - STRING #25 @ $4D0A9
+
+#WRITE(GBA,$54774)
+<$E0><$32><$00><$4E><$04><$36><$E0><$31><$00><$0E><$02><$1E><$E0><$32><$00><$07><$02><$1F><HERO_LEFT_PORTRAIT>さいきん あやしいひとを<LINE>
+みかけませんでしたか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>わからないなあ<LINE>
+こんな とかいには みかけない ひとって<LINE>
+けっこういるからねえ<LINE>
+どのひとも あやしそうにかんじることも<LINE>
+あるしねえ<END>
+
+//POINTER #26 @ $54778 - STRING #26 @ $4D11D
+
+#WRITE(GBA,$54778)
+<$E0><$32><$00><$4E><$04><$37><$E0><$31><$00><$0E><$02><$1E><$E0><$32><$00><$07><$02><$1D><CHANGE_RIGHT_PORTRAIT><$01>こんにちはー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>はい?<LINE>
+なにか ごようかしら?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち どろぼうさんを<LINE>
+さがしてるんですけど<LINE>
+あやしいひと みかけませんでしたか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>そうねえ<LINE>
+わたしは みかけなかったわ<LINE>
+それに ここさいきん そんなうわさ<LINE>
+きかないからね<LINE>
+でも こどもが そんなあぶないこと<LINE>
+しないで おとなに まかせなさい<END>
+
+//POINTER #27 @ $5477C - STRING #27 @ $4D1D2
+
+#WRITE(GBA,$5477C)
+<$E0><$31><$00><$09><$01><$1F><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ん?<LINE>
+きょうは なんのよう?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いま どろぼうさん さがしてるの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>どろぼうに さんづけは・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>なにか しらないか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>うーん どろぼうか・・・<LINE>
+あ そういえば<LINE>
+このあいだの デバイスなんだけどさ<NEWBOX>
+とどくのが おくれたのは<LINE>
+そのみせに どろぼうが<LINE>
+はいったかららしいぜ<NEWBOX>
+おかげで たいかいに しゅつじょう<LINE>
+できなかったよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それは たいへんだったのね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>そーなんだよ<NEWBOX>
+でさ ボクのほうも しらべておくよ<LINE>
+また きたときまでに なにかあれば<LINE>
+おしえてあげるよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<$E0><$20><$00><$09><END>
+
+//POINTER #28 @ $54780 - STRING #28 @ $4D2F1
+
+#WRITE(GBA,$54780)
+<$E0><$31><$00><$08><$01><$20><CHANGE_RIGHT_PORTRAIT><$02>まだ はやいよ<LINE>
+そんなすぐに じょうほうなんて<LINE>
+あつまらないよ<LINE>
+まだ きいてない ところでもいって<LINE>
+きいてきてよ<END>
+
+//POINTER #29 @ $54784 - STRING #29 @ $4D333
+
+#WRITE(GBA,$54784)
+<$E0><$31><$00><$59><$01><$0E><$E0><$31><$00><$0E><$01><$2E><$E0><$31><$00><$0B><$01><$0E><CHANGE_RIGHT_PORTRAIT><$02>ちょうどいいとこに きたな<NEWBOX>
+<HERO_LEFT_PORTRAIT>なにか わかったのか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>む<LINE>
+きみにじゃなくて みさりちゃんに<LINE>
+いったんだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>あー そうかよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>で どうだったの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>あ そうそう ぬすまれた<LINE>
+おみせのひとに きいたんだけど<LINE>
+ゆうびんきょくの くるまを<LINE>
+みかけたひとが いるらしいんだ<LINE>
+ま ゆうびんきょくの ひとが<LINE>
+そんなこと するはず ないから・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? ゆうびんきょく?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>いや だから かんけいないと<LINE>
+おもうんだけどね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょっと こころ あたりが あるの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>あ そう?<LINE>
+なら ちからになれて よかったけど<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ゆうびんきょくに いってみましょう<$E0><$20><$00><$0A><END>
+
+//POINTER #30 @ $54788 - STRING #30 @ $4D47F
+
+#WRITE(GBA,$54788)
+<$E0><$31><$00><$0A><$01><$22><CHANGE_RIGHT_PORTRAIT><$1E>やあ きょうも てつだいに<LINE>
+きてくれたのかい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい いまは ひとさがしなんです<LINE>
+どろぼうさんを さがしているの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>そりゃ ぶっそうだね<LINE>
+ゆうびんきょくも きをつけなきゃね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それで あやしいひととかって<LINE>
+みかけませんでしたか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>あやしいと いえば このまえ<LINE>
+ひとを やとったんだけど<LINE>
+1しゅうかんまえから こないんだよ<LINE>
+おかげで いそがしくって<LINE>
+このまえは みさりちゃんたちに<LINE>
+てつだってもらえて たすかったよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そんなの いつでも おやすいごようよ<LINE>
+でも いまは おしごと<LINE>
+おてつだいできないの ごめんなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>いいんだよ また ひまなとき<LINE>
+おねがいするよ<$E0><$20><$00><$08><END>
+
+//POINTER #31 @ $5478C - STRING #31 @ $4D5B7
+
+#WRITE(GBA,$5478C)
+<$E0><$31><$00><$0B><$02><$02><CHANGE_RIGHT_PORTRAIT><$1E>どうしたんだい?<LINE>
+ふたりとも そんなにあわてて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まえに いってた やすんでるひとの<LINE>
+おうちを おしえてください<NEWBOX>
+もしかしたら どろぼうさんかも<LINE>
+しれないんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>ええっ!!<LINE>
+まさか とはおもうけど<LINE>
+ちょっと あやしかったからねー<NEWBOX>
+じゃ ちょっと まってて・・・<LINE>
+・・・<NEWBOX>
+はい ここがそうだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<$E0><$20><$00><$0B><NEWBOX>
+<REMOVE_PORTRAITS><PLAY_SFX><$26><COLOR><$0D>ようぎしゃのちず</COLOR>を てにいれた<$E0><$44><$10><END>
+
+//POINTER #32 @ $54790 - STRING #32 @ $4D68B
+
+#WRITE(GBA,$54790)
+<$E0><$31><$00><$0D><$01><$26><CHANGE_RIGHT_PORTRAIT><$09>やあ そのご<LINE>
+なにかわかったかい?<NEWBOX>
+<$E0><$31><$00><$0B><$01><$24><CHANGE_RIGHT_PORTRAIT><$01>まだ よくわからないの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>いいかい くれぐれも<LINE>
+むりしちゃ だめだからね<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい<END>
+
+//POINTER #33 @ $54794 - STRING #33 @ $4D6DD
+
+#WRITE(GBA,$54794)
+<CHANGE_RIGHT_PORTRAIT><$01>ここに いるひとを しらべてみてください<LINE>
+はんにんかも しれないんです<NEWBOX>
+<HERO_LEFT_PORTRAIT>ぬすまれた みせの ちかくに<LINE>
+すんでいるひとが<NEWBOX>
+そのじかんに<LINE>
+ゆうびんきょくの くるまを<LINE>
+みかけたらしいんです<LINE>
+ゆうびんきょくで きいたら<LINE>
+1しゅうかんも<LINE>
+やすんでいるひとがいるって・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ほほう おもしろいせんだね<LINE>
+さっそく ぶかと ここに いってみるよ<LINE>
+ごきょうりょく かんしゃするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いえ ちからになれたら<LINE>
+それだけで うれしいです<$E0><$20><$00><$0C><END>
+
+//POINTER #34 @ $54798 - STRING #34 @ $4D7BE
+
+#WRITE(GBA,$54798)
+<CHANGE_RIGHT_PORTRAIT><$01>あのちずを けいじさんに<LINE>
+わたしてきたわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>そうか かれが はんにんじゃなきゃ<LINE>
+いいんだけどな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね でも もし はんにんだったら<LINE>
+みすごすわけには いかないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1E>そうだね<LINE>
+わざわざ ほうこく ありがとうね<$E0><$20><$00><$0D><END>
+
+//POINTER #35 @ $5479C - STRING #35 @ $4D835
+
+#WRITE(GBA,$5479C)
+<CHANGE_RIGHT_PORTRAIT><$09>やあ みさりちゃん おてがらだよ!<LINE>
+はんにんを たいほしたよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ぬすんだことを みとめたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ああ かなり はんせいしてたよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>よかったけど<LINE>
+はんにんさん かわいそう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>わるいことは わるいことだ<LINE>
+ちゃんと その つぐないを<LINE>
+しないといけないよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>それから はんにんがぬすんだ<LINE>
+デバイスを おみせにかえそうとしたら<LINE>
+えんぎがわるいし みせの イメージが<LINE>
+わるくなるから こっちで しょぶんして<LINE>
+くれって いわれたんだけど<LINE>
+よかったら みさりちゃんたち<LINE>
+もらってくれないかな?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? いいんですか?<LINE>
+やったー ラッキーだよね<NEWBOX>
+<$E0><$20><$00><$0E><$E0><$20><$00><$54><$E0>の2ぞ<$E0>ァ2ぞ0<$F0><$E0>ァ2ぞ0<$F1><$E0>ァ2ぞ0<$F2><REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>くを<LINE>
+3こ</COLOR> てにいてた<$E0><$44><$14><END>
+
+//POINTER #36 @ $547A0 - STRING #36 @ $4D99B
+
+#WRITE(GBA,$547A0)
+<$E0><$32><$00><$4E><$04><$3A><$E0><$31><$00><$19><$01><$ED><$E0><$31><$00><$10><$01><$EE><$E0><$32><$00><$0C><$01><$EF><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>こんにちは<LINE>
+・・・ねェ おねえちゃん<LINE>
+ボクのパパ みかけなかった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? おとうさん でかけてるの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>うん もう ずっとかえってこないんだ<LINE>
+ママは もうわすれろって いうんだけど<LINE>
+ボク またパパと あそびたいんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わかったわ<LINE>
+もし パパをみつけたら<LINE>
+かならずかえるように いってあげるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>ほんと?<LINE>
+うわあ ヤッター<LINE>
+やくそくだよ おねェちゃん!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まっかせておいてよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>じゃ これもっていって<LINE>
+これ パパからもらった<LINE>
+ボクの たからもの なんだ<LINE>
+パパ これみれば ボクのこと<LINE>
+おもいだしてくれると おもうんだ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+バックに しまった<$E0><$20><$00><$10><NEWBOX>
+<HERO_LEFT_PORTRAIT>これは かならず<LINE>
+おとうさんに わたすよ<NEWBOX>
+きみ なまえは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>ボク まなぶっていうの!<LINE>
+たのんだよ おにいちゃん<END>
+
+//POINTER #37 @ $547A4 - STRING #37 @ $4DB42
+
+#WRITE(GBA,$547A4)
+<$E0><$32><$00><$4E><$04><$3B><$E0><$31><$00><$2A><$01><$8D><$E0><$31><$00><$29><$01><$8E><$E0><$31><$00><$28><$01><$8D><$E0><$31><$00><$27><$01><$2F><$E0><$31><$00><$11><$01><$29><$E0><$32><$00><$0C><$01><$2A><CHANGE_RIGHT_PORTRAIT><$0B>やあ みさりちゃん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? てんちょうさん<LINE>
+なんか げんきないみたい<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0B>ああ このふきょうの あおりで<LINE>
+おみせの うりあげがおちて<LINE>
+ついに デパートを<LINE>
+へいてんすることに したんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー!? そんなー<LINE>
+ちいさいころから きてたから<LINE>
+わたし とっても ざんねんだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>おじさんも ざんねんでしょうがないよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたし おうえんしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>ありがとう みさりちゃん<NEWBOX>
+あ そうだ<LINE>
+もうすぐ へいてんセールやるから<LINE>
+うれのこったのが あれば すきなの<LINE>
+もっていって いいよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう<LINE>
+でも ぜんぶうれると いいわね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>そうだね みさりちゃんの<LINE>
+きたいに こたえるように がんばるよ<$E0><$20><$00><$11><END>
+
+//POINTER #38 @ $547A8 - STRING #38 @ $4DCAC
+
+#WRITE(GBA,$547A8)
+<CHANGE_RIGHT_PORTRAIT><$0B>やあ みさりちゃん<LINE>
+これから へいてんセールの<LINE>
+じゅんびなんだよ<LINE>
+もうちょっと まっててくれるかい<END>
+
+//POINTER #39 @ $547AC - STRING #39 @ $4DCE2
+
+#WRITE(GBA,$547AC)
+<CHANGE_RIGHT_PORTRAIT><$0B>みさりちゃん いらっしゃい<LINE>
+きょうは なにかかいものですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>い いえ ちがうの ちょっと<LINE>
+よってみただけなの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>いいんだよ みてってくれるだけでも<LINE>
+あ ごめん ひととあわなきゃ<NEWBOX>
+いけないから これでしつれいするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ わたしたちも かえります<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>そうかい じゃあ またきておくれよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>は~い<END>
+
+//POINTER #40 @ $547B0 - STRING #40 @ $4DD88
+
+#WRITE(GBA,$547B0)
+<$E0><$32><$00><$4E><$04><$39><$E0><$31><$00><$43><$04><$15><$E0><$31><$00><$12><$04><$13><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>やあ こんにちは<NEWBOX>
+おや きみたちは ダイナバトラーかい?<NEWBOX>
+<HERO_LEFT_PORTRAIT>そうさ なりたてだけどね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>そうか<LINE>
+じゃあ がんばってくれよ<LINE>
+<HERO_LEFT_PORTRAIT>おう まかせてくれ<END>
+
+//POINTER #41 @ $547B4 - STRING #41 @ $4DDF8
+
+#WRITE(GBA,$547B4)
+<$E0><$32><$00><$4E><$04><$3E><CHANGE_RIGHT_PORTRAIT><$1B>いらっしゃいませ ディノモしゃへようこそ<NEWBOX>
+<$E0><$31><$00><$43><$02><$42><GOTO_SCRIPT><$02><$44><$E0><$31><$00><$5D><$02><$47><$E0><$32><$00><$4E><$04><$3D><$E0><$31><$00><$06><$02><$47><$E0><$31><$00><$07><$02><$46><$E0><$32><$00><$06><$02><$45><CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0>だ<END>
+
+//POINTER #42 @ $547B8 - STRING #42 @ $4DE20
+
+#WRITE(GBA,$547B8)
+<$E0><$31><$00><$5D><$02><$47><$E0><$32><$00><$4E><$04><$3D><$E0><$31><$00><$06><$02><$47><$E0><$31><$00><$07><$02><$46><$E0><$32><$00><$06><$02><$45><CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0>だ<END>
+
+//POINTER #43 @ $547BC - STRING #43 @ $4DE5A
+
+#WRITE(GBA,$547BC)
+<CHANGE_RIGHT_PORTRAIT><$02>はんにんは つかまったかい?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おかげさまで つかまったわ<LINE>
+これも <$E0>さくんの おかげよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$02>そうか それは よかったよ<END>
+
+//POINTER #44 @ $547C0 - STRING #44 @ $4DE9E
+
+#WRITE(GBA,$547C0)
+<$E0><$32><$00><$11><$02><$61><CHANGE_RIGHT_PORTRAIT><$0B>やあ みさりちゃん<LINE>
+ぶじ へいてんセールが おわったよ<LINE>
+あまり いいのは のこってないけど<LINE>
+この <COLOR><$0D>あつでのぬのぶくろ</COLOR> なんか<LINE>
+じょうぶで いいものだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょうどよかったわ<LINE>
+それを なんまいか ください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>めのつけどころが いいねー<LINE>
+これは いいものなんだけど<LINE>
+なかなか にんきがなくて<LINE>
+うれのこっちゃってたんだ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>あつでのぬのぶくろ</COLOR>を てにいれた<$E0><$20><$00><$28><$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう てんちょうさん<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>こんなこと おやすいごようだよ<NEWBOX>
+さいごに いいものを みわける<LINE>
+いいめを もった ひとにであえて<LINE>
+よかったよ<LINE>
+さようなら みさりちゃん<LINE>
+<HERO_NAME>くん<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>さようなら てんちょうさん<LINE>
+どうかおげんきで<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0B>ありがとう<END>
+
+//POINTER #45 @ $547C4 - STRING #45 @ $4DFFE
+
+#WRITE(GBA,$547C4)
+どちらにいきますか?<LINE>
+  1F  2F<$E0>2040ら1マ  <$E0><$32><$00><$4E><$04><$56><$E0><$31><$00><$13><$01><$37><$E0><$31><$00><$4A><$02><$51><$E0><$31><$00><$3F><$02><$50><CHANGE_RIGHT_PORTRAIT><$02>わかったよ じいさん<LINE>
+ブロンズメダルだね<LINE>
+すぐ もってくるから<LINE>
+だれにも わたさないでくれよ<NEWBOX>
+<HERO_LEFT_PORTRAIT><$E0>さーっ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>なんだ きみたちも<$E0>そに<LINE>
+これたようだねー<NEWBOX>
+まあ がんばってくれよ<LINE>
+ボクは いそいでいるから<LINE>
+これで しつれいするよ<NEWBOX>
+<$E0><$20><$00><$3F><REMOVE_PORTRAITS>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なに あわててたのかしら<NEWBOX>
+こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>やあ こんにちは<LINE>
+おや おじょうちゃんたちは<LINE>
+このまちの ひとじゃないね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ わたしたち<LINE>
+ダイナバトラーです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお そうじゃったか<NEWBOX>
+もしよかったら ダイナバトラーの<LINE>
+れきしを きいて いかんかね?<LINE>
+  はい  いいえ<$E0> 040り0る<CHANGE_RIGHT_PORTRAIT><$01>ええ ぜひきかせてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか じゃ だいきんとして<LINE>
+ブロンズメダルを 1まい<LINE>
+もらえるかの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>え? ただじゃないんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>あたりまえじゃ<LINE>
+こんな いいはなし<LINE>
+ただで はなすのは もったいないわい<NEWBOX>
+どうだい きくのかい?<LINE>
+  はい  いいえ<$E0> 040れ0る<CHANGE_RIGHT_PORTRAIT><$01>またこんどにします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはざんねんじゃ<END>
+
+//POINTER #46 @ $547C8 - STRING #46 @ $4E01C
+
+#WRITE(GBA,$547C8)
+<$E0><$32><$00><$4E><$04><$56><$E0><$31><$00><$13><$01><$37><$E0><$31><$00><$4A><$02><$51><$E0><$31><$00><$3F><$02><$50><CHANGE_RIGHT_PORTRAIT><$02>わかったよ じいさん<LINE>
+ブロンズメダルだね<LINE>
+すぐ もってくるから<LINE>
+だれにも わたさないでくれよ<NEWBOX>
+<HERO_LEFT_PORTRAIT><$E0>さーっ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>なんだ きみたちも<$E0>そに<LINE>
+これたようだねー<NEWBOX>
+まあ がんばってくれよ<LINE>
+ボクは いそいでいるから<LINE>
+これで しつれいするよ<NEWBOX>
+<$E0><$20><$00><$3F><REMOVE_PORTRAITS>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なに あわててたのかしら<NEWBOX>
+こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>やあ こんにちは<LINE>
+おや おじょうちゃんたちは<LINE>
+このまちの ひとじゃないね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ わたしたち<LINE>
+ダイナバトラーです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお そうじゃったか<NEWBOX>
+もしよかったら ダイナバトラーの<LINE>
+れきしを きいて いかんかね?<LINE>
+  はい  いいえ<$E0> 040り0る<CHANGE_RIGHT_PORTRAIT><$01>ええ ぜひきかせてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか じゃ だいきんとして<LINE>
+ブロンズメダルを 1まい<LINE>
+もらえるかの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>え? ただじゃないんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>あたりまえじゃ<LINE>
+こんな いいはなし<LINE>
+ただで はなすのは もったいないわい<NEWBOX>
+どうだい きくのかい?<LINE>
+  はい  いいえ<$E0> 040れ0る<CHANGE_RIGHT_PORTRAIT><$01>またこんどにします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはざんねんじゃ<END>
+
+//POINTER #47 @ $547CC - STRING #47 @ $4E156
+
+#WRITE(GBA,$547CC)
+<CHANGE_RIGHT_PORTRAIT><$01>ええ ぜひきかせてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか じゃ だいきんとして<LINE>
+ブロンズメダルを 1まい<LINE>
+もらえるかの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>え? ただじゃないんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>あたりまえじゃ<LINE>
+こんな いいはなし<LINE>
+ただで はなすのは もったいないわい<NEWBOX>
+どうだい きくのかい?<LINE>
+  はい  いいえ<$E0> 040れ0る<CHANGE_RIGHT_PORTRAIT><$01>またこんどにします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはざんねんじゃ<END>
+
+//POINTER #48 @ $547D0 - STRING #48 @ $4E1E9
+
+#WRITE(GBA,$547D0)
+<CHANGE_RIGHT_PORTRAIT><$01>またこんどにします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはざんねんじゃ<END>
+
+//POINTER #49 @ $547D4 - STRING #49 @ $4E207
+
+#WRITE(GBA,$547D4)
+<$E0>ぎ100わ<CHANGE_RIGHT_PORTRAIT><$01>わかったわ はらいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12><PLAY_SFX><$2C>はい ありがとうよ<$E0><$44><$16><NEWBOX>
+それじゃあ きいておくれ<LINE>
+あー そもそも ダイナバトルがー<LINE>
+はじまるまえ ダイナは ただの<LINE>
+ペットロボットだった<LINE>
+そのころ EMEこうせきを<LINE>
+はっけんし さまざまな けんきゅうから<LINE>
+りようかちを みつけたのが<LINE>
+いまのディノモしゃ なんじゃ<LINE>
+そこで ダイナに めをつけ<LINE>
+ダイナを はんばいしていた<LINE>
+かいしゃを ばいしゅうしたんじゃ<LINE>
+そしてダイナを つかった バトルを<LINE>
+はじめるように なったのじゃ<LINE>
+そのごの ダイナバトルは<LINE>
+めざましい はってんを<LINE>
+とげていったのじゃ<LINE>
+そんななか デバイスの<LINE>
+せいぞうメーカーが<LINE>
+どくじに かいはつした<LINE>
+まぼろしの デバイスが<LINE>
+そんざいする そうじゃよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あ ありがとう<LINE>
+かなり べんきょうになりました<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはよかった<LINE>
+ちゃんと きいてくれた おれいに<LINE>
+これを あげよう<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>ふるびたデバイス</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これが まぼろしのデバイス?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ブロンズメダル1まいじゃ<LINE>
+それは あげられないさね<LINE>
+<HERO_LEFT_PORTRAIT>そうですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>じゃが かなりめずらしい ものじゃよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ いまの ダイナとは<LINE>
+せつぞくコネクタのかたちが ちがうわ<LINE>
+これじゃ デバイスセットできないわね<LINE>
+じゃ これってゴミ?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>まあ そういうことじゃ<LINE>
+かっかっかっ<NEWBOX>
+しかし なにかのやくに<LINE>
+たつかも しれんよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おじゃましました<$E0><$20><$00><$13><END>
+
+//POINTER #50 @ $547D8 - STRING #50 @ $4E21C
+
+#WRITE(GBA,$547D8)
+<CHANGE_RIGHT_PORTRAIT><$12><PLAY_SFX><$2C>はい ありがとうよ<$E0><$44><$16><NEWBOX>
+それじゃあ きいておくれ<LINE>
+あー そもそも ダイナバトルがー<LINE>
+はじまるまえ ダイナは ただの<LINE>
+ペットロボットだった<LINE>
+そのころ EMEこうせきを<LINE>
+はっけんし さまざまな けんきゅうから<LINE>
+りようかちを みつけたのが<LINE>
+いまのディノモしゃ なんじゃ<LINE>
+そこで ダイナに めをつけ<LINE>
+ダイナを はんばいしていた<LINE>
+かいしゃを ばいしゅうしたんじゃ<LINE>
+そしてダイナを つかった バトルを<LINE>
+はじめるように なったのじゃ<LINE>
+そのごの ダイナバトルは<LINE>
+めざましい はってんを<LINE>
+とげていったのじゃ<LINE>
+そんななか デバイスの<LINE>
+せいぞうメーカーが<LINE>
+どくじに かいはつした<LINE>
+まぼろしの デバイスが<LINE>
+そんざいする そうじゃよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あ ありがとう<LINE>
+かなり べんきょうになりました<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか それはよかった<LINE>
+ちゃんと きいてくれた おれいに<LINE>
+これを あげよう<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>ふるびたデバイス</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これが まぼろしのデバイス?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ブロンズメダル1まいじゃ<LINE>
+それは あげられないさね<LINE>
+<HERO_LEFT_PORTRAIT>そうですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>じゃが かなりめずらしい ものじゃよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ いまの ダイナとは<LINE>
+せつぞくコネクタのかたちが ちがうわ<LINE>
+これじゃ デバイスセットできないわね<LINE>
+じゃ これってゴミ?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$12>まあ そういうことじゃ<LINE>
+かっかっかっ<NEWBOX>
+しかし なにかのやくに<LINE>
+たつかも しれんよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おじゃましました<$E0><$20><$00><$13><END>
+
+//POINTER #51 @ $547DC - STRING #51 @ $4E489
+
+#WRITE(GBA,$547DC)
+<CHANGE_RIGHT_PORTRAIT><$12>なんじゃ メダルをもっておらんのか<LINE>
+はなしを ききたいなら ブロンズメダルを<LINE>
+もってくることじゃ<$E0><$20><$00><$4A><END>
+
+//POINTER #52 @ $547E0 - STRING #52 @ $4E4C1
+
+#WRITE(GBA,$547E0)
+<CHANGE_RIGHT_PORTRAIT><$12>なんじゃ またきたのか?<LINE>
+もうきても はなすことはないぞ<END>
+
+//POINTER #53 @ $547E4 - STRING #53 @ $4E4E2
+
+#WRITE(GBA,$547E4)
+<$E0><$32><$00><$4E><$04><$51><$E0><$31><$00><$1E><$01><$4F><$E0><$31><$00><$1D><$01><$50><GOTO_SCRIPT><$02><$62><CHANGE_RIGHT_PORTRAIT><$01>いつみても ここは ひとがおおいわよね<LINE>
+べつの ばしょにいきましょう<END>
+
+//POINTER #54 @ $547E8 - STRING #54 @ $4E4F8
+
+#WRITE(GBA,$547E8)
+<CHANGE_RIGHT_PORTRAIT><$01>いつみても ここは ひとがおおいわよね<LINE>
+べつの ばしょにいきましょう<END>
+
+//POINTER #55 @ $547EC - STRING #55 @ $4E51E
+
+#WRITE(GBA,$547EC)
+<$E0><$32><$00><$4E><$04><$55><$E0><$31><$00><$16><$01><$41><$E0>る431わ<$E0>る441わ<$E0>る471わ<$E0>る4え1わ<HERO_LEFT_PORTRAIT>みさり~ ここから<LINE>
+むこうまで なにで いくきなんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? あっ そうか<LINE>
+さかなけいの ダイナがないから<LINE>
+むじんとうに いけないわ<END>
+
+//POINTER #56 @ $547F0 - STRING #56 @ $4E58C
+
+#WRITE(GBA,$547F0)
+<$E0><$31><$00><$38><$01><$51><CHANGE_RIGHT_PORTRAIT><$01>・・・<NEWBOX>
+なんとか たどりつけたわね<NEWBOX>
+まず シスコのきをさがしましょう<NEWBOX>
+あ~ん!!<LINE>
+どのきが シスコのきか<LINE>
+わからないよ~<NEWBOX>
+<HERO_LEFT_PORTRAIT>マスターの ところに もどって<LINE>
+もういちど くわしくきいてこようよ<$E0><$20><$00><$37><END>
+
+//POINTER #57 @ $547F4 - STRING #57 @ $4E603
+
+#WRITE(GBA,$547F4)
+<$E0><$31><$00><$37><$01><$52><CHANGE_RIGHT_PORTRAIT><$0D>シスコのみは しゅうかくできましたか?<NEWBOX>
+<HERO_LEFT_PORTRAIT>ごめんなさい まだです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>ばしょは むじんとうです<LINE>
+よろしくおねがいします<END>
+
+//POINTER #58 @ $547F8 - STRING #58 @ $4E64C
+
+#WRITE(GBA,$547F8)
+<CHANGE_RIGHT_PORTRAIT><$01>ただいまー<LINE>
+とってきたわよ いっぱい<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>ごくろうさまです<LINE>
+では いただきます<LINE>
+おお これは かなりの りょうが<LINE>
+つくれますね<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>やったー なんにんまえくらい?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>これなら 20にんぶんは<LINE>
+つくれますね<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>えー そんな たべたら<LINE>
+ふとっちゃうかなぁ<NEWBOX>
+<HERO_LEFT_PORTRAIT>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>む?<LINE>
+いま なんか かんがえたでしょ?<NEWBOX>
+<HERO_LEFT_PORTRAIT>い いや・・・<LINE>
+なにも かんがえてないよ<LINE>
+きのせいだって・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>では これから すぐに<LINE>
+ちょうりに とりかかります<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ヤッター<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>もうしわけありませんが<LINE>
+したごしらえから はじめますので<LINE>
+しょうしょう おじかんを<LINE>
+いただきたいのですが<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ いいわよ<LINE>
+そのぶん おなかへらして まってるわ<LINE>
+で どのくらいまつんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>シスコのみを ゆがくのに 30ぷん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>ゆがいた みを かわからはずして<LINE>
+すりつぶして かんそうさせるのに<LINE>
+2じかん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー!!<LINE>
+がまん がまん<LINE>
+それで できあがり?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>すりつぶして かんそうした ものを<LINE>
+せんようシロップに つけること<LINE>
+1しゅうかん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もーう!!<LINE>
+それじゃ すぐ たべられないじゃない<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>まえは ざいこがあったので<LINE>
+つくりおきで まかなってましたので<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あーん<LINE>
+なんか だまされたー<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>1しゅうかんごに きていただければ<LINE>
+ごちそういたしますよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ぜったい きます!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>そうだ シスコのみの おれいに<LINE>
+これを さしあげますよ<NEWBOX>
+<GOTO_SCRIPT><$03><$00><CHANGE_RIGHT_PORTRAIT><$01>もちろんよ もってるわ<LINE>
+じゃあ さっそく でかけてくるわ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>では よろしくおねがいします<LINE>
+とってきていただいた ざいりょうで<LINE>
+タルトをおつくりしますよ<LINE>
+もちろん おだいは いただきません<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>うそー いっぱい とってきたら<LINE>
+タルト いっぱいたべられるの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>はい うでによりを かけて<LINE>
+おつくりいたします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃ いってきま~す<$E0><$20><$00><$15><END>
+
+//POINTER #59 @ $547FC - STRING #59 @ $4E8E8
+
+#WRITE(GBA,$547FC)
+<CHANGE_RIGHT_PORTRAIT><$01>もちろんよ もってるわ<LINE>
+じゃあ さっそく でかけてくるわ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>では よろしくおねがいします<LINE>
+とってきていただいた ざいりょうで<LINE>
+タルトをおつくりしますよ<LINE>
+もちろん おだいは いただきません<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>うそー いっぱい とってきたら<LINE>
+タルト いっぱいたべられるの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>はい うでによりを かけて<LINE>
+おつくりいたします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃ いってきま~す<$E0><$20><$00><$15><END>
+
+//POINTER #60 @ $54800 - STRING #60 @ $4E99E
+
+#WRITE(GBA,$54800)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>いらっしゃいませ<LINE>
+さかなのかたちをした ダイナは<LINE>
+てに いれられましたか?<NEWBOX>
+<GOTO_SCRIPT><$01><$54><HERO_LEFT_PORTRAIT>あんな むじんとうにいっても<LINE>
+しょうがないんじゃないのかな<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わかったわ いくのやめましょう<END>
+
+//POINTER #61 @ $54804 - STRING #61 @ $4E9D5
+
+#WRITE(GBA,$54804)
+<HERO_LEFT_PORTRAIT>あんな むじんとうにいっても<LINE>
+しょうがないんじゃないのかな<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わかったわ いくのやめましょう<END>
+
+//POINTER #62 @ $54808 - STRING #62 @ $4EA09
+
+#WRITE(GBA,$54808)
+<HERO_LEFT_PORTRAIT>もうシスコのみは いらないんじゃないか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね もどりましょう<END>
+
+//POINTER #63 @ $5480C - STRING #63 @ $4EA31
+
+#WRITE(GBA,$5480C)
+<$E0><$31><$00><$7B><$01><$4F><$E0><$31><$00><$7B><$01><$48><CHANGE_RIGHT_PORTRAIT><$0D>まだ シスコのみを<LINE>
+じゅくせいさせているところです<LINE>
+もうしばらくおまちください<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>え~ なんか すごいまってるかんじがする<LINE>
+しょうがない でなおしてきます<END>
+
+//POINTER #64 @ $54810 - STRING #64 @ $4EA91
+
+#WRITE(GBA,$54810)
+<$E0><$31><$00><$5E><$02><$A0><$E0><$32><$00><$4E><$04><$53><$E0><$31><$00><$19><$01><$47><$E0><$31><$00><$18><$01><$45><CHANGE_RIGHT_PORTRAIT><$0E>なんだね おまえたちは?<LINE>
+どろぼうなら ここには なにもないよ<LINE>
+<HERO_LEFT_PORTRAIT>いいや おれたちは<LINE>
+どろぼうじゃないよ<LINE>
+ダイナバトラーさ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そのダイナバトラーさんが<LINE>
+オレになにかようなのか?<NEWBOX>
+<$E0><$31><$00><$10><$01><$44><CHANGE_RIGHT_PORTRAIT><$01>いえ ようはないです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>オレも おまえたちには<LINE>
+ようなんかないね<LINE>
+おねがいだから そっとしておいてくれ<LINE>
+オレは ひとりになりたいんだ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい すぐに でていきます<$E0><$20><$00><$18><END>
+
+//POINTER #65 @ $54814 - STRING #65 @ $4EB74
+
+#WRITE(GBA,$54814)
+<CHANGE_RIGHT_PORTRAIT><$01>いえ ないといえば<LINE>
+ないような・・・<NEWBOX>
+<GOTO_SCRIPT><$02><$35><CHANGE_RIGHT_PORTRAIT><$0E>また おまえたちか<LINE>
+いいかげんに してくれ<LINE>
+ひとりに してくれって<LINE>
+なんども いってるだろ<$E0><$31><$00><$10><$01><$46><END>
+
+//POINTER #66 @ $54818 - STRING #66 @ $4EB91
+
+#WRITE(GBA,$54818)
+<CHANGE_RIGHT_PORTRAIT><$0E>また おまえたちか<LINE>
+いいかげんに してくれ<LINE>
+ひとりに してくれって<LINE>
+なんども いってるだろ<$E0><$31><$00><$10><$01><$46><END>
+
+//POINTER #67 @ $5481C - STRING #67 @ $4EBC8
+
+#WRITE(GBA,$5481C)
+<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まってください<LINE>
+わたしたちの はなしを きいてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>なぜ きみたちは オレを<LINE>
+ひとりに してくれないんだ<NEWBOX>
+<GOTO_SCRIPT><$02><$35><CHANGE_RIGHT_PORTRAIT><$01>もう ここには だれもいないわ<LINE>
+まなぶくんのところに かえったのね<END>
+
+//POINTER #68 @ $54820 - STRING #68 @ $4EC0A
+
+#WRITE(GBA,$54820)
+<CHANGE_RIGHT_PORTRAIT><$01>もう ここには だれもいないわ<LINE>
+まなぶくんのところに かえったのね<END>
+
+//POINTER #69 @ $54824 - STRING #69 @ $4EC2F
+
+#WRITE(GBA,$54824)
+<$E0><$31><$00><$1A><$02><$93><CHANGE_RIGHT_PORTRAIT><$01>こんにちはー<LINE>
+まだ ベイタルトは できていないと<LINE>
+おもうんだけど きちゃった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>いらっしゃいませ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? マスターは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ちゅうぼうで タルトを<LINE>
+つくってます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ ベイタルトは あきらめて<LINE>
+ショートケーキを2つと<LINE>
+メロンソーダを2つね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>・・・<LINE>
+かしこまりました<LINE>
+ごちゅうもんを くりかえします<LINE>
+シナモンケーキ3つと<LINE>
+ココナツジュースですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ あのー<LINE>
+ちゅうもん ぜんぜん ちがうんですけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>す すいません<LINE>
+もういちど ごちゅうもんを<LINE>
+おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ショートケーキと メロンソーダを<LINE>
+2つずつください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>・・・<LINE>
+はい アップルパイと<LINE>
+トマトジュースですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>・・・<LINE>
+お おねえさん どうかしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>え? またちゅうもん ちがいました?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか すごく つかれてるって<LINE>
+かんじするんですけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ ちょっと こまったことがあって<LINE>
+さいきん あまり ねられないの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だいじょうぶですか?<LINE>
+もし わたしたちでよければ<LINE>
+そうだんにのりますよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>んー じつは<LINE>
+ちょっと がらのわるいひとに<LINE>
+しつこく こうさいを<LINE>
+もうしこまれてるの<LINE>
+なんども ことわってるんだけど<LINE>
+あきらめて もらえなくって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありえない そんなの<LINE>
+けいさつとかに そうだんしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>それが ぜんぜん あいてに<LINE>
+してもらえなくて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わかったわ わたしたちが<LINE>
+おちからになるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>それは ありがたいんだけど<LINE>
+かれは <COLOR><$0A>ダイナブレイカー</COLOR>なのよ<NEWBOX>
+<$E0><$31><$00><$24><$01><$49><CHANGE_RIGHT_PORTRAIT><$01>ダイナブレイカー?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ダイナバトラーを とちゅうで ざせつして<LINE>
+ダイナをつかって わるいことを<LINE>
+するひとたちよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー ゆるせない それー<LINE>
+ダイナを わるいことに つかうなんて<LINE>
+わかったわ わたしたちが<LINE>
+そのおとこを たおしてあげる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だいじょうぶかしら?<LINE>
+かれ けっこう つよいって<LINE>
+じまんしてるけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ここにいる <HERO_NAME>も<LINE>
+かなり つよいですよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>じゃ おねがいします<LINE>
+このじかんなら ガチャステパークに<LINE>
+いってると おもいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>かれも ガチャステ してるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>いえ おきゃくさんを おどして<LINE>
+おかねを まきあげているとおもいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もう ゆるせないわ<LINE>
+いきましょう<$E0><$20><$00><$1A><END>
+
+//POINTER #70 @ $54828 - STRING #70 @ $4F02C
+
+#WRITE(GBA,$54828)
+<CHANGE_RIGHT_PORTRAIT><$01>ダイナブレイカーって ゆるせないわ<NEWBOX>
+わかったわ わたしたちが<LINE>
+そのおとこを たおしてあげる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だいじょうぶかしら?<LINE>
+かれ けっこう つよいって<LINE>
+じまんしてるけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ここにいる <HERO_NAME>も<LINE>
+かなり つよいですよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>じゃ おねがいします<LINE>
+このじかんなら ガチャステパークに<LINE>
+いってると おもいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>かれも ガチャステ してるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>いえ おきゃくさんを おどして<LINE>
+おかねを まきあげているとおもいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もう ゆるせないわ<LINE>
+いきましょう<$E0><$20><$00><$1A><END>
+
+//POINTER #71 @ $5482C - STRING #71 @ $4F11A
+
+#WRITE(GBA,$5482C)
+<END>
+
+//POINTER #72 @ $54830 - STRING #72 @ $4F11B
+
+#WRITE(GBA,$54830)
+<CHANGE_RIGHT_PORTRAIT><$1F>おい ちょっと オレさまに<LINE>
+かねを きふしてくれよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>え? あの~<LINE>
+わたし そんなに おかねもってないです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まちなさい! やめなさいよ そんなこと<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>ん?<LINE>
+なんだ おまえたちは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>このひとは <HERO_NAME><LINE>
+わたしは みさりよ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>なまえなんか きいちゃ いねえよ<LINE>
+なんのようが あんだ オレさまに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ベイカフェの おねえさんに<LINE>
+めいわくを かけてるでしょう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>あん? それが どうしたんだ?<LINE>
+てめえには かんけえねえだろ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おなじ おんなとして<LINE>
+ゆるせないからよっ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>はあ? ヒッヒヒヒッ<LINE>
+おなじ おんなにしちゃ<LINE>
+いろけがねえなぁ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もう しつれいなやつ<LINE>
+ダイナバトラーを ざせつした<LINE>
+いくじなしのくせに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>なにぃ ごるあぁ!!<LINE>
+こどもだとおもって いいきになってんじゃ<LINE>
+ねえぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>この<HERO_NAME>が<LINE>
+ほんものの ダイナバトルを<LINE>
+みせてあげるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>おお ならみせて もらおうか?<LINE>
+その つよさって ものをよー<NEWBOX>
+<$E0>ぱ1れ<CHANGE_RIGHT_PORTRAIT><$1F>オレさまには かてなかったが<LINE>
+けっこう やるじゃねえか<LINE>
+<HERO_NAME>とかいったな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんとか うまくいったわね<NEWBOX>
+<HERO_LEFT_PORTRAIT>まけたのは くやしいけどね<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><$E0><$31><$00><$1C><$01><$4D><CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>ん?<LINE>
+こんにちは<LINE>
+なにかようかい?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ いえ<LINE>
+なにを しているのかなあって<LINE>
+ちょっときになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>ああ いまかい?<LINE>
+ていちあみようの おもりを<LINE>
+さがしているんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ていちあみ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>そうだ<LINE>
+むこうぎしに じんこうの<LINE>
+すなはまが つくられたせいで<LINE>
+りょうにいく ふねが おきに<LINE>
+でられなくなってなあ<LINE>
+このへんで ていちあみりょうを<LINE>
+しているんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうなんですか<LINE>
+たいへんなんですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>だが そのおもりも<LINE>
+かいていが すなにおおわれて<LINE>
+てごろないわが みつからないんだ<LINE>
+もし <COLOR><$0A>くだいたがんせき</COLOR>があれば<LINE>
+かいとるから もってきてくれないか<NEWBOX>
+<$E0><$31><$00><$41><$01><$58><CHANGE_RIGHT_PORTRAIT><$01>わかったわ おぼえておくわ<$E0><$20><$00><$1C><END>
+
+//POINTER #73 @ $54834 - STRING #73 @ $4F51B
+
+#WRITE(GBA,$54834)
+<$E0><$31><$00><$1C><$01><$4D><CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>ん?<LINE>
+こんにちは<LINE>
+なにかようかい?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ いえ<LINE>
+なにを しているのかなあって<LINE>
+ちょっときになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>ああ いまかい?<LINE>
+ていちあみようの おもりを<LINE>
+さがしているんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ていちあみ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>そうだ<LINE>
+むこうぎしに じんこうの<LINE>
+すなはまが つくられたせいで<LINE>
+りょうにいく ふねが おきに<LINE>
+でられなくなってなあ<LINE>
+このへんで ていちあみりょうを<LINE>
+しているんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうなんですか<LINE>
+たいへんなんですね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$10>だが そのおもりも<LINE>
+かいていが すなにおおわれて<LINE>
+てごろないわが みつからないんだ<LINE>
+もし <COLOR><$0A>くだいたがんせき</COLOR>があれば<LINE>
+かいとるから もってきてくれないか<NEWBOX>
+<$E0><$31><$00><$41><$01><$58><CHANGE_RIGHT_PORTRAIT><$01>わかったわ おぼえておくわ<$E0><$20><$00><$1C><END>
+
+//POINTER #74 @ $54838 - STRING #74 @ $4F66D
+
+#WRITE(GBA,$54838)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<$E0><$32><$00><$41><$01><$4E><$E0><$31><$00><$44><$01><$55><GOTO_SCRIPT><$01><$56><CHANGE_RIGHT_PORTRAIT><$10>また おまえたちか<LINE>
+<COLOR><$0A>くだいたがんせき</COLOR>を てにいれたら<LINE>
+オレのところに もってきてくれよ<END>
+
+//POINTER #75 @ $5483C - STRING #75 @ $4F686
+
+#WRITE(GBA,$5483C)
+<CHANGE_RIGHT_PORTRAIT><$10>また おまえたちか<LINE>
+<COLOR><$0A>くだいたがんせき</COLOR>を てにいれたら<LINE>
+オレのところに もってきてくれよ<END>
+
+//POINTER #76 @ $54840 - STRING #76 @ $4F6BA
+
+#WRITE(GBA,$54840)
+<$E0><$32><$00><$17><$02><$62><$E0><$32><$00><$1B><$01><$48><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<LINE>
+タルトたべに きちゃった!<LINE>
+<HERO_LEFT_PORTRAIT>さいきん みさり ふとったよなー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そんなことないもん!!<LINE>
+もういい!! きょうはかえるっ!<END>
+
+//POINTER #77 @ $54844 - STRING #77 @ $4F71A
+
+#WRITE(GBA,$54844)
+<$E0><$31><$00><$26><$01><$4F><CHANGE_RIGHT_PORTRAIT><$0F>いらっしゃいませ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>やあ いらっしゃい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あの おみずを ください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>はい しょうしょう おまちください<LINE>
+いま もってまいります<NEWBOX>
+<HERO_LEFT_PORTRAIT>ちがうんだ<LINE>
+さばくのまちで みずを<LINE>
+ひつようとしている ひとが<LINE>
+いるんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>そりゃ たいへんだ<LINE>
+じゃあ このガロンぼとるを あげるよ<LINE>
+もっていきなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう マスター<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>おやすいごようさ<$E0><$20><$00><$1E><END>
+
+//POINTER #78 @ $54848 - STRING #78 @ $4F7DB
+
+#WRITE(GBA,$54848)
+<HERO_LEFT_PORTRAIT>シスコのきの とくちょうを きいたから<LINE>
+もうだいじょうぶだね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ<LINE>
+さっそく さがしましょうよ<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>これかな~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>きの とくちょうは?<NEWBOX>
+<HERO_LEFT_PORTRAIT>はっぱは<LINE>
+ちいさくて はさきが2つにわかれている<NEWBOX>
+みきは<LINE>
+しろくて ごつごつしてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんかちがうみたいね<LINE>
+ほかのを さがしましょう<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>これ なんか にてないか?<LINE>
+とくちょうは・・・<NEWBOX>
+はっぱは<LINE>
+おおきくて はさきが2つにわかれている<NEWBOX>
+みきは<LINE>
+くろくて つるつるしてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか びみょうに ちがうね<LINE>
+じゃあ つぎいってみよ~!<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>これ かなり にてるぞ!!<LINE>
+とくちょうは・・・<NEWBOX>
+はっぱは<LINE>
+おおきくて はさきが3つにわかれている<NEWBOX>
+みきは<LINE>
+しろくて つるつるしてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ああ~<LINE>
+これよ これよ!!<LINE>
+これが シスコのきね<LINE>
+おもっていたより ちいさいのね<NEWBOX>
+もてるだけ とっていきましょう<NEWBOX>
+・<NEWBOX>
+・・<NEWBOX>
+・・・<NEWBOX>
+けっこう とれたわね<LINE>
+だいしゅうかくよ<LINE>
+すぐに かえりましょう<$E0><$20><$00><$16><END>
+
+//POINTER #79 @ $5484C - STRING #79 @ $4F9BB
+
+#WRITE(GBA,$5484C)
+<CHANGE_RIGHT_PORTRAIT><$0F>いらっしゃいませ~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ?<LINE>
+マスターは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ ほかのざいりょうを かいに<LINE>
+でかけられています<NEWBOX>
+<HERO_LEFT_PORTRAIT>ええ~~!!<LINE>
+まじかよー<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0F>どうしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あの<LINE>
+シスコのきの とくちょうって<LINE>
+わかりませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ああ それなら わかるわよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おしえてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>いいわよ<LINE>
+けっこう ふくざつだから<LINE>
+メモしたほうが いいわよ<NEWBOX>
+はっぱは<LINE>
+おおきくて はさきが3つにわかれている<NEWBOX>
+みきは<LINE>
+しろくて つるつるしてる<NEWBOX>
+こんな かんじかしら<NEWBOX>
+にてるのが あるから<LINE>
+きを つけてね~<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は シスコのきの<LINE>
+とくちょうを きいた<NEWBOX>
+<HERO_LEFT_PORTRAIT>やったー<LINE>
+これで もう だいじょうぶだぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ウフフ<LINE>
+がんばってね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まかせて いっぱいとってくるわ<$E0><$20><$00><$38><END>
+
+//POINTER #80 @ $54850 - STRING #80 @ $4FB18
+
+#WRITE(GBA,$54850)
+<END>
+
+//POINTER #81 @ $54854 - STRING #81 @ $4FB19
+
+#WRITE(GBA,$54854)
+<$E0>る430っ<$E0>る440っ<$E0>る470っ<$E0>る4え0っ<CHANGE_RIGHT_PORTRAIT><$01>あーん そーよ<LINE>
+わたしたち もってなかったわ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>では ごちゅうもんは?<NEWBOX>
+<$E0><$20><$00><$3A><CHANGE_RIGHT_PORTRAIT><$01>いえ ならいいです<LINE>
+でなおしてきます<END>
+
+//POINTER #82 @ $54858 - STRING #82 @ $4FB77
+
+#WRITE(GBA,$54858)
+<GOTO_SCRIPT><$00><$3B>0ナ<CHANGE_RIGHT_PORTRAIT><$02>やあ <HERO_NAME><LINE>
+そうか きみらも がんせきを<LINE>
+もっているところを みると<LINE>
+だいぶ つよくなったみたいだな<LINE>
+<HERO_LEFT_PORTRAIT>まあな<NEWBOX>
+<$E0><$20><$00><$3B><CHANGE_RIGHT_PORTRAIT><$02>ボクは ダイナバトルより<LINE>
+きょうみがある じょうほうを<LINE>
+てにいれたんだ<LINE>
+ボクは しばらく そっちを<LINE>
+しらべているんだ<NEWBOX>
+まあ きみが どうしてもって<LINE>
+ときには バトルすることが<NEWBOX>
+あるかもしれないけどね<NEWBOX>
+じゃあ ボクはいそいでるんで<LINE>
+これで しつれいするよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_LEFT_PORTRAIT><$E0>さって<LINE>
+いつも いそがしそうだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ほんとね<NEWBOX>
+それじゃあ わたしたちも<LINE>
+りょうしさんのところへ いそぎましょう<NEWBOX>
+<REMOVE_PORTRAITS><CHANGE_RIGHT_PORTRAIT><$10>おお がんせきを<LINE>
+もってきて くれたのか<LINE>
+じゃ ぜんぶ かいとらせてもらうよ<NEWBOX>
+<$E0>ぬ ょ<HERO_NAME>は<LINE>
+<PLAY_SFX><$21><COLOR><$0A><$E0>す00ビット</COLOR> てにいれた<NEWBOX>
+<$E0>ャ0<$E0><$44><$1C><CHANGE_RIGHT_PORTRAIT><$10>ありがとよ<LINE>
+よかったら また もってきてくれ<END>
+
+//POINTER #83 @ $5485C - STRING #83 @ $4FC82
+
+#WRITE(GBA,$5485C)
+<CHANGE_RIGHT_PORTRAIT><$10>おお がんせきを<LINE>
+もってきて くれたのか<LINE>
+じゃ ぜんぶ かいとらせてもらうよ<NEWBOX>
+<$E0>ぬ ょ<HERO_NAME>は<LINE>
+<PLAY_SFX><$21><COLOR><$0A><$E0>す00ビット</COLOR> てにいれた<NEWBOX>
+<$E0>ャ0<$E0><$44><$1C><CHANGE_RIGHT_PORTRAIT><$10>ありがとよ<LINE>
+よかったら また もってきてくれ<END>
+
+//POINTER #84 @ $54860 - STRING #84 @ $4FC9A
+
+#WRITE(GBA,$54860)
+じゃ ぜんぶ かいとらせてもらうよ<NEWBOX>
+<$E0>ぬ ょ<HERO_NAME>は<LINE>
+<PLAY_SFX><$21><COLOR><$0A><$E0>す00ビット</COLOR> てにいれた<NEWBOX>
+<$E0>ャ0<$E0><$44><$1C><CHANGE_RIGHT_PORTRAIT><$10>ありがとよ<LINE>
+よかったら また もってきてくれ<END>
+
+//POINTER #85 @ $54864 - STRING #85 @ $4FCEA
+
+#WRITE(GBA,$54864)
+おや? きみたち<LINE>
+<COLOR><$0A>くだいたがんせき</COLOR>を<LINE>
+もっているようだね<NEWBOX>
+<$E0><$20><$00><$1C><GOTO_SCRIPT><$01><$57><END>
+
+//POINTER #86 @ $54868 - STRING #86 @ $4FD15
+
+#WRITE(GBA,$54868)
+<END>
+
+//POINTER #87 @ $5486C - STRING #87 @ $4FD16
+
+#WRITE(GBA,$5486C)
+<END>
+
+//POINTER #88 @ $54870 - STRING #88 @ $4FD17
+
+#WRITE(GBA,$54870)
+<END>
+
+//POINTER #89 @ $54874 - STRING #89 @ $4FD18
+
+#WRITE(GBA,$54874)
+<END>
+
+//POINTER #90 @ $54878 - STRING #90 @ $4FD19
+
+#WRITE(GBA,$54878)
+<END>
+
+//POINTER #91 @ $5487C - STRING #91 @ $4FD1A
+
+#WRITE(GBA,$5487C)
+<END>
+
+//POINTER #92 @ $54880 - STRING #92 @ $4FD1B
+
+#WRITE(GBA,$54880)
+<CHANGE_RIGHT_PORTRAIT><$11>このまえは ありがとう<LINE>
+しばらく のどの かわきを<LINE>
+うるおすことができたわ<END>
+
+//POINTER #93 @ $54884 - STRING #93 @ $4FD44
+
+#WRITE(GBA,$54884)
+<$E0><$32><$00><$4E><$04><$5D><$E0><$31><$00><$1D><$01><$61><$E0><$31><$00><$26><$01><$69><CHANGE_RIGHT_PORTRAIT><$11>ああ いいところにきたわ<LINE>
+わたしに おみずを<LINE>
+わけてもらえないかしら・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わっ! ど どうしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$11>さいきん みずくみばが かれだして<LINE>
+おみずが あまり のめないのよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ わかったわ<LINE>
+ちょっとまっててね<LINE>
+おみずをくんでくるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$11>ありがとう おねがいするわね<$E0><$20><$00><$1D><NEWBOX>
+<HERO_LEFT_PORTRAIT>おお まかせてくれ<END>
+
+//POINTER #94 @ $54888 - STRING #94 @ $4FE00
+
+#WRITE(GBA,$54888)
+<$E0><$31><$00><$26><$01><$69><$E0><$31><$00><$79><$01><$5F><CHANGE_RIGHT_PORTRAIT><$11>ああ まってたわ<NEWBOX>
+<$E0><$31><$00><$1E><$01><$62><CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい<LINE>
+まだ おみずが てにはいらないの<LINE>
+<CHANGE_RIGHT_PORTRAIT><$11>ええ そんなにすぐに みつからないわ<LINE>
+このまちでは むずかしいわよ<END>
+
+//POINTER #95 @ $5488C - STRING #95 @ $4FE5E
+
+#WRITE(GBA,$5488C)
+<HERO_LEFT_PORTRAIT>みずを もってきたよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わ わわ!<LINE>
+ひとがいっぱい<LINE>
+<CHANGE_RIGHT_PORTRAIT><$11>そろそろ もどってくるころかと<LINE>
+おもって きんじょのひとも<LINE>
+よんできたのよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね それは よかったわ<LINE>
+たぶん みなさんのぶんも<LINE>
+あるとおもうわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$11>ありがとう<LINE>
+あなたのように やさしいかたは いないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そんな わたし ひとりじゃ<LINE>
+できなかったわ<NEWBOX>
+<HERO_NAME>が<LINE>
+いてくれたからです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$11>わずかのおれいですが<LINE>
+うけとってください<NEWBOX>
+<$E0>ィ <$F0><REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$21><COLOR><$0A>2400ビット</COLOR>てにいれた<$E0><$44><$14><$E0><$20><$00><$79><END>
+
+//POINTER #96 @ $54890 - STRING #96 @ $4FF50
+
+#WRITE(GBA,$54890)
+<$E0><$31><$00><$7E><$01><$6C><$E0><$32><$00><$4E><$04><$65><$E0><$31><$00><$4B><$01><$6A><$E0><$31><$00><$1F><$01><$68><$E0><$31><$00><$20><$01><$67><$E0><$31><$00><$7A><$01><$6B><CHANGE_RIGHT_PORTRAIT><$01>わあ なんか すごいとこね<LINE>
+いせきみたいのが いっぱいあるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>だれじゃ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>キャッ!?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>わしをみて おどろくとは<LINE>
+しつれいなやつじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい<LINE>
+いきなり こえをかけられたので<LINE>
+びっくりしちゃって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>まあ よい<LINE>
+どうやら とうくつだんじゃ<LINE>
+なさそうじゃからの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>とうくつだん?<LINE>
+おじいさんは ここで<LINE>
+なにをしてるんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>わしは ふるびたデバイスを<LINE>
+ずっと さがしているんじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ふるびたデバイス?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>そうじゃ しっとるのか?<NEWBOX>
+<$E0><$31><$00><$13><$01><$64><CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい<LINE>
+まぼろしのデバイスなら<LINE>
+わたしたちも さがしているんだけど<LINE>
+ふるびたデバイスについては<LINE>
+まったく しらないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>まあ いいわい<LINE>
+もし ふるいデバイスでもみつけたら<LINE>
+ぜひ わしにみせておくれ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はーい<LINE>
+それじゃ おじゃましました<$E0><$20><$00><$7A><END>
+
+//POINTER #97 @ $54894 - STRING #97 @ $500F7
+
+#WRITE(GBA,$54894)
+<CHANGE_RIGHT_PORTRAIT><$01>それなら ふるびたデバイスを<LINE>
+サンカルロにいた おじいさんから<LINE>
+もらったわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお みせておくれ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いいわよ<LINE>
+はい これよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお こ これは・・・<LINE>
+もしよかったら このデバイスと<LINE>
+わしの もっているデバイスと<LINE>
+こうかんして もらえんじゃろか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ん~ べつにつかいみちが<LINE>
+ないから もってても<LINE>
+ひつようないけど<NEWBOX>
+ねえ どうする? こうかんする?<LINE>
+  はい  いいえ<$E0> 040ヤ0ユ<HERO_LEFT_PORTRAIT>ああ べつにかまわないよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお すまんのお<LINE>
+ほれ ではこれと こうかんじゃ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>ボロボロのデバイス</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか これ まえのより<LINE>
+もっと ふるそうだわ<LINE>
+これも ぜったい<LINE>
+デバイスセットには つかえないわ<$E0><$20><$00><$1F><END>
+
+//POINTER #98 @ $54898 - STRING #98 @ $501C6
+
+#WRITE(GBA,$54898)
+<HERO_LEFT_PORTRAIT>ああ べつにかまわないよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお すまんのお<LINE>
+ほれ ではこれと こうかんじゃ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>ボロボロのデバイス</COLOR>を てにいれた<$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか これ まえのより<LINE>
+もっと ふるそうだわ<LINE>
+これも ぜったい<LINE>
+デバイスセットには つかえないわ<$E0><$20><$00><$1F><END>
+
+//POINTER #99 @ $5489C - STRING #99 @ $5024D
+
+#WRITE(GBA,$5489C)
+<HERO_LEFT_PORTRAIT>いまは まだ こうかんしたくないんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ふん そんなもの もってても<LINE>
+なんのやくにも たたんぞ<LINE>
+ごうつくばりめ<$E0><$20><$00><$20><END>
+
+//POINTER #100 @ $548A0 - STRING #100 @ $5028E
+
+#WRITE(GBA,$548A0)
+<CHANGE_RIGHT_PORTRAIT><$12>また ひやかしに きたのか<LINE>
+それなら かえっとくれ<NEWBOX>
+それとも デバイスを<LINE>
+こうかんしてくれるのか?<LINE>
+  はい  いいえ<$E0> 040ヤ0ユ<CHANGE_RIGHT_PORTRAIT><$12>やあ デバイスありがとうよ<LINE>
+わしの コレクションに くわえられて<LINE>
+うれしいぞ<LINE>
+こんどは まぼろしのデバイスを<LINE>
+ほりあてるぞ・・・<NEWBOX>
+ん? まだ おったのか<LINE>
+いそがしいから おまえたちの<LINE>
+あいてなど してられないぞ<$E0><$20><$00><$4B><END>
+
+//POINTER #101 @ $548A4 - STRING #101 @ $502D5
+
+#WRITE(GBA,$548A4)
+<CHANGE_RIGHT_PORTRAIT><$12>やあ デバイスありがとうよ<LINE>
+わしの コレクションに くわえられて<LINE>
+うれしいぞ<LINE>
+こんどは まぼろしのデバイスを<LINE>
+ほりあてるぞ・・・<NEWBOX>
+ん? まだ おったのか<LINE>
+いそがしいから おまえたちの<LINE>
+あいてなど してられないぞ<$E0><$20><$00><$4B><END>
+
+//POINTER #102 @ $548A8 - STRING #102 @ $5034A
+
+#WRITE(GBA,$548A8)
+<CHANGE_RIGHT_PORTRAIT><$11>あなたたちが みずくみばを<LINE>
+とりもどしてくれて たすかったわ<LINE>
+これで おみずを じゆうに<LINE>
+のむことができるわ<LINE>
+ありがとう<END>
+
+//POINTER #103 @ $548AC - STRING #103 @ $5038A
+
+#WRITE(GBA,$548AC)
+<CHANGE_RIGHT_PORTRAIT><$12>ん? まだ おったのか<LINE>
+いそがしいから おまえたちの<LINE>
+あいてなど してられないぞ<END>
+
+//POINTER #104 @ $548B0 - STRING #104 @ $503B7
+
+#WRITE(GBA,$548B0)
+<CHANGE_RIGHT_PORTRAIT><$12>おまえたちか<LINE>
+どうじゃ ふるびたデバイスは<LINE>
+さがせたかね?<NEWBOX>
+<$E0><$31><$00><$13><$01><$64><HERO_LEFT_PORTRAIT>わるいな じいさん<LINE>
+まだ ふるびたデバイスは<LINE>
+てにいれてないんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>そうか・・・<LINE>
+まあ きになったら いろんなまちで<LINE>
+しらべておくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>ああ わかった<LINE>
+そうしてみるよ<END>
+
+//POINTER #105 @ $548B4 - STRING #105 @ $5043D
+
+#WRITE(GBA,$548B4)
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+ひとの けはいが しない<LINE>
+だれもいないようだ<END>
+
+//POINTER #106 @ $548B8 - STRING #106 @ $5045D
+
+#WRITE(GBA,$548B8)
+<END>
+
+//POINTER #107 @ $548BC - STRING #107 @ $5045E
+
+#WRITE(GBA,$548BC)
+<END>
+
+//POINTER #108 @ $548C0 - STRING #108 @ $5045F
+
+#WRITE(GBA,$548C0)
+<END>
+
+//POINTER #109 @ $548C4 - STRING #109 @ $50460
+
+#WRITE(GBA,$548C4)
+<CHANGE_RIGHT_PORTRAIT><$13>いらっしゃい<LINE>
+なにか こうかんするのかい?<NEWBOX>
+<$E0><$31><$00><$21><$01><$71><CHANGE_RIGHT_PORTRAIT><$01>ここは なにやさんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>なんだ しらないで<LINE>
+ここへきたんだ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい<LINE>
+しらないです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>ここは EMEこうせきの<LINE>
+こうかんじょだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>EMEこうせき<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>あんたらだって ダイナが<LINE>
+EMEこうせきから つくられてるのは<LINE>
+しってるだろ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あー なんか きいたことあるかも<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>その いしを かいとってるのさ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>どんな いしでも<LINE>
+かいとってくれるの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>そのいしのなかに EMEこうせきが<LINE>
+ふくまれている りょうで<LINE>
+ねだんがちがうよ<LINE>
+EMEこうせきが はいっているいしは<LINE>
+ひかっているから わかりやすいよ<LINE>
+ほとんどかがやきがないは   100<LINE>
+かがやきがすくないは     300<LINE>
+かなりかがやいているは    800<LINE>
+まぶしいくらいのかがやきは 2000で<LINE>
+かいとるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ~ そのいしは<LINE>
+どこでとれるの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>さあな しってるやつは<LINE>
+ひみつにして ほってくるからね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー それずるい<LINE>
+おとなのいんぼうだぁ~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>ひとついえるのは<LINE>
+このまちには ないってことだ<LINE>
+オレも しってれば<LINE>
+ひとを やとって ほりにいくよ<LINE>
+かいとるより もうかるからな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わかったわ じぶんたちで しらべます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>みつけたら ここへ もっといで<LINE>
+かいとってやるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>は~い<$E0><$20><$00><$21><END>
+
+//POINTER #110 @ $548C8 - STRING #110 @ $506BB
+
+#WRITE(GBA,$548C8)
+<$E0><$31><$00><$40><$04><$00><GOTO_SCRIPT><$01><$73><CHANGE_RIGHT_PORTRAIT><$13>ありがとよ<LINE>
+また てにいれたら きてくれよ<END>
+
+//POINTER #111 @ $548CC - STRING #111 @ $506C5
+
+#WRITE(GBA,$548CC)
+<CHANGE_RIGHT_PORTRAIT><$13>ありがとよ<LINE>
+また てにいれたら きてくれよ<END>
+
+//POINTER #112 @ $548D0 - STRING #112 @ $506DE
+
+#WRITE(GBA,$548D0)
+<CHANGE_RIGHT_PORTRAIT><$01>いまは もってないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$13>そうかい じゃあ<LINE>
+てにいれたら またきな<END>
+
+//POINTER #113 @ $548D4 - STRING #113 @ $50704
+
+#WRITE(GBA,$548D4)
+<CHANGE_LEFT_PORTRAIT><$19>ところで <$E0>ささまとの<LINE>
+バトルが まだのようですが<NEWBOX>
+バトルを かいししますが<LINE>
+よろしいですか?<LINE>
+  はい  いいえ<$E0> 040げ0ぐ<CHANGE_LEFT_PORTRAIT><$19>ただいま アッパークラスのたいかいが<LINE>
+かいさいされています<NEWBOX>
+たいかいは 1どさんかすると<LINE>
+たいかいがおわるまで<LINE>
+バッテリーの じゅうでんや<LINE>
+ショップのりようが できませんので<LINE>
+じゅうぶんな じゅんびがひつようです<NEWBOX>
+たいかいにさんかしますか?<LINE>
+  はい  いいえ<$E0> 040ャ0ュ<GOTO_SCRIPT><$03><$61>たいかいは いっていのきかんしか<LINE>
+かいさいされていませんので<LINE>
+たいかいに さんかするばあいは<LINE>
+じゅうぶん ちゅういしてください<NEWBOX>
+<$E0>わそ0ョ<$E0><$31><$00><$23><$01><$78><GOTO_SCRIPT><$01><$7A>またの ごりようを おまちしております<END>
+
+//POINTER #114 @ $548D8 - STRING #114 @ $50749
+
+#WRITE(GBA,$548D8)
+<CHANGE_LEFT_PORTRAIT><$19>ただいま アッパークラスのたいかいが<LINE>
+かいさいされています<NEWBOX>
+たいかいは 1どさんかすると<LINE>
+たいかいがおわるまで<LINE>
+バッテリーの じゅうでんや<LINE>
+ショップのりようが できませんので<LINE>
+じゅうぶんな じゅんびがひつようです<NEWBOX>
+たいかいにさんかしますか?<LINE>
+  はい  いいえ<$E0> 040ャ0ュ<GOTO_SCRIPT><$03><$61>たいかいは いっていのきかんしか<LINE>
+かいさいされていませんので<LINE>
+たいかいに さんかするばあいは<LINE>
+じゅうぶん ちゅういしてください<NEWBOX>
+<$E0>わそ0ョ<$E0><$31><$00><$23><$01><$78><GOTO_SCRIPT><$01><$7A>またの ごりようを おまちしております<END>
+
+//POINTER #115 @ $548DC - STRING #115 @ $507D9
+
+#WRITE(GBA,$548DC)
+<GOTO_SCRIPT><$03><$61>たいかいは いっていのきかんしか<LINE>
+かいさいされていませんので<LINE>
+たいかいに さんかするばあいは<LINE>
+じゅうぶん ちゅういしてください<NEWBOX>
+<$E0>わそ0ョ<$E0><$31><$00><$23><$01><$78><GOTO_SCRIPT><$01><$7A>またの ごりようを おまちしております<END>
+
+//POINTER #116 @ $548E0 - STRING #116 @ $507DD
+
+#WRITE(GBA,$548E0)
+たいかいは いっていのきかんしか<LINE>
+かいさいされていませんので<LINE>
+たいかいに さんかするばあいは<LINE>
+じゅうぶん ちゅういしてください<NEWBOX>
+<$E0>わそ0ョ<$E0><$31><$00><$23><$01><$78><GOTO_SCRIPT><$01><$7A>またの ごりようを おまちしております<END>
+
+//POINTER #117 @ $548E4 - STRING #117 @ $5082C
+
+#WRITE(GBA,$548E4)
+またの ごりようを おまちしております<END>
+
+//POINTER #118 @ $548E8 - STRING #118 @ $50840
+
+#WRITE(GBA,$548E8)
+<$E0><$32><$00><$4E><$02><$32><$E0><$31><$00><$46><$03><$62><$E0>ん0ッ<$E0><$31><$00><$25><$01><$83><GOTO_SCRIPT><$02><$31><$E0><$31><$00><$39><$01><$74><CHANGE_LEFT_PORTRAIT><$19>ようこそ バトルプレイスへ<LINE>
+おなまえの とうろくを<LINE>
+おねがいします<LINE>
+・・・<LINE>
+ごかくにん させていただきます<LINE>
+<HERO_NAME>さまですね<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>おめでとうございます<LINE>
+いままでの バトルのけっかから<LINE>
+つぎの あいてと バトルでかったほうが<LINE>
+ディノモしゃから さいしんの<LINE>
+ダイナチャージャーを プレゼントします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わあ それ すごい すご~い<LINE>
+で そのあいては だれですか?<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19><$E0>ささまです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うわ さいあく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>やあ <HERO_NAME>!!<LINE>
+またあえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうして <$E0>さなんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>きまってるじゃないか~<LINE>
+きみと ぼくは えいえんの ライバルだぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>どっちみち かつのは<LINE>
+わたしたちだけどね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>せいぜい いっておけばいいさ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>では バトルをかいしします<LINE>
+よろしいですか?<LINE>
+  はい  いいえ<$E0> 040げ0ぐ<HERO_LEFT_PORTRAIT>ちょっとまってくれ<LINE>
+そうびを かくにんしてから<LINE>
+もういちど くるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>なんだ なんだー<LINE>
+そのまま にげたら ダイナチャージャーは<LINE>
+ボクのものだぜ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>じゅんびができたら<LINE>
+もういちど きてください<$E0><$20><$00><$39><END>
+
+//POINTER #119 @ $548EC - STRING #119 @ $5085A
+
+#WRITE(GBA,$548EC)
+<$E0><$31><$00><$39><$01><$74><CHANGE_LEFT_PORTRAIT><$19>ようこそ バトルプレイスへ<LINE>
+おなまえの とうろくを<LINE>
+おねがいします<LINE>
+・・・<LINE>
+ごかくにん させていただきます<LINE>
+<HERO_NAME>さまですね<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>おめでとうございます<LINE>
+いままでの バトルのけっかから<LINE>
+つぎの あいてと バトルでかったほうが<LINE>
+ディノモしゃから さいしんの<LINE>
+ダイナチャージャーを プレゼントします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わあ それ すごい すご~い<LINE>
+で そのあいては だれですか?<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19><$E0>ささまです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うわ さいあく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>やあ <HERO_NAME>!!<LINE>
+またあえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうして <$E0>さなんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>きまってるじゃないか~<LINE>
+きみと ぼくは えいえんの ライバルだぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>どっちみち かつのは<LINE>
+わたしたちだけどね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>せいぜい いっておけばいいさ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>では バトルをかいしします<LINE>
+よろしいですか?<LINE>
+  はい  いいえ<$E0> 040げ0ぐ<HERO_LEFT_PORTRAIT>ちょっとまってくれ<LINE>
+そうびを かくにんしてから<LINE>
+もういちど くるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>なんだ なんだー<LINE>
+そのまま にげたら ダイナチャージャーは<LINE>
+ボクのものだぜ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>じゅんびができたら<LINE>
+もういちど きてください<$E0><$20><$00><$39><END>
+
+//POINTER #120 @ $548F0 - STRING #120 @ $509DE
+
+#WRITE(GBA,$548F0)
+<HERO_LEFT_PORTRAIT>ちょっとまってくれ<LINE>
+そうびを かくにんしてから<LINE>
+もういちど くるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>なんだ なんだー<LINE>
+そのまま にげたら ダイナチャージャーは<LINE>
+ボクのものだぜ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>じゅんびができたら<LINE>
+もういちど きてください<$E0><$20><$00><$39><END>
+
+//POINTER #121 @ $548F4 - STRING #121 @ $50A4D
+
+#WRITE(GBA,$548F4)
+<HERO_LEFT_PORTRAIT>よ~し<LINE>
+しょうぶだっ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>のぞむところだっ!!<NEWBOX>
+<REMOVE_PORTRAITS><$E0>び0ご<CHANGE_RIGHT_PORTRAIT><$01>いいバトルだったのに~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02><HERO_NAME>!!<LINE>
+いいバトルだったぜ<LINE>
+こんかいは ボクのかちだ<LINE>
+あたらしい ダイナチャージャーは<LINE>
+ボクが もらえるけど<LINE>
+きみの どりょくを みとめて<LINE>
+そのけんりを きみに ゆずるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え~ ウソッ<LINE>
+もらえるの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>あたらしい ダイナチャージャーをつかって<LINE>
+きみにかっても<LINE>
+ダイナチャージャーの さでまけた<LINE>
+なんて いわれたくないからな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>どうもありがとう<NEWBOX>
+<GOTO_SCRIPT><$01><$7E><CHANGE_RIGHT_PORTRAIT><$02>いいバトルだったぜ<LINE>
+くやしいけど ボクのまけだ<LINE>
+あたらしい ダイナチャージャーは<LINE>
+<HERO_NAME>の ものだよ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>ディノモしゃから あたらしい<LINE>
+ダイナチャージャーを おわたしします<NEWBOX>
+<REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
+<$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
+ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+なりました<$E0><$20><$00><$23><END>
+
+//POINTER #122 @ $548F8 - STRING #122 @ $50B49
+
+#WRITE(GBA,$548F8)
+<CHANGE_RIGHT_PORTRAIT><$02>いいバトルだったぜ<LINE>
+くやしいけど ボクのまけだ<LINE>
+あたらしい ダイナチャージャーは<LINE>
+<HERO_NAME>の ものだよ<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$19>ディノモしゃから あたらしい<LINE>
+ダイナチャージャーを おわたしします<NEWBOX>
+<REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
+<$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
+ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+なりました<$E0><$20><$00><$23><END>
+
+//POINTER #123 @ $548FC - STRING #123 @ $50BA7
+
+#WRITE(GBA,$548FC)
+<REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
+<$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
+ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+なりました<$E0><$20><$00><$23><END>
+
+//POINTER #124 @ $54900 - STRING #124 @ $50BF9
+
+#WRITE(GBA,$54900)
+<CHANGE_RIGHT_PORTRAIT><$14>やあ! きみたちか<LINE>
+このまえは どうもありがとう<LINE>
+ここの みずくみばは こわれたままで<LINE>
+なおすのに もうすこし じかんが<LINE>
+かかるみたいだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>でも ダイナブレイカーがいなくなって<LINE>
+よかったぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>まあ なにもないまちだけど<LINE>
+ひまなときは ときどき あそびに<LINE>
+きてくれよ<END>
+
+//POINTER #125 @ $54904 - STRING #125 @ $50C88
+
+#WRITE(GBA,$54904)
+<$E0><$32><$00><$4E><$04><$6C><$E0><$31><$00><$26><$01><$7F><CHANGE_RIGHT_PORTRAIT><$01>あれ? このみずくみば<LINE>
+みずが かれてる<LINE>
+あっちの みずくみばは<LINE>
+あふれるほど みずがあるのに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>ここは ダイナブレイカーに<LINE>
+こわされちゃったんだ<LINE>
+それに あっちは ダイナブレイカーが<LINE>
+せんりょうしてるから つかえないんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー そんな<LINE>
+じゃあ このまちのひとたちって<LINE>
+みずのめないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>いや たかいおかねを はらえば<LINE>
+のめるけど まちのひとは<LINE>
+もう おかねを もってるひとが<LINE>
+いないんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ひっどーい<LINE>
+そんなやつ やっつければいいのに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>やつらの リーダーが けっこう<LINE>
+つよいんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なら わたしたちにまかせて<LINE>
+かるく ひねりつぶしてくるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>きみたちみたいな こどもじゃ<LINE>
+あぶないよ やめといたほうが いいぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だいじょうぶ すぐにやっつけてくるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>どうなっても しらないぞ<$E0><$20><$00><$24><END>
+
+//POINTER #126 @ $54908 - STRING #126 @ $50E0D
+
+#WRITE(GBA,$54908)
+<$E0><$32><$00><$4E><$04><$62><$E0><$31><$00><$26><$01><$86><$E0><$31><$00><$25><$01><$85><$E0><$31><$00><$24><$01><$82><CHANGE_RIGHT_PORTRAIT><$01>このまちは あまり ひとをみないけど<LINE>
+ここは とくに だれもいないわね<END>
+
+//POINTER #127 @ $5490C - STRING #127 @ $50E4C
+
+#WRITE(GBA,$5490C)
+<CHANGE_RIGHT_PORTRAIT><$01>ここだよね<LINE>
+あの~ だれかいませんかー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>おい だれにいってんだ ねえちゃんよー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ あの ダイナブレイカーさんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>あん? それがどうした~?<LINE>
+ケンカでも うるってかー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ そうよ<LINE>
+なにか もんくある?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>ヒー ヒャッヒャヒャヒャ<LINE>
+こりゃ おもしれーや<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>リーダーを よんできてください<LINE>
+わたしたち ほんきです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>ちっ いちどいたいめ みたいようだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>おい どうした?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>あ リーダー うっす<LINE>
+なんでも ねえです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>そんなことないだろ<LINE>
+おじょうさん どうしました<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ あなたが リーダーね<LINE>
+みずくみばを まちのひとに<LINE>
+かえしてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>あー それは できませんよ<LINE>
+われわれも ビジネスなので<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こんなの ビジネスじゃないわ<LINE>
+わるいことよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>てめえ だまって きいてりゃ ずにのって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>こら やめなさい<LINE>
+おどしで ひとのこころは うごきませんよ<NEWBOX>
+わかりました<LINE>
+わたしが あいてをします<LINE>
+バトルで わたしが まければ<LINE>
+このまちを さりましょう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>やったー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>ただし あなたがたが まけたら<LINE>
+どうなるか せきにんは もちませんよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えっ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>ケッケッケ<LINE>
+こりゃ おもしれえや<NEWBOX>
+せいぜい まけたときの<LINE>
+いのちごいでも かんがえたほうがいいな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ぜったい まけないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>では バトルプレイスで おまちしています<$E0><$20><$00><$25><END>
+
+//POINTER #128 @ $54910 - STRING #128 @ $510C4
+
+#WRITE(GBA,$54910)
+<$E0><$31><$00><$26><$02><$31><CHANGE_RIGHT_PORTRAIT><$14>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ああ! こんにちは~<LINE>
+おうえんに きてくれたんだー<LINE>
+きょうは ぜったいにかつわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>なんか たいへんな やくそくを<LINE>
+させられたそうだね<LINE>
+まちのひとぜんいんが おれいを<LINE>
+いいたいそうだよ<LINE>
+きょうは まちのひとぜんいんが<LINE>
+サポーターになって おうえんを<LINE>
+させてもらうよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう<LINE>
+これで ちからが わいてくるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>ビビらずに よくこれたな<LINE>
+にげちまったかと おもったぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>あなたたちの ゆうきは<LINE>
+ほめておきましょう<LINE>
+ただし かちは ゆずりませんよ<LINE>
+では バトルかいしです<NEWBOX>
+<REMOVE_PORTRAITS><$E0>ぱ0ぢ<CHANGE_RIGHT_PORTRAIT><$20>すばらしい しょうぶでした<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>おい おまえたち まけちまったなぁー<LINE>
+ヒーッヒッヒッヒッ<LINE>
+どうなるか わかってるんだろうなぁー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>こら やめなさい そういういいかたは<LINE>
+よくありませんよ<NEWBOX>
+あなたたちの ちからは わかりました<LINE>
+あなたたちなら りっぱな<LINE>
+ダイナバトラーに なるでしょう<LINE>
+そのぜんとを おいわいして<LINE>
+われわれは このまちをでることにします<LINE>
+<CHANGE_RIGHT_PORTRAIT><$21>ほーら みたか でていくぜ<LINE>
+オレたちは・・・!?<LINE>
+リ リーダー かったのにこのまちを<LINE>
+でていっちまうんで?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>そうです われわれは ほかのまちで<LINE>
+ダイナバトラーの てだすけでもしましょう<LINE>
+<CHANGE_RIGHT_PORTRAIT><$21>へ へい<LINE>
+リーダーの おことばどおりに いたしやす<LINE>
+<CHANGE_RIGHT_PORTRAIT><$20>ということで われわれは<LINE>
+これでしつれいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ・・・<LINE>
+さ さようなら<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>ありがとう<LINE>
+けっかは どうあれ かれらが<LINE>
+でていってくれたのは<LINE>
+きみたちの おかげだよ<LINE>
+<HERO_LEFT_PORTRAIT>まけたのは くやしいけどね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>とにかく おれいをするよ<LINE>
+みんなからの おれいのしるしです<NEWBOX>
+<REMOVE_PORTRAITS><$E0><$73><$00><$01><HERO_NAME>は<LINE>
+<PLAY_SFX><$2C><COLOR><$0D>ゴールドメダル1まい</COLOR>を てにいれた<$E0><$44><$16><NEWBOX>
+<$E0><$20><$00><$26><CHANGE_RIGHT_PORTRAIT><$01>ありがとう<END>
+
+//POINTER #129 @ $54914 - STRING #129 @ $513E7
+
+#WRITE(GBA,$54914)
+<CHANGE_RIGHT_PORTRAIT><$20>すばらしい しょうぶでした<LINE>
+わたしの かんぱいです<LINE>
+おやくそくどおり このまちを<LINE>
+でていくことにします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$21>リーダー・・・<LINE>
+オ オレくやしいっす<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$20>かれら ぜんとある わかものに<LINE>
+きたいすることに しましょう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$14>おめでとう<LINE>
+おかねはないですが まちのみんなからの<LINE>
+おれいの しるしです<NEWBOX>
+<REMOVE_PORTRAITS><$E0><$73><$00><$03><HERO_NAME>は<LINE>
+<PLAY_SFX><$2C><COLOR><$0A>ゴールドメダル3まい</COLOR>を てにいれた<$E0><$44><$16><NEWBOX>
+<$E0><$20><$00><$26><CHANGE_RIGHT_PORTRAIT><$01>わあ ありがとう<END>
+
+//POINTER #130 @ $54918 - STRING #130 @ $514BB
+
+#WRITE(GBA,$54918)
+<CHANGE_RIGHT_PORTRAIT><$01>だれも いないみたい<NEWBOX>
+わたしたちも はやく バトルプレイスに<LINE>
+いきましょう<END>
+
+//POINTER #131 @ $5491C - STRING #131 @ $514E4
+
+#WRITE(GBA,$5491C)
+<CHANGE_RIGHT_PORTRAIT><$01>いまは まえとちがって<LINE>
+たくさんの ひとたちで<LINE>
+にぎわっているわね<END>
+
+//POINTER #132 @ $54920 - STRING #132 @ $51509
+
+#WRITE(GBA,$54920)
+<$E0><$32><$00><$4E><$04><$63><$E0><$31><$00><$29><$01><$8C><$E0><$31><$00><$27><$01><$88><CHANGE_RIGHT_PORTRAIT><$02>ごめんよ<LINE>
+ボクは ほかのことしらべていて<LINE>
+それを さがすことはできないよ<NEWBOX>
+また こんど きたときに<LINE>
+おてつだいするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ああ わるかったね むりいって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>じゃあ きをつけて<LINE>
+しゅっぱつしてくれよ<NEWBOX>
+<HERO_LEFT_PORTRAIT><$E0>さ!!<LINE>
+どうして いつも おれたちの<LINE>
+さきまわり してるんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>しつれいだな~<LINE>
+きみたちが ボクのあとを<LINE>
+おっかけてきてるんじゃないか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>やあ こんにちは みさりちゃん<LINE>
+こんなさばくのまちまで たいへんだね~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう しんぱいしてくれて<LINE>
+でも だいじょうぶよ<LINE>
+<HERO_NAME>も いることだし<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>それが ボクがいちばん しんぱいしてる<LINE>
+ことなんだけどね~<NEWBOX>
+<HERO_LEFT_PORTRAIT>なに~っ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>おっと もう こんなじかんか<LINE>
+ボクは ちょっと しらべものを<LINE>
+してるから これで しつれいするよ<NEWBOX>
+じゃあ きをつけてね みさりちゃん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう<LINE>
+<$E0>さくんも きをつけてね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>それじゃあね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>・・・<NEWBOX>
+この ひろば なにかな~<LINE>
+ちょっと あそこの ひとに<LINE>
+きいてみようよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>やあ こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わあ すごい にもつがいっぱい<LINE>
+どこかに でかけるんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ああ そうなんだよ<LINE>
+ぼくらは キャラバンたい なんだけど<LINE>
+かくちの ものを うりかいしているんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ たのしそう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>たのしいのは たのしいんだけどね<LINE>
+ちょっと こまったことが<LINE>
+おきたんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こまったこと?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>このまちで ちょっと しなものを<LINE>
+かいすぎて しまって<LINE>
+はこぶための ふくろが ひつようなんだ<LINE>
+あいにく ここじゃ てにはいらなくて<LINE>
+こまっているんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ わたしたちが<LINE>
+さがしてきましょうか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>え? いいのかい<LINE>
+さっきの おとこのこには<LINE>
+ことわられたんだけど<LINE>
+それは すごくありがたいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT><$F0>(<$E0>さのことだな・・・<$F0>)<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おおきなふくろを さがしてくれば<LINE>
+いいんですよね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ああ しかも じょうぶな<LINE>
+<COLOR><$0D>あつでのぬのぶくろ</COLOR>を<LINE>
+おねがいしたいんだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかったよ さがしてみるぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>よろしく たのんだよ<$E0><$20><$00><$27><END>
+
+//POINTER #133 @ $54924 - STRING #133 @ $518B7
+
+#WRITE(GBA,$54924)
+<$E0><$31><$00><$28><$01><$89><CHANGE_RIGHT_PORTRAIT><$22>どうだい みつかったかい?<NEWBOX>
+<HERO_LEFT_PORTRAIT>ごめん<LINE>
+まだ みつからないんだ<END>
+
+//POINTER #134 @ $54928 - STRING #134 @ $518E2
+
+#WRITE(GBA,$54928)
+<CHANGE_RIGHT_PORTRAIT><$01>もってきたわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>おお ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい どうぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>すごい! これはいいしなだよ<LINE>
+こんないいしなを えらぶなんて<LINE>
+このしなを みたてた ひとは すごいな<LINE>
+ぜひ われわれと いっしょに<LINE>
+しごとが したいよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ダイナシティの デパートの<LINE>
+てんちょうさんよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>そうか じゃあ いそがしくて<LINE>
+むりそうだね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>たぶん だいじょうぶよ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>そんなことは ないだろう<LINE>
+こんないいしなを みきわめられる<LINE>
+ひとの おみせなら<LINE>
+しょうばい はんじょうで<LINE>
+いそがしいだろうに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ところが もう おみせは<LINE>
+へいてんしちゃったの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>なんと・・・<LINE>
+おそらく やすものてんに<LINE>
+きゃくを うばわれた くちだろう<LINE>
+ならば われわれと ともに<LINE>
+しごとを してもらえるか<LINE>
+いちどあって たのんでこよう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おじさんも よろこぶかもしれないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>それでは これは こんかいの おれいです<NEWBOX>
+<$E0>る3は0ぶ<$E0>る3ぉ0ぶ<$E0>る3ナ0ぶ<$E0>る3ン0ぶ<$E0>る3ば0ぶ<$E0>ァ3ば3に<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><$E0>の3ば<COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<GOTO_SCRIPT><$01><$8B><REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0>ィ c<PLAY_SFX><$21><COLOR><$0A>2000ビット</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>では こんかいは おせわになりました<LINE>
+にもつを つみこみしだい<LINE>
+しゅっぱつします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい では おきをつけて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ありがとう<$E0><$20><$00><$29><END>
+
+//POINTER #135 @ $5492C - STRING #135 @ $51AC4
+
+#WRITE(GBA,$5492C)
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0>ィ c<PLAY_SFX><$21><COLOR><$0A>2000ビット</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>では こんかいは おせわになりました<LINE>
+にもつを つみこみしだい<LINE>
+しゅっぱつします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい では おきをつけて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ありがとう<$E0><$20><$00><$29><END>
+
+//POINTER #136 @ $54930 - STRING #136 @ $51AE8
+
+#WRITE(GBA,$54930)
+<CHANGE_RIGHT_PORTRAIT><$22>では こんかいは おせわになりました<LINE>
+にもつを つみこみしだい<LINE>
+しゅっぱつします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい では おきをつけて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$22>ありがとう<$E0><$20><$00><$29><END>
+
+//POINTER #137 @ $54934 - STRING #137 @ $51B31
+
+#WRITE(GBA,$54934)
+<REMOVE_PORTRAITS>キャラバンたいは しゅっぱつしたようだ<END>
+
+//POINTER #138 @ $54938 - STRING #138 @ $51B47
+
+#WRITE(GBA,$54938)
+<REMOVE_PORTRAITS>へいてんしましたという ふだがあるだけだ<END>
+
+//POINTER #139 @ $5493C - STRING #139 @ $51B5E
+
+#WRITE(GBA,$5493C)
+<CHANGE_RIGHT_PORTRAIT><$0B>やあ みさりちゃん<LINE>
+あれから キャラバンたいの<LINE>
+たいちょうさんに おあいして<LINE>
+なかまに いれてもらうことになったよ<LINE>
+あんな いいひとたちとであえて<LINE>
+ほんとうに よかったよ<LINE>
+ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>よろこんでもらえて わたしたちも<LINE>
+うれしいわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>じゃあ ほんとうに これでおわかれだね<LINE>
+<HERO_NAME>くんは<LINE>
+きっと りっぱな ダイナバトラーに<LINE>
+なれるよ<LINE>
+この めききの おじじの<LINE>
+めにかなったんじゃ<LINE>
+ぜったいに なれますよ!!<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>では さようなら<NEWBOX>
+<HERO_LEFT_PORTRAIT>さようなら<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>さようなら~<$E0><$20><$00><$2A><END>
+
+//POINTER #140 @ $54940 - STRING #140 @ $51C60
+
+#WRITE(GBA,$54940)
+<CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0>だ<END>
+
+//POINTER #141 @ $54944 - STRING #141 @ $51C7C
+
+#WRITE(GBA,$54944)
+<REMOVE_PORTRAITS>こうざんないの かべには<LINE>
+キラキラと かがやくところがある<NEWBOX>
+かべを けずってみますか?<LINE>
+  はい  いいえ<$E0> 040ぽ0ガ<$E0>る3は0ギ<$E0>る3ぉ0ギ<$E0>る3ナ0ギ<$E0>る3ン0ギ<$E0>る3ば0ギひじょうにかたい かべだ<LINE>
+ドリルデバイスがあれば<LINE>
+ダイナに かべを けずってもらえそうだ<NEWBOX>
+<HERO_NAME>は けずらないことにした<END>
+
+//POINTER #142 @ $54948 - STRING #142 @ $51CBC
+
+#WRITE(GBA,$54948)
+<$E0>る3は0ギ<$E0>る3ぉ0ギ<$E0>る3ナ0ギ<$E0>る3ン0ギ<$E0>る3ば0ギひじょうにかたい かべだ<LINE>
+ドリルデバイスがあれば<LINE>
+ダイナに かべを けずってもらえそうだ<NEWBOX>
+<HERO_NAME>は けずらないことにした<END>
+
+//POINTER #143 @ $5494C - STRING #143 @ $51D07
+
+#WRITE(GBA,$5494C)
+<HERO_NAME>は けずらないことにした<END>
+
+//POINTER #144 @ $54950 - STRING #144 @ $51D16
+
+#WRITE(GBA,$54950)
+ダイナが ドリルデバイスで<LINE>
+かべを けずった<LINE>
+ズガガガガガガ・・・<NEWBOX>
+・<PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><NEWBOX>
+・・<PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><NEWBOX>
+・・・<PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><PLAY_SFX><$07><$E0><$44><$08><NEWBOX>
+<GOTO_SCRIPT><$04><$01>てにいれた<$E0><$44><$16><END>
+
+//POINTER #145 @ $54954 - STRING #145 @ $51D84
+
+#WRITE(GBA,$54954)
+てにいれた<$E0><$44><$16><END>
+
+//POINTER #146 @ $54958 - STRING #146 @ $51D8D
+
+#WRITE(GBA,$54958)
+<$E0><$31><$00><$2C><$01><$9B><$E0><$31><$00><$2D><$01><$9A><CHANGE_RIGHT_PORTRAIT><$01>ここは なんのどうくつかしら<NEWBOX>
+<$E0>わと0ゴ<$E0><$31><$00><$2B><$01><$9D><CHANGE_RIGHT_PORTRAIT><$15>ありゃ~~~っ!!<LINE>
+ぅおどりゃぁ~!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>きゃー<LINE>
+な なに!?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>はぁだ~ぅっ・・<LINE>
+ゲホゲホゲホ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あはははは<LINE>
+むせたぁ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>うぬぬぬぬ<LINE>
+せっしゃを ぐろうするとは<LINE>
+ふとどきなやつ<LINE>
+いざ しょうぶいたせ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? あ ごめんなさい<LINE>
+わたしたちは ダイナバトラーだから<LINE>
+からだは きたえてないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>なにを かんちがいしておる<LINE>
+せっしゃも ダイナバトラーでござる<NEWBOX>
+<HERO_LEFT_PORTRAIT>じゃあ からだきたえるのって<LINE>
+あんまり いみないんじゃ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>おぬしたちは かんがえが あまいの<LINE>
+これは からだを きたえることによって<LINE>
+せいしんりょくの たんれんを しておる<LINE>
+せいしんりょくを きたえれば<LINE>
+とっさの はんだんりょくも<LINE>
+こうじょうすると いうものじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ふ~ん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>まだ わからないようじゃ<LINE>
+しょせん 2りゅうの<LINE>
+ダイナバトラーであろう<LINE>
+もうよいから たちさるがよい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>まってよ そんな たたかうまえに<LINE>
+きめつけないでよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>わしは つねに つよいものと<LINE>
+たたかうことに きめている<LINE>
+2りゅうは あいてにせん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だから たたかってから<LINE>
+はんだんしてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>ふっ まあ よいか<LINE>
+たたかいを こばんだとあっては<LINE>
+せっしゃの なが すたるというもの<LINE>
+ぐにもつかぬほどの ものとでも<LINE>
+せいせいどうどうと たたかって<LINE>
+しんぜよう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>なに れいにはおよばぬ<LINE>
+いかなる ちょうせんでも うけてたつのが<LINE>
+きゅうきょくの つよさを もとめる<LINE>
+しゅぎょうしゃの こころがまえじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>でも わたしたちは まけないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>わたしたちとは ふたりで<LINE>
+せっしゃと たたかうのか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いえ じっさいに たたかうのは<LINE>
+<HERO_NAME>よ<LINE>
+わたしは おうえんだけ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>さようか どちらでも かまわぬぞ<LINE>
+では せっしゃは バトルプレイスで<LINE>
+まっておるぞ<$E0><$20><$00><$2B><END>
+
+//POINTER #147 @ $5495C - STRING #147 @ $520EE
+
+#WRITE(GBA,$5495C)
+<REMOVE_PORTRAITS>なんの けはいも かんじることができない<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なにも ないみたいね いきましょう<END>
+
+//POINTER #148 @ $54960 - STRING #148 @ $5211A
+
+#WRITE(GBA,$54960)
+<$E0><$31><$00><$81><$02><$33><$E0><$31><$00><$3E><$03><$14><CHANGE_RIGHT_PORTRAIT><$15>おじけづかず よくまいられた<LINE>
+では さっそく バトルと まいろう<NEWBOX>
+<GOTO_SCRIPT><$03><$13><CHANGE_RIGHT_PORTRAIT><$01>え? こ これ なに?<LINE>
+こんなの みたことないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>さも ありなん<LINE>
+それは いにしえよりつたわる<LINE>
+まぼろしのデバイス でござる<LINE>
+おぬしたちも いちどは<LINE>
+みみに したことは ござらぬか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ ボディデバイスってことは<LINE>
+ほかの ぶぶんの デバイスも<LINE>
+あるんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>そのように きいておるが<LINE>
+ながねん さがしておる<LINE>
+わしでも それいがいを<LINE>
+てにすることは かなわなかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そんな たいせつなものを<LINE>
+わたしたちが もらって いいんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>うむ さきほどの バトルで せっしゃが<LINE>
+さとったことでござるが せっしゃよりも<LINE>
+わかいものが このデバイスを もって<LINE>
+のこりの デバイスを さがすべきでござる<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかったよ<LINE>
+のこりの デバイスは おれたちが<LINE>
+さがしだすよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>そのいき じゃ<LINE>
+こんどこそ しつれいつかまつる<LINE>
+ぬぅぉわあぁ~~~~・・・<$E0><$20><$00><$2C><END>
+
+//POINTER #149 @ $54964 - STRING #149 @ $5214E
+
+#WRITE(GBA,$54964)
+<CHANGE_RIGHT_PORTRAIT><$01>え? こ これ なに?<LINE>
+こんなの みたことないわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>さも ありなん<LINE>
+それは いにしえよりつたわる<LINE>
+まぼろしのデバイス でござる<LINE>
+おぬしたちも いちどは<LINE>
+みみに したことは ござらぬか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ ボディデバイスってことは<LINE>
+ほかの ぶぶんの デバイスも<LINE>
+あるんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>そのように きいておるが<LINE>
+ながねん さがしておる<LINE>
+わしでも それいがいを<LINE>
+てにすることは かなわなかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そんな たいせつなものを<LINE>
+わたしたちが もらって いいんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>うむ さきほどの バトルで せっしゃが<LINE>
+さとったことでござるが せっしゃよりも<LINE>
+わかいものが このデバイスを もって<LINE>
+のこりの デバイスを さがすべきでござる<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかったよ<LINE>
+のこりの デバイスは おれたちが<LINE>
+さがしだすよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>そのいき じゃ<LINE>
+こんどこそ しつれいつかまつる<LINE>
+ぬぅぉわあぁ~~~~・・・<$E0><$20><$00><$2C><END>
+
+//POINTER #150 @ $54968 - STRING #150 @ $522E3
+
+#WRITE(GBA,$54968)
+<CHANGE_RIGHT_PORTRAIT><$15>なんと ボディの もちものが<LINE>
+いっぱいではないか<NEWBOX>
+にもつを せいりしたのち<LINE>
+せっしゃの もとへ まいられよ<$E0><$20><$00><$2D><END>
+
+//POINTER #151 @ $5496C - STRING #151 @ $52320
+
+#WRITE(GBA,$5496C)
+<CHANGE_RIGHT_PORTRAIT><$01>きました~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>はぁだぁ~~!!プルプル<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>プルプル?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>やあ よくまいられた<LINE>
+これが やくそくのしなじゃ<NEWBOX>
+<GOTO_SCRIPT><$03><$10><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>ぬぁた~~!!<LINE>
+ほぅぁたぁ~~!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だめみたい しゅぎょうに<LINE>
+しゅうちゅうして きこえないようね<LINE>
+しゅぎょうの じゃましないように<LINE>
+かえりましょう<END>
+
+//POINTER #152 @ $54970 - STRING #152 @ $52368
+
+#WRITE(GBA,$54970)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$15>ぬぁた~~!!<LINE>
+ほぅぁたぁ~~!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だめみたい しゅぎょうに<LINE>
+しゅうちゅうして きこえないようね<LINE>
+しゅぎょうの じゃましないように<LINE>
+かえりましょう<END>
+
+//POINTER #153 @ $54974 - STRING #153 @ $523CB
+
+#WRITE(GBA,$54974)
+<$E0><$32><$00><$4E><$02><$53><$E0><$31><$00><$2C><$02><$33><$E0><$31><$00><$2B><$01><$97><GOTO_SCRIPT><$02><$33><$E0><$32><$00><$4E><$01><$96><CHANGE_RIGHT_PORTRAIT><$01>だれも いないわね<LINE>
+わたしたちも はやく<LINE>
+バトルプレイスへ いかなくちゃ<END>
+
+//POINTER #154 @ $54978 - STRING #154 @ $523E1
+
+#WRITE(GBA,$54978)
+<$E0><$32><$00><$4E><$01><$96><CHANGE_RIGHT_PORTRAIT><$01>だれも いないわね<LINE>
+わたしたちも はやく<LINE>
+バトルプレイスへ いかなくちゃ<END>
+
+//POINTER #155 @ $5497C - STRING #155 @ $5240F
+
+#WRITE(GBA,$5497C)
+<END>
+
+//POINTER #156 @ $54980 - STRING #156 @ $52410
+
+#WRITE(GBA,$54980)
+<CHANGE_RIGHT_PORTRAIT><$01>なんか しめった くうきが<LINE>
+ただよってるわね<LINE>
+きもちわるいから ここでましょう<END>
+
+//POINTER #157 @ $54984 - STRING #157 @ $5243B
+
+#WRITE(GBA,$54984)
+<$E0><$31><$00><$2E><$01><$A5><$E0><$31><$00><$2F><$01><$A4><$E0><$32><$00><$2C><$01><$9F><$E0><$32><$00><$1F><$01><$9F><CHANGE_RIGHT_PORTRAIT><$01>わあー このどうくつって なんか<LINE>
+しめっぽくて きもちわるいわー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ん?<LINE>
+だれじゃ おぬしたち!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ えーと<LINE>
+あの わたしたちは~・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>むむ あやしいやつめ<LINE>
+さては とうぞくだんじゃな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? いえ ちがいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いーや そうにきまっておる!<NEWBOX>
+<HERO_LEFT_PORTRAIT>ちがうって いってるじゃないか!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いんや さっき めしを<LINE>
+かいにいったとき<LINE>
+あやしいれんちゅうが<LINE>
+どうくつへ むかうって<LINE>
+おしえてくれたひとが いるんじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>おう こんちわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おー さきほどは しんせつに<LINE>
+おしえてくだすって たすかりましたわい<LINE>
+ごちゅうこくどおり<LINE>
+あやしいやつが あらわれましたぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あやしいって こっちの<LINE>
+おじさんのほうが<LINE>
+あやしそうだけど・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>オレが おしえなきゃ だいじなもんが<LINE>
+ぬすまれるとこだったぜ じいさん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>はい ありがとうございます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>なあ こんなやつが<LINE>
+たびたび くると あぶねえからよ<LINE>
+そのたからものがある ばしょを<LINE>
+おしえてくれよ<LINE>
+オレが まもってやっても いいんだぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>え? ですが・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>だいじょうぶだって<LINE>
+おくいって はなしを きかせてくれよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか むりやり おくに<LINE>
+つれていかれた みたいなかんじね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>だか・・・・だろ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>・・・い<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>・・・せー・・・よ・・・ら~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか はなしが もつれてるのかな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>わあぁ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>きゃっ!! ひめいだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>おら てめえら まだいたのか どけ!!<NEWBOX>
+<HERO_LEFT_PORTRAIT>おい まてよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ なに そのてにもってるの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>あん? これがどうした<LINE>
+おくのおとこが おれいに<LINE>
+くれたんだよぅ もんくあんのか<NEWBOX>
+<HERO_LEFT_PORTRAIT>こどもだとおもって なめたら<LINE>
+いたいめ みるぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>なんだと こるぁー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>むこうの どうくつにいる<LINE>
+しゅぎょうそうだって たおしたんだから!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>もしかして カビラの ことを<LINE>
+いってるのか?<NEWBOX>
+ん? カビラがいってた わけえやつって<LINE>
+こんガキらのことか~?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうよ このデバイス もらったんだから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>な な・・・ ほんものだ・・・<LINE>
+あ あわわわわ~<LINE>
+こ これは かえすぜ・・・<LINE>
+じゃねえ オレからの プレゼントだ<LINE>
+だから カビラには なにも いうなよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありゃ にげちゃった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>う・・・ <NEWBOX>
+<HERO_LEFT_PORTRAIT>あ だいじょうぶですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ああ そ それは・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ さっきのひとが かえしてくれたわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>じゃなく そっちのほうだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>あ これは カビラって ひとから<LINE>
+もらったんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>カビラから・・・<LINE>
+そうか どうやら わしは とんでもない<LINE>
+かんちがいを してしまったらしい<NEWBOX>
+すまなかったね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いえ そんなの きにしていないですから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ここで ながねんいせきを<LINE>
+はっくつしていると あまり せけんが<LINE>
+みえなく なっているようじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いせきの はっくつといえば<LINE>
+まえにも にたひとに あって<LINE>
+こんな つかえない デバイスを<LINE>
+もらったわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお こ これは・・・<LINE>
+わたしが ながねん さがし<LINE>
+もとめていた デバイスじゃ<NEWBOX>
+<HERO_LEFT_PORTRAIT>じゃあ あげるよ おれたちが<LINE>
+もってても いみがないから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>え? いいのかい?<LINE>
+これを もらっても<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>ボロボロのデバイス</COLOR>を<LINE>
+あげた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお どうもありがとう<LINE>
+では いただくだけでは<LINE>
+もうしわけないから こちらと<LINE>
+こうかんしよう<NEWBOX>
+<GOTO_SCRIPT><$03><$18><HERO_LEFT_PORTRAIT>ありがとう!<LINE>
+でも せっかく とりもどしたのに・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いいんじゃよ きにせず もっていってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ありがとう そうしてくれると うれしいよ<LINE>
+わたしは ここを ひきはらって<LINE>
+どこかで はくぶつかんでも ひらくよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうですか がんばってくださいね<LINE>
+じゃあ わたしたち かえります<LINE>
+ありがとうございました<END>
+
+//POINTER #158 @ $54988 - STRING #158 @ $52453
+
+#WRITE(GBA,$54988)
+<CHANGE_RIGHT_PORTRAIT><$01>わあー このどうくつって なんか<LINE>
+しめっぽくて きもちわるいわー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ん?<LINE>
+だれじゃ おぬしたち!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ えーと<LINE>
+あの わたしたちは~・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>むむ あやしいやつめ<LINE>
+さては とうぞくだんじゃな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? いえ ちがいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いーや そうにきまっておる!<NEWBOX>
+<HERO_LEFT_PORTRAIT>ちがうって いってるじゃないか!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いんや さっき めしを<LINE>
+かいにいったとき<LINE>
+あやしいれんちゅうが<LINE>
+どうくつへ むかうって<LINE>
+おしえてくれたひとが いるんじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>おう こんちわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おー さきほどは しんせつに<LINE>
+おしえてくだすって たすかりましたわい<LINE>
+ごちゅうこくどおり<LINE>
+あやしいやつが あらわれましたぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あやしいって こっちの<LINE>
+おじさんのほうが<LINE>
+あやしそうだけど・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>オレが おしえなきゃ だいじなもんが<LINE>
+ぬすまれるとこだったぜ じいさん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>はい ありがとうございます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>なあ こんなやつが<LINE>
+たびたび くると あぶねえからよ<LINE>
+そのたからものがある ばしょを<LINE>
+おしえてくれよ<LINE>
+オレが まもってやっても いいんだぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>え? ですが・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>だいじょうぶだって<LINE>
+おくいって はなしを きかせてくれよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか むりやり おくに<LINE>
+つれていかれた みたいなかんじね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>だか・・・・だろ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>・・・い<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>・・・せー・・・よ・・・ら~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか はなしが もつれてるのかな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>わあぁ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>きゃっ!! ひめいだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>おら てめえら まだいたのか どけ!!<NEWBOX>
+<HERO_LEFT_PORTRAIT>おい まてよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ なに そのてにもってるの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>あん? これがどうした<LINE>
+おくのおとこが おれいに<LINE>
+くれたんだよぅ もんくあんのか<NEWBOX>
+<HERO_LEFT_PORTRAIT>こどもだとおもって なめたら<LINE>
+いたいめ みるぜ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>なんだと こるぁー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>むこうの どうくつにいる<LINE>
+しゅぎょうそうだって たおしたんだから!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>もしかして カビラの ことを<LINE>
+いってるのか?<NEWBOX>
+ん? カビラがいってた わけえやつって<LINE>
+こんガキらのことか~?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうよ このデバイス もらったんだから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$16>な な・・・ ほんものだ・・・<LINE>
+あ あわわわわ~<LINE>
+こ これは かえすぜ・・・<LINE>
+じゃねえ オレからの プレゼントだ<LINE>
+だから カビラには なにも いうなよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありゃ にげちゃった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>う・・・ <NEWBOX>
+<HERO_LEFT_PORTRAIT>あ だいじょうぶですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ああ そ それは・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>これ さっきのひとが かえしてくれたわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>じゃなく そっちのほうだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>あ これは カビラって ひとから<LINE>
+もらったんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>カビラから・・・<LINE>
+そうか どうやら わしは とんでもない<LINE>
+かんちがいを してしまったらしい<NEWBOX>
+すまなかったね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いえ そんなの きにしていないですから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ここで ながねんいせきを<LINE>
+はっくつしていると あまり せけんが<LINE>
+みえなく なっているようじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いせきの はっくつといえば<LINE>
+まえにも にたひとに あって<LINE>
+こんな つかえない デバイスを<LINE>
+もらったわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお こ これは・・・<LINE>
+わたしが ながねん さがし<LINE>
+もとめていた デバイスじゃ<NEWBOX>
+<HERO_LEFT_PORTRAIT>じゃあ あげるよ おれたちが<LINE>
+もってても いみがないから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>え? いいのかい?<LINE>
+これを もらっても<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>ボロボロのデバイス</COLOR>を<LINE>
+あげた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>おお どうもありがとう<LINE>
+では いただくだけでは<LINE>
+もうしわけないから こちらと<LINE>
+こうかんしよう<NEWBOX>
+<GOTO_SCRIPT><$03><$18><HERO_LEFT_PORTRAIT>ありがとう!<LINE>
+でも せっかく とりもどしたのに・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いいんじゃよ きにせず もっていってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ありがとう そうしてくれると うれしいよ<LINE>
+わたしは ここを ひきはらって<LINE>
+どこかで はくぶつかんでも ひらくよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうですか がんばってくださいね<LINE>
+じゃあ わたしたち かえります<LINE>
+ありがとうございました<END>
+
+//POINTER #159 @ $5498C - STRING #159 @ $52A51
+
+#WRITE(GBA,$5498C)
+<HERO_LEFT_PORTRAIT>ありがとう!<LINE>
+でも せっかく とりもどしたのに・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>いいんじゃよ きにせず もっていってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$12>ありがとう そうしてくれると うれしいよ<LINE>
+わたしは ここを ひきはらって<LINE>
+どこかで はくぶつかんでも ひらくよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうですか がんばってくださいね<LINE>
+じゃあ わたしたち かえります<LINE>
+ありがとうございました<END>
+
+//POINTER #160 @ $54990 - STRING #160 @ $52B07
+
+#WRITE(GBA,$54990)
+<CHANGE_RIGHT_PORTRAIT><$12>どうやら ライドの もちものが<LINE>
+いっぱいのようじゃな<LINE>
+にもつを せいりしてから<LINE>
+また きておくれ<LINE>
+それまで デバイスを たいせつに<LINE>
+あずかっておるよ<$E0><$20><$00><$2F><END>
+
+//POINTER #161 @ $54994 - STRING #161 @ $52B59
+
+#WRITE(GBA,$54994)
+<CHANGE_RIGHT_PORTRAIT><$12>まっとったぞ<LINE>
+にもつは せいりされたかの?<NEWBOX>
+<GOTO_SCRIPT><$03><$18><CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もう ここには いないようね<END>
+
+//POINTER #162 @ $54998 - STRING #162 @ $52B77
+
+#WRITE(GBA,$54998)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もう ここには いないようね<END>
+
+//POINTER #163 @ $5499C - STRING #163 @ $52B9D
+
+#WRITE(GBA,$5499C)
+<END>
+
+//POINTER #164 @ $549A0 - STRING #164 @ $52B9E
+
+#WRITE(GBA,$549A0)
+<END>
+
+//POINTER #165 @ $549A4 - STRING #165 @ $52B9F
+
+#WRITE(GBA,$549A4)
+<END>
+
+//POINTER #166 @ $549A8 - STRING #166 @ $52BA0
+
+#WRITE(GBA,$549A8)
+<END>
+
+//POINTER #167 @ $549AC - STRING #167 @ $52BA1
+
+#WRITE(GBA,$549AC)
+<END>
+
+//POINTER #168 @ $549B0 - STRING #168 @ $52BA2
+
+#WRITE(GBA,$549B0)
+<END>
+
+//POINTER #169 @ $549B4 - STRING #169 @ $52BA3
+
+#WRITE(GBA,$549B4)
+<END>
+
+//POINTER #170 @ $549B8 - STRING #170 @ $52BA4
+
+#WRITE(GBA,$549B8)
+<END>
+
+//POINTER #171 @ $549BC - STRING #171 @ $52BA5
+
+#WRITE(GBA,$549BC)
+<$E0><$31><$00><$2E><$01><$B1><CHANGE_RIGHT_PORTRAIT><$17>おーい きみたち ここは きけんだよ<LINE>
+あぶないから うろうろ しちゃだめだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おじさんたちは きけんじゃないんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おじさんたちは きけんを<LINE>
+さっちできるから あぶなくなるまえに<LINE>
+にげられるんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ すごいのね<LINE>
+じゃあ わたしたちは ひきかえすわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ああ そうしたほうがいいよ<END>
+
+//POINTER #172 @ $549C0 - STRING #172 @ $52BAB
+
+#WRITE(GBA,$549C0)
+<CHANGE_RIGHT_PORTRAIT><$17>おーい きみたち ここは きけんだよ<LINE>
+あぶないから うろうろ しちゃだめだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>おじさんたちは きけんじゃないんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おじさんたちは きけんを<LINE>
+さっちできるから あぶなくなるまえに<LINE>
+にげられるんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>へえ すごいのね<LINE>
+じゃあ わたしたちは ひきかえすわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ああ そうしたほうがいいよ<END>
+
+//POINTER #173 @ $549C4 - STRING #173 @ $52C4A
+
+#WRITE(GBA,$549C4)
+<$E0><$31><$00><$30><$01><$B6><$E0><$31><$00><$31><$01><$B5><$E0><$31><$00><$2E><$01><$AE><GOTO_SCRIPT><$01><$AF><CHANGE_RIGHT_PORTRAIT><$01>あ かべがくずれてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きみたち きけんだよ<LINE>
+ここから はなれなさい<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きゅうに じしんか なにかで<LINE>
+じめんがゆれたから<LINE>
+にげようと したんだが<LINE>
+なかまが あしをくじいて しまったんだ<LINE>
+いそいで たすけを よびに<LINE>
+いこうとしたら<LINE>
+がべが くずれてきたんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わっ たいへん<LINE>
+はやく たすけなきゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>そうだ きみたち ダイナバトラーだよね<NEWBOX>
+キャタピラタイプのライドデバイスと<LINE>
+だいちぞくせいの ダイナを<LINE>
+もっていないかな?<NEWBOX>
+<GOTO_SCRIPT><$03><$22><HERO_LEFT_PORTRAIT>りょうほう もってるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おお いいぞー<NEWBOX>
+じゃあ このきゅうきゅうばこを<LINE>
+むこうの なかまに もっていって<LINE>
+ほしいんだ<LINE>
+このかべを のぼって そのすきまから<LINE>
+むこうがわに いってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった<LINE>
+・・・<LINE>
+・・・<NEWBOX>
+むこうがわに ついたみたいだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おーい くすりは とれたかー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>だいじょうぶだー ありがとうー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ありがとう オレからも れいをいうよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれいなんて<LINE>
+ダイナバトラーとして とうぜんのことを<LINE>
+しただけです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>いや なみの ダイナバトラーには<LINE>
+そんなこと できないよ<LINE>
+だから おれいと これからの<LINE>
+かつやくを いのって これを<LINE>
+しんていするよ<NEWBOX>
+おー いいよなー これ あげてもー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>ああー かまわねえよー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>かべが くずれるまえに これを<LINE>
+みつけたんだよ<NEWBOX>
+<GOTO_SCRIPT><$03><$20><CHANGE_RIGHT_PORTRAIT><$01>これ まぼろしのデバイスの<LINE>
+バッテリーヘッドだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きにいって もらえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうも ありがとう! たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おう かつやく きたいしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それでは しつれいします<END>
+
+//POINTER #174 @ $549C8 - STRING #174 @ $52C60
+
+#WRITE(GBA,$549C8)
+<CHANGE_RIGHT_PORTRAIT><$01>あ かべがくずれてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きみたち きけんだよ<LINE>
+ここから はなれなさい<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きゅうに じしんか なにかで<LINE>
+じめんがゆれたから<LINE>
+にげようと したんだが<LINE>
+なかまが あしをくじいて しまったんだ<LINE>
+いそいで たすけを よびに<LINE>
+いこうとしたら<LINE>
+がべが くずれてきたんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わっ たいへん<LINE>
+はやく たすけなきゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>そうだ きみたち ダイナバトラーだよね<NEWBOX>
+キャタピラタイプのライドデバイスと<LINE>
+だいちぞくせいの ダイナを<LINE>
+もっていないかな?<NEWBOX>
+<GOTO_SCRIPT><$03><$22><HERO_LEFT_PORTRAIT>りょうほう もってるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おお いいぞー<NEWBOX>
+じゃあ このきゅうきゅうばこを<LINE>
+むこうの なかまに もっていって<LINE>
+ほしいんだ<LINE>
+このかべを のぼって そのすきまから<LINE>
+むこうがわに いってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった<LINE>
+・・・<LINE>
+・・・<NEWBOX>
+むこうがわに ついたみたいだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おーい くすりは とれたかー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>だいじょうぶだー ありがとうー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ありがとう オレからも れいをいうよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれいなんて<LINE>
+ダイナバトラーとして とうぜんのことを<LINE>
+しただけです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>いや なみの ダイナバトラーには<LINE>
+そんなこと できないよ<LINE>
+だから おれいと これからの<LINE>
+かつやくを いのって これを<LINE>
+しんていするよ<NEWBOX>
+おー いいよなー これ あげてもー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>ああー かまわねえよー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>かべが くずれるまえに これを<LINE>
+みつけたんだよ<NEWBOX>
+<GOTO_SCRIPT><$03><$20><CHANGE_RIGHT_PORTRAIT><$01>これ まぼろしのデバイスの<LINE>
+バッテリーヘッドだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きにいって もらえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうも ありがとう! たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おう かつやく きたいしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それでは しつれいします<END>
+
+//POINTER #175 @ $549CC - STRING #175 @ $52D53
+
+#WRITE(GBA,$549CC)
+<HERO_LEFT_PORTRAIT>りょうほう もってるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おお いいぞー<NEWBOX>
+じゃあ このきゅうきゅうばこを<LINE>
+むこうの なかまに もっていって<LINE>
+ほしいんだ<LINE>
+このかべを のぼって そのすきまから<LINE>
+むこうがわに いってくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかった<LINE>
+・・・<LINE>
+・・・<NEWBOX>
+むこうがわに ついたみたいだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おーい くすりは とれたかー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>だいじょうぶだー ありがとうー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ありがとう オレからも れいをいうよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれいなんて<LINE>
+ダイナバトラーとして とうぜんのことを<LINE>
+しただけです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>いや なみの ダイナバトラーには<LINE>
+そんなこと できないよ<LINE>
+だから おれいと これからの<LINE>
+かつやくを いのって これを<LINE>
+しんていするよ<NEWBOX>
+おー いいよなー これ あげてもー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$23>ああー かまわねえよー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>かべが くずれるまえに これを<LINE>
+みつけたんだよ<NEWBOX>
+<GOTO_SCRIPT><$03><$20><CHANGE_RIGHT_PORTRAIT><$01>これ まぼろしのデバイスの<LINE>
+バッテリーヘッドだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きにいって もらえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうも ありがとう! たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おう かつやく きたいしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それでは しつれいします<END>
+
+//POINTER #176 @ $549D0 - STRING #176 @ $52ECB
+
+#WRITE(GBA,$549D0)
+<CHANGE_RIGHT_PORTRAIT><$01>これ まぼろしのデバイスの<LINE>
+バッテリーヘッドだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>きにいって もらえて うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>どうも ありがとう! たいせつにするよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>おう かつやく きたいしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それでは しつれいします<END>
+
+//POINTER #177 @ $549D4 - STRING #177 @ $52F37
+
+#WRITE(GBA,$549D4)
+<CHANGE_RIGHT_PORTRAIT><$17>おや にもつが いっぱいのようだね<LINE>
+バッテリーヘッドのにもつを<LINE>
+へらしてから またきてくれ<$E0><$20><$00><$31><END>
+
+//POINTER #178 @ $549D8 - STRING #178 @ $52F6D
+
+#WRITE(GBA,$549D8)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<LINE>
+あれ まだ かべが くずれてる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$17>ああ そうなんだ<LINE>
+あしばを かためないと<LINE>
+もっと くずれるらしいんだ<NEWBOX>
+・・・おっと おれいの しなだよね<LINE>
+はい どうぞ<NEWBOX>
+<GOTO_SCRIPT><$03><$20><CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+だれも いないようだ<END>
+
+//POINTER #179 @ $549DC - STRING #179 @ $52FCC
+
+#WRITE(GBA,$549DC)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<REMOVE_PORTRAITS>・・・<NEWBOX>
+だれも いないようだ<END>
+
+//POINTER #180 @ $549E0 - STRING #180 @ $52FE9
+
+#WRITE(GBA,$549E0)
+<END>
+
+//POINTER #181 @ $549E4 - STRING #181 @ $52FEA
+
+#WRITE(GBA,$549E4)
+<END>
+
+//POINTER #182 @ $549E8 - STRING #182 @ $52FEB
+
+#WRITE(GBA,$549E8)
+<END>
+
+//POINTER #183 @ $549EC - STRING #183 @ $52FEC
+
+#WRITE(GBA,$549EC)
+<END>
+
+//POINTER #184 @ $549F0 - STRING #184 @ $52FED
+
+#WRITE(GBA,$549F0)
+<END>
+
+//POINTER #185 @ $549F4 - STRING #185 @ $52FEE
+
+#WRITE(GBA,$549F4)
+<END>
+
+//POINTER #186 @ $549F8 - STRING #186 @ $52FEF
+
+#WRITE(GBA,$549F8)
+<END>
+
+//POINTER #187 @ $549FC - STRING #187 @ $52FF0
+
+#WRITE(GBA,$549FC)
+<CHANGE_RIGHT_PORTRAIT><$01>あれ なにかしら ここ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>おい ここは いっぱんじんは<LINE>
+たちいりきんしだぞ<LINE>
+かえりなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょ ちょっと おさないでよ<LINE>
+そんなことされなくても でていきます~ぅ<END>
+
+//POINTER #188 @ $54A00 - STRING #188 @ $5304A
+
+#WRITE(GBA,$54A00)
+<$E0><$32><$00><$78><$01><$BE><GOTO_SCRIPT><$01><$C5><$E0><$32><$00><$4E><$01><$BF><$E0><$31><$00><$78><$01><$C5><$E0><$31><$00><$76><$03><$2F><$E0><$31><$00><$77><$03><$30><$E0><$31><$00><$33><$01><$C2><$E0><$31><$00><$30><$01><$C1><CHANGE_RIGHT_PORTRAIT><$01>あれ なにかしら ここ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>おい ここは いっぱんじんは<LINE>
+たちいりきんしだぞ<LINE>
+かえりなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょ ちょっと おさないでよ<LINE>
+そんなことされなくても でていきます~ぅ<END>
+
+//POINTER #189 @ $54A04 - STRING #189 @ $53054
+
+#WRITE(GBA,$54A04)
+<$E0><$32><$00><$4E><$01><$BF><$E0><$31><$00><$78><$01><$C5><$E0><$31><$00><$76><$03><$2F><$E0><$31><$00><$77><$03><$30><$E0><$31><$00><$33><$01><$C2><$E0><$31><$00><$30><$01><$C1><CHANGE_RIGHT_PORTRAIT><$01>あれ なにかしら ここ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>おい ここは いっぱんじんは<LINE>
+たちいりきんしだぞ<LINE>
+かえりなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょ ちょっと おさないでよ<LINE>
+そんなことされなくても でていきます~ぅ<END>
+
+//POINTER #190 @ $54A08 - STRING #190 @ $530D2
+
+#WRITE(GBA,$54A08)
+<CHANGE_RIGHT_PORTRAIT><$01>ここ こうじょうか なにかよね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>やあ こんにちは<NEWBOX>
+<HERO_LEFT_PORTRAIT>ここは なんの こうじょうですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ん~ せいかくには こうじょうじゃ<LINE>
+ないんだよ<NEWBOX>
+きみたち ダイナバトラー だから<LINE>
+しってるとおもうけど<LINE>
+ダイナのひょうめんは<LINE>
+EMEこうせきで<LINE>
+かこうされているのは<LINE>
+しっているよね<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい くわしくは しらないんですけど<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>もし よかったら<LINE>
+なかを あんないしようか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わあ いいんですか?<LINE>
+ぜひ みせてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>じゃ ついてきて<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はーい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ここだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わ あつい なに ここ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>EMEこうせきを とかすためにつかう<LINE>
+ようこうろさ<NEWBOX>
+<HERO_LEFT_PORTRAIT>へー はじめてみた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>じつは EMEこうせきは<LINE>
+ひじょうにかたいから さいしょに<LINE>
+プラズマクラスターという そうちに<LINE>
+いれなきゃ いけないんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>プラズマクラスター?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>かんたんに いえば<LINE>
+ミキサーみたいなものかな<LINE>
+がんせきを こまかく くだいていくんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょっと わかったような きがする<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>その プラズマクラスターで<LINE>
+ふんさいした けっしょうを<LINE>
+ようこうろで とかすんだ<LINE>
+あとは ふつうの きんぞくと<LINE>
+おなじで かたに ながしたり<LINE>
+いろいろな かこうをして<LINE>
+ダイナやデバイスが つくられていくんだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>なるほど おしえてくれて<LINE>
+ありがとうございます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>じゃあ プラズマクラスターの<LINE>
+こうていを みにいこうか<LINE>
+<$E0>オ・・・!?<PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$14><PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$14><PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$08><PLAY_SFX><$05><$E0><$44><$08><NEWBOX>
+ん? どうしたんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>あ こうじょうちょう!<LINE>
+ぞくせいのちがう EMEこうせきが<LINE>
+あやまって プラズマクラスターないに<LINE>
+こんにゅうしたもようです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>とにかく すぐに さぎょうを<LINE>
+ていししなさい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>はいっ!!<LINE>
+・・・<LINE>
+て ていししました<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>よし これで ひとあんしんか<$E0>カ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>あ いえ せいぎょぼうの<LINE>
+ぬきとりを しませんと<LINE>
+ろしんないの プラズマと<LINE>
+はんのうして しまいます<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>そうか しかし いまのじょうきょうでは<LINE>
+ろしんないに はいることは むずかしいぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>そうですね かみなりぞくせいの<LINE>
+ダイナなら だいじょうぶだと<LINE>
+おもいますが<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>そうか きみたち もっていないかな?<LINE>
+かみなりぞくせいの ダイナを<NEWBOX>
+<$E0>る450X<$E0>る460X<$E0>る470X<CHANGE_RIGHT_PORTRAIT><$01>ごめんなさい<LINE>
+かみなりぞくせいの ダイナは<LINE>
+いま もっていないわ<LINE>
+すぐに かみなりぞくせいの ダイナを<LINE>
+もってくるわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>あまり ゆうよが ないんだ<LINE>
+よろしくたのむよ<$E0><$20><$00><$33><END>
+
+//POINTER #191 @ $54A0C - STRING #191 @ $5353C
+
+#WRITE(GBA,$54A0C)
+<CHANGE_RIGHT_PORTRAIT><$24>おお かみなりぞくせいの<LINE>
+ダイナを もってきてくれたか<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい もっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>おお では さっそく<LINE>
+プラズマクラスターの ろしんないへ<LINE>
+むかわせてくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい むかわせます<LINE>
+・・・<LINE>
+・・・<LINE>
+ろしんないに つきました<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ちゅうおうに ぼうがあるが<LINE>
+それが せいぎょぼうだ<LINE>
+それを そっと ぬいてくれ<LINE>
+しんちょうに ゆっくりで いいぞ<NEWBOX>
+<HERO_LEFT_PORTRAIT>・・・ せいぎょぼうを つかみました<LINE>
+ぬきます ・・・<NEWBOX>
+・・!<NEWBOX>
+・・・ふぅ<LINE>
+ぬきとりましたぁ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>おお ごくろうさま<LINE>
+よくがんばったね<LINE>
+おかげで だいじに いたらなくて<LINE>
+すんだよ<LINE>
+きゅうで あまり いいおれいが<LINE>
+できないけど これを あげるよ<NEWBOX>
+<GOTO_SCRIPT><$03><$28><$E0><$31><$00><$76><$01><$C6><$E0><$31><$00><$77><$01><$C6><CHANGE_RIGHT_PORTRAIT><$01>え? これ もしかして<LINE>
+まぼろしのデバイス!?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>さあ どうなのかな?<LINE>
+このこうじょうを つくるとき<LINE>
+じめんから でてきたものなんだ<LINE>
+ふるいデバイスだと おもったから<LINE>
+いまの ダイナに つかえるなんて<LINE>
+かんがえつかなかったなあ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ほんとに これ いただいて<LINE>
+いいんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ああ いいよ<LINE>
+そんなに よろこんでもらえるなら<LINE>
+あげるほうも うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい だいじにつかいます<LINE>
+じゃ ありがとうございました<$E0><$20><$00><$78><END>
+
+//POINTER #192 @ $54A10 - STRING #192 @ $5355B
+
+#WRITE(GBA,$54A10)
+<HERO_LEFT_PORTRAIT>はい もっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>おお では さっそく<LINE>
+プラズマクラスターの ろしんないへ<LINE>
+むかわせてくれ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい むかわせます<LINE>
+・・・<LINE>
+・・・<LINE>
+ろしんないに つきました<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ちゅうおうに ぼうがあるが<LINE>
+それが せいぎょぼうだ<LINE>
+それを そっと ぬいてくれ<LINE>
+しんちょうに ゆっくりで いいぞ<NEWBOX>
+<HERO_LEFT_PORTRAIT>・・・ せいぎょぼうを つかみました<LINE>
+ぬきます ・・・<NEWBOX>
+・・!<NEWBOX>
+・・・ふぅ<LINE>
+ぬきとりましたぁ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>おお ごくろうさま<LINE>
+よくがんばったね<LINE>
+おかげで だいじに いたらなくて<LINE>
+すんだよ<LINE>
+きゅうで あまり いいおれいが<LINE>
+できないけど これを あげるよ<NEWBOX>
+<GOTO_SCRIPT><$03><$28><$E0><$31><$00><$76><$01><$C6><$E0><$31><$00><$77><$01><$C6><CHANGE_RIGHT_PORTRAIT><$01>え? これ もしかして<LINE>
+まぼろしのデバイス!?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>さあ どうなのかな?<LINE>
+このこうじょうを つくるとき<LINE>
+じめんから でてきたものなんだ<LINE>
+ふるいデバイスだと おもったから<LINE>
+いまの ダイナに つかえるなんて<LINE>
+かんがえつかなかったなあ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ほんとに これ いただいて<LINE>
+いいんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ああ いいよ<LINE>
+そんなに よろこんでもらえるなら<LINE>
+あげるほうも うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい だいじにつかいます<LINE>
+じゃ ありがとうございました<$E0><$20><$00><$78><END>
+
+//POINTER #193 @ $54A14 - STRING #193 @ $53683
+
+#WRITE(GBA,$54A14)
+<$E0><$31><$00><$76><$01><$C6><$E0><$31><$00><$77><$01><$C6><CHANGE_RIGHT_PORTRAIT><$01>え? これ もしかして<LINE>
+まぼろしのデバイス!?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>さあ どうなのかな?<LINE>
+このこうじょうを つくるとき<LINE>
+じめんから でてきたものなんだ<LINE>
+ふるいデバイスだと おもったから<LINE>
+いまの ダイナに つかえるなんて<LINE>
+かんがえつかなかったなあ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ほんとに これ いただいて<LINE>
+いいんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$24>ああ いいよ<LINE>
+そんなに よろこんでもらえるなら<LINE>
+あげるほうも うれしいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>はい だいじにつかいます<LINE>
+じゃ ありがとうございました<$E0><$20><$00><$78><END>
+
+//POINTER #194 @ $54A18 - STRING #194 @ $5376F
+
+#WRITE(GBA,$54A18)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$18>やあ こんにちは<LINE>
+こうじょうちょうは いま<LINE>
+でかけてるんだ<LINE>
+また こんど きておくれ<END>
+
+//POINTER #195 @ $54A1C - STRING #195 @ $537A6
+
+#WRITE(GBA,$54A1C)
+<CHANGE_RIGHT_PORTRAIT><$24>にもつを へらして もういちど<LINE>
+ここにきなさい<LINE>
+そのとき あらためて デバイスをあげるよ<END>
+
+//POINTER #196 @ $54A20 - STRING #196 @ $537D6
+
+#WRITE(GBA,$54A20)
+<END>
+
+//POINTER #197 @ $54A24 - STRING #197 @ $537D7
+
+#WRITE(GBA,$54A24)
+<END>
+
+//POINTER #198 @ $54A28 - STRING #198 @ $537D8
+
+#WRITE(GBA,$54A28)
+<END>
+
+//POINTER #199 @ $54A2C - STRING #199 @ $537D9
+
+#WRITE(GBA,$54A2C)
+<END>
+
+//POINTER #200 @ $54A30 - STRING #200 @ $537DA
+
+#WRITE(GBA,$54A30)
+<CHANGE_RIGHT_PORTRAIT><$04>じゃあ ガチャステパークへ<LINE>
+てんそうするわね<NEWBOX>
+がんばって いいものがでるといいねー<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #201 @ $54A34 - STRING #201 @ $5380C
+
+#WRITE(GBA,$54A34)
+<CHANGE_RIGHT_PORTRAIT><$01>ティターニャさん!!<LINE>
+ここに あやしいひと<LINE>
+きませんでしたか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>どーだろうねー<LINE>
+ここは ダイナバトラーなら<LINE>
+だれでも りようできるからねー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ダイナブレイカーが いるかも<LINE>
+しれないんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>ダイナブレイカーっていっても<LINE>
+もともと ダイナバトラーだから<LINE>
+くべつが つかないんだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>みさり!!<LINE>
+あそこのやつ なんか あやしいぞ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うん いってみましょう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>ここでの ゴタゴタは ごめんだよ~<NEWBOX>
+<GOTO_SCRIPT><$01><$4B><CHANGE_RIGHT_PORTRAIT><$04>わかったわ <$F0><$EA><COLOR><$08>ダイナシティ</COLOR><$F0><$EB>にてんそうね<$E0>ぜ <$E0><$31><$00><$1B><$01><$CB><$E0><$31><$00><$1A><$01><$CC><CHANGE_RIGHT_PORTRAIT><$04>じゃあ ガチャステパークへ<LINE>
+てんそうするわね<NEWBOX>
+がんばって いいものがでるといいねー<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #202 @ $54A38 - STRING #202 @ $538F3
+
+#WRITE(GBA,$54A38)
+<CHANGE_RIGHT_PORTRAIT><$04>わかったわ <$F0><$EA><COLOR><$08>ダイナシティ</COLOR><$F0><$EB>にてんそうね<$E0>ぜ <$E0><$31><$00><$1B><$01><$CB><$E0><$31><$00><$1A><$01><$CC><CHANGE_RIGHT_PORTRAIT><$04>じゃあ ガチャステパークへ<LINE>
+てんそうするわね<NEWBOX>
+がんばって いいものがでるといいねー<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #203 @ $54A3C - STRING #203 @ $53914
+
+#WRITE(GBA,$54A3C)
+<$E0><$31><$00><$1B><$01><$CB><$E0><$31><$00><$1A><$01><$CC><CHANGE_RIGHT_PORTRAIT><$04>じゃあ ガチャステパークへ<LINE>
+てんそうするわね<NEWBOX>
+がんばって いいものがでるといいねー<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #204 @ $54A40 - STRING #204 @ $53952
+
+#WRITE(GBA,$54A40)
+<CHANGE_RIGHT_PORTRAIT><$04>それで どっちの まちにてんそうだい?<LINE>
+  <$F0><$EA><COLOR><$08>ダイナシティ</COLOR><$F0><$EB>  <$F0><$EA><COLOR><$08>アタカマラ</COLOR><$F0><$EB><$E0>20あ0h0o  <$E0><$31><$00><$34><$02><$7F><CHANGE_RIGHT_PORTRAIT><$01>ここは ガチャゲートっていって<LINE>
+ガチャステパークか べつの まちに<LINE>
+てんそうしてくれる ばしょよ<LINE>
+<$E0><$31><$00><$03><$02><$3F><$E0><$31><$00><$53><$02><$3F>いまは おかねがないから<LINE>
+なかにはいっても いみないから<LINE>
+もどりましょう<END>
+
+//POINTER #205 @ $54A44 - STRING #205 @ $53995
+
+#WRITE(GBA,$54A44)
+<$E0><$31><$00><$34><$02><$7F><CHANGE_RIGHT_PORTRAIT><$01>ここは ガチャゲートっていって<LINE>
+ガチャステパークか べつの まちに<LINE>
+てんそうしてくれる ばしょよ<LINE>
+<$E0><$31><$00><$03><$02><$3F><$E0><$31><$00><$53><$02><$3F>いまは おかねがないから<LINE>
+なかにはいっても いみないから<LINE>
+もどりましょう<END>
+
+//POINTER #206 @ $54A48 - STRING #206 @ $53A02
+
+#WRITE(GBA,$54A48)
+<$E0><$32><$00><$60><$01><$DB><CHANGE_RIGHT_PORTRAIT><$04>このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<HERO_LEFT_PORTRAIT>ああ てんそうしてくれ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>ほんらいは <$F0><$EA>にんていしょ<$F0><$EB>が<LINE>
+なきゃてんそうしないんだけど<LINE>
+こんかいは とくべつだよ<$E0>ぜ0<HERO_LEFT_PORTRAIT>やっぱり いいや<LINE>
+でなおしてくる<END>
+
+//POINTER #207 @ $54A4C - STRING #207 @ $53A5A
+
+#WRITE(GBA,$54A4C)
+<HERO_LEFT_PORTRAIT>ああ てんそうしてくれ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>ほんらいは <$F0><$EA>にんていしょ<$F0><$EB>が<LINE>
+なきゃてんそうしないんだけど<LINE>
+こんかいは とくべつだよ<$E0>ぜ0<HERO_LEFT_PORTRAIT>やっぱり いいや<LINE>
+でなおしてくる<END>
+
+//POINTER #208 @ $54A50 - STRING #208 @ $53A9C
+
+#WRITE(GBA,$54A50)
+<HERO_LEFT_PORTRAIT>やっぱり いいや<LINE>
+でなおしてくる<END>
+
+//POINTER #209 @ $54A54 - STRING #209 @ $53AB0
+
+#WRITE(GBA,$54A54)
+<CHANGE_RIGHT_PORTRAIT><$04><$E0><$31><$00><$45><$02><$88>なんだい なんだ~い<LINE>
+あんた まだ わたしをたおして<LINE>
+<$F0><$EA>にんていしょ<$F0><$EB>を もらって<LINE>
+ないのかい?<LINE>
+なら まだ ここからさきへ<LINE>
+とおすわけには いかないねぇ<LINE>
+つぎの まちに いきたいんだったら<LINE>
+わたしを たおしてからね~<END>
+
+//POINTER #210 @ $54A58 - STRING #210 @ $53B2C
+
+#WRITE(GBA,$54A58)
+<$E0><$32><$00><$61><$01><$D9><CHANGE_RIGHT_PORTRAIT><$05>どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  よし <$F0><$EA><COLOR><$08>サンカルロ</COLOR><$F0><$EB>だな<$E0>ぜ0<CHANGE_RIGHT_PORTRAIT><$05><$E0><$31><$00><$47><$02><$89>おーーっと<LINE>
+オレを たおして <$F0><$EA>にんていしょ<$F0><$EB>を<LINE>
+もらってないみたいだな<LINE>
+だったら ここから さきへは<LINE>
+てんそうできないなーぁ<LINE>
+<$F0><$EA>ダオスタヴィル<$F0><$EB>へ いきたいんなら<LINE>
+オレを たおしてから またきな<END>
+
+//POINTER #211 @ $54A5C - STRING #211 @ $53B5E
+
+#WRITE(GBA,$54A5C)
+よし <$F0><$EA><COLOR><$08>サンカルロ</COLOR><$F0><$EB>だな<$E0>ぜ0<CHANGE_RIGHT_PORTRAIT><$05><$E0><$31><$00><$47><$02><$89>おーーっと<LINE>
+オレを たおして <$F0><$EA>にんていしょ<$F0><$EB>を<LINE>
+もらってないみたいだな<LINE>
+だったら ここから さきへは<LINE>
+てんそうできないなーぁ<LINE>
+<$F0><$EA>ダオスタヴィル<$F0><$EB>へ いきたいんなら<LINE>
+オレを たおしてから またきな<END>
+
+//POINTER #212 @ $54A60 - STRING #212 @ $53B74
+
+#WRITE(GBA,$54A60)
+<CHANGE_RIGHT_PORTRAIT><$05><$E0><$31><$00><$47><$02><$89>おーーっと<LINE>
+オレを たおして <$F0><$EA>にんていしょ<$F0><$EB>を<LINE>
+もらってないみたいだな<LINE>
+だったら ここから さきへは<LINE>
+てんそうできないなーぁ<LINE>
+<$F0><$EA>ダオスタヴィル<$F0><$EB>へ いきたいんなら<LINE>
+オレを たおしてから またきな<END>
+
+//POINTER #213 @ $54A64 - STRING #213 @ $53BE7
+
+#WRITE(GBA,$54A64)
+<$E0><$31><$00><$4F><$01><$DC><$E0><$32><$00><$4E><$01><$DC><$E0><$32><$00><$62><$01><$DA><CHANGE_RIGHT_PORTRAIT><$06>てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<$E0><$20><$00><$61><$E0><$31><$00><$47><$01><$E9><$E0><$31><$00><$46><$01><$E7><CHANGE_RIGHT_PORTRAIT><$05>やあ きみとは はじめましてだよね<LINE>
+オレは このまちのかんりかんの<LINE>
+マイグレインだ よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$05>さて どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <$E0><$20><$00><$62><$E0><$31><$00><$49><$01><$EA><$E0><$31><$00><$48><$01><$E8><CHANGE_RIGHT_PORTRAIT><$06>しんがおだな<LINE>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<$E0><$20><$00><$60><$E0><$31><$00><$45><$01><$EB><$E0><$31><$00><$44><$01><$E6><CHANGE_RIGHT_PORTRAIT><$04>おや あんた みかけない かおだねェ<LINE>
+あたしは このまちの かんりかんで<LINE>
+ティターニャっていうんだ<LINE>
+よろしくたのむよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれは <HERO_NAME> よろしく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<$E0><$31><$00><$70><$01><$DD><$E0><$20><$00><$70><CHANGE_RIGHT_PORTRAIT><$08>やあ てんそうかい?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? かんりかんいないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>ああ とつぜん いなくなったから<LINE>
+かわりに ぼくが てんそうを<LINE>
+やってるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ てんそう おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>OK で どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5><CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #214 @ $54A68 - STRING #214 @ $53C2B
+
+#WRITE(GBA,$54A68)
+<$E0><$20><$00><$61><$E0><$31><$00><$47><$01><$E9><$E0><$31><$00><$46><$01><$E7><CHANGE_RIGHT_PORTRAIT><$05>やあ きみとは はじめましてだよね<LINE>
+オレは このまちのかんりかんの<LINE>
+マイグレインだ よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$05>さて どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <$E0><$20><$00><$62><$E0><$31><$00><$49><$01><$EA><$E0><$31><$00><$48><$01><$E8><CHANGE_RIGHT_PORTRAIT><$06>しんがおだな<LINE>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<$E0><$20><$00><$60><$E0><$31><$00><$45><$01><$EB><$E0><$31><$00><$44><$01><$E6><CHANGE_RIGHT_PORTRAIT><$04>おや あんた みかけない かおだねェ<LINE>
+あたしは このまちの かんりかんで<LINE>
+ティターニャっていうんだ<LINE>
+よろしくたのむよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれは <HERO_NAME> よろしく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<$E0><$31><$00><$70><$01><$DD><$E0><$20><$00><$70><CHANGE_RIGHT_PORTRAIT><$08>やあ てんそうかい?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? かんりかんいないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>ああ とつぜん いなくなったから<LINE>
+かわりに ぼくが てんそうを<LINE>
+やってるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ てんそう おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>OK で どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5><CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #215 @ $54A6C - STRING #215 @ $53C9D
+
+#WRITE(GBA,$54A6C)
+<$E0><$20><$00><$62><$E0><$31><$00><$49><$01><$EA><$E0><$31><$00><$48><$01><$E8><CHANGE_RIGHT_PORTRAIT><$06>しんがおだな<LINE>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<$E0><$20><$00><$60><$E0><$31><$00><$45><$01><$EB><$E0><$31><$00><$44><$01><$E6><CHANGE_RIGHT_PORTRAIT><$04>おや あんた みかけない かおだねェ<LINE>
+あたしは このまちの かんりかんで<LINE>
+ティターニャっていうんだ<LINE>
+よろしくたのむよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれは <HERO_NAME> よろしく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<$E0><$31><$00><$70><$01><$DD><$E0><$20><$00><$70><CHANGE_RIGHT_PORTRAIT><$08>やあ てんそうかい?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? かんりかんいないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>ああ とつぜん いなくなったから<LINE>
+かわりに ぼくが てんそうを<LINE>
+やってるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ てんそう おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>OK で どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5><CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #216 @ $54A70 - STRING #216 @ $53D27
+
+#WRITE(GBA,$54A70)
+<$E0><$20><$00><$60><$E0><$31><$00><$45><$01><$EB><$E0><$31><$00><$44><$01><$E6><CHANGE_RIGHT_PORTRAIT><$04>おや あんた みかけない かおだねェ<LINE>
+あたしは このまちの かんりかんで<LINE>
+ティターニャっていうんだ<LINE>
+よろしくたのむよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おれは <HERO_NAME> よろしく<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$04>このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<$E0><$31><$00><$70><$01><$DD><$E0><$20><$00><$70><CHANGE_RIGHT_PORTRAIT><$08>やあ てんそうかい?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? かんりかんいないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>ああ とつぜん いなくなったから<LINE>
+かわりに ぼくが てんそうを<LINE>
+やってるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ てんそう おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>OK で どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5><CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #217 @ $54A74 - STRING #217 @ $53DD7
+
+#WRITE(GBA,$54A74)
+<$E0><$31><$00><$70><$01><$DD><$E0><$20><$00><$70><CHANGE_RIGHT_PORTRAIT><$08>やあ てんそうかい?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? かんりかんいないの?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>ああ とつぜん いなくなったから<LINE>
+かわりに ぼくが てんそうを<LINE>
+やってるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ てんそう おねがいします<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$08>OK で どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5><CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #218 @ $54A78 - STRING #218 @ $53E74
+
+#WRITE(GBA,$54A78)
+<CHANGE_RIGHT_PORTRAIT><$08>こんにちは<LINE>
+どちらへの てんそうだね<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0y0z0<$E5>OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #219 @ $54A7C - STRING #219 @ $53EA6
+
+#WRITE(GBA,$54A7C)
+OK ガチャステパークへの<LINE>
+てんそうだね<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #220 @ $54A80 - STRING #220 @ $53EBF
+
+#WRITE(GBA,$54A80)
+じゃあ<$F0><$EA><COLOR><$08>アタカマラ</COLOR><$F0><$EB>へ<LINE>
+てんそうでいいんだね?<LINE>
+  はい  いいえ<$E0> 040"0<$E5>ライドデバイスの にもつが いっぱいです<LINE>
+うけとりを あきらめますか?<LINE>
+  はい  いいえ<$E0> 040<$E1>0<$E2><HERO_NAME>は デバイスをあきらめた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>あら ざんねん<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<LINE>
+きもちだけ もらっておくよ<$E0><$20><$00><$14><END>
+
+//POINTER #221 @ $54A84 - STRING #221 @ $53EF0
+
+#WRITE(GBA,$54A84)
+ライドデバイスの にもつが いっぱいです<LINE>
+うけとりを あきらめますか?<LINE>
+  はい  いいえ<$E0> 040<$E1>0<$E2><HERO_NAME>は デバイスをあきらめた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>あら ざんねん<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<LINE>
+きもちだけ もらっておくよ<$E0><$20><$00><$14><END>
+
+//POINTER #222 @ $54A88 - STRING #222 @ $53F26
+
+#WRITE(GBA,$54A88)
+<HERO_NAME>は デバイスをあきらめた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>あら ざんねん<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<LINE>
+きもちだけ もらっておくよ<$E0><$20><$00><$14><END>
+
+//POINTER #223 @ $54A8C - STRING #223 @ $53F5B
+
+#WRITE(GBA,$54A8C)
+<$E0>の1ぬしょじひんから デバイスを1つ すてます<NEWBOX>
+いらないデバイスを えらんで<LINE>
+Aボタンをおしてください<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の1ぬ<$E0>ァ1ぬ0<$E0><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<$E0><$20><$00><$14><END>
+
+//POINTER #224 @ $54A90 - STRING #224 @ $53FDA
+
+#WRITE(GBA,$54A90)
+<CHANGE_RIGHT_PORTRAIT><$02>よし きたな<NEWBOX>
+<HERO_LEFT_PORTRAIT>なんだ ここは?<LINE>
+かべが ピカピカしてるぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか いまも ひとが すんでるみたいね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>・・・<LINE>
+よし あった<LINE>
+これだ!<NEWBOX>
+じゃあ いくぞ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えっ? なにをするの?<NEWBOX>
+<PLAY_SFX><$23><$E0><$44><$32><$E0>ぶ<CHANGE_RIGHT_PORTRAIT><$01>キャッ! すごいゆれ<LINE>
+た たっていられないわ<NEWBOX>
+<HERO_LEFT_PORTRAIT>うわ! す すごいな<LINE>
+この ゆ ゆれ れ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>マジに すごい!<LINE>
+からだが なげだされそうだよ<$E0><$20><$00><$7F><$E0>ぜ3じゃあ いってらっしゃい<$E0>ぜ1OK てんそうは ちゅうしだね<END>
+
+//POINTER #225 @ $54A94 - STRING #225 @ $540A8
+
+#WRITE(GBA,$54A94)
+じゃあ いってらっしゃい<$E0>ぜ1OK てんそうは ちゅうしだね<END>
+
+//POINTER #226 @ $54A98 - STRING #226 @ $540B7
+
+#WRITE(GBA,$54A98)
+OK てんそうは ちゅうしだね<END>
+
+//POINTER #227 @ $54A9C - STRING #227 @ $540C7
+
+#WRITE(GBA,$54A9C)
+<CHANGE_RIGHT_PORTRAIT><$04>おやおや ガチャゲートで あたしに<LINE>
+あいさつなしに たいかいを<LINE>
+ゆうしょうする なんて<LINE>
+たいしたもんじゃないか<NEWBOX>
+あいさつが おくれたけど<LINE>
+あたしは このまちの かんりかんで<LINE>
+ティターニャっていうんだ<LINE>
+よろしくたのむよ<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<CHANGE_RIGHT_PORTRAIT><$05>へえ このまちの ガチャゲートに<LINE>
+いちども こないで<LINE>
+たいかいに ゆうしょうするなんて<LINE>
+たいしたもんだよ<LINE>
+だが オレにかつのは むずかしい<LINE>
+だろうけどな<NEWBOX>
+オレは このまちのかんりかんの<LINE>
+マイグレインだ よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$05>さて どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ さきに ここにきて<LINE>
+オレさまに あいさつしないで<LINE>
+たいかいを ゆうしょう するなんてな<NEWBOX>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$05>やあ ここへ いちどもこないで<LINE>
+<$F0><$EA>にんていしょ<$F0><$EB>を とるとは<LINE>
+さすがだなぁ<NEWBOX>
+それで どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ<LINE>
+ここに いっかいもこないで<LINE>
+オレさまを たおすとは<NEWBOX>
+なまいきだな~<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #228 @ $54AA0 - STRING #228 @ $54188
+
+#WRITE(GBA,$54AA0)
+<CHANGE_RIGHT_PORTRAIT><$05>へえ このまちの ガチャゲートに<LINE>
+いちども こないで<LINE>
+たいかいに ゆうしょうするなんて<LINE>
+たいしたもんだよ<LINE>
+だが オレにかつのは むずかしい<LINE>
+だろうけどな<NEWBOX>
+オレは このまちのかんりかんの<LINE>
+マイグレインだ よろしくな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$05>さて どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ さきに ここにきて<LINE>
+オレさまに あいさつしないで<LINE>
+たいかいを ゆうしょう するなんてな<NEWBOX>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$05>やあ ここへ いちどもこないで<LINE>
+<$F0><$EA>にんていしょ<$F0><$EB>を とるとは<LINE>
+さすがだなぁ<NEWBOX>
+それで どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ<LINE>
+ここに いっかいもこないで<LINE>
+オレさまを たおすとは<NEWBOX>
+なまいきだな~<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #229 @ $54AA4 - STRING #229 @ $54226
+
+#WRITE(GBA,$54AA4)
+<CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ さきに ここにきて<LINE>
+オレさまに あいさつしないで<LINE>
+たいかいを ゆうしょう するなんてな<NEWBOX>
+オレさまは ヴァレザラムだ<LINE>
+せかいで いちばん つよい<LINE>
+ダイナバトラーの なまえだから<LINE>
+ちゃんとおぼえていたほうが いいぞ<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$05>やあ ここへ いちどもこないで<LINE>
+<$F0><$EA>にんていしょ<$F0><$EB>を とるとは<LINE>
+さすがだなぁ<NEWBOX>
+それで どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ<LINE>
+ここに いっかいもこないで<LINE>
+オレさまを たおすとは<NEWBOX>
+なまいきだな~<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #230 @ $54AA8 - STRING #230 @ $542CD
+
+#WRITE(GBA,$54AA8)
+<CHANGE_RIGHT_PORTRAIT><$05>やあ ここへ いちどもこないで<LINE>
+<$F0><$EA>にんていしょ<$F0><$EB>を とるとは<LINE>
+さすがだなぁ<NEWBOX>
+それで どっちの てんそうだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1で1ど  <CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ<LINE>
+ここに いっかいもこないで<LINE>
+オレさまを たおすとは<NEWBOX>
+なまいきだな~<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #231 @ $54AAC - STRING #231 @ $54325
+
+#WRITE(GBA,$54AAC)
+<CHANGE_RIGHT_PORTRAIT><$06>なんだ おまえ<LINE>
+ここに いっかいもこないで<LINE>
+オレさまを たおすとは<NEWBOX>
+なまいきだな~<NEWBOX>
+で てんそうしてほしいのは どっちだ?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぶ1べ1ぱ<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #232 @ $54AB0 - STRING #232 @ $54384
+
+#WRITE(GBA,$54AB0)
+<CHANGE_RIGHT_PORTRAIT><$04>おやおや ここを いちども<LINE>
+りようしないで あたしを たおした<LINE>
+<HERO_NAME>じゃないか<NEWBOX>
+このゲートからは ガチャステパークと<LINE>
+まちへのてんそうが できるけど<NEWBOX>
+どっちの てんそうだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ0i0j0n<END>
+
+//POINTER #233 @ $54AB4 - STRING #233 @ $543FE
+
+#WRITE(GBA,$54AB4)
+<END>
+
+//POINTER #234 @ $54AB8 - STRING #234 @ $543FF
+
+#WRITE(GBA,$54AB8)
+<CHANGE_RIGHT_PORTRAIT><$0A>おねえちゃんたち ありがとう<LINE>
+パパかえってきたんだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>ありがとう わたしからも<LINE>
+おれいをいいます<LINE>
+やはり かぞくでいるのが いちばんです<$E0><$20><$00><$7B><END>
+
+//POINTER #235 @ $54ABC - STRING #235 @ $5444E
+
+#WRITE(GBA,$54ABC)
+<CHANGE_RIGHT_PORTRAIT><$0A>おねえちゃん おにいちゃん やくそくだよ<LINE>
+パパを よんできてね<END>
+
+//POINTER #236 @ $54AC0 - STRING #236 @ $54471
+
+#WRITE(GBA,$54AC0)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0A>ぼく パパまってるんだから<LINE>
+じゃましないで<END>
+
+//POINTER #237 @ $54AC4 - STRING #237 @ $54495
+
+#WRITE(GBA,$54AC4)
+<$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F3><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<GOTO_SCRIPT><$01><$F3><$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR><LINE>
+をすてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F4><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<GOTO_SCRIPT><$01><$F4><$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F2><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><END>
+
+//POINTER #238 @ $54AC8 - STRING #238 @ $544F9
+
+#WRITE(GBA,$54AC8)
+<$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR><LINE>
+をすてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F4><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<GOTO_SCRIPT><$01><$F4><$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F2><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><END>
+
+//POINTER #239 @ $54ACC - STRING #239 @ $5455D
+
+#WRITE(GBA,$54ACC)
+<$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>おや にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F2><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><END>
+
+//POINTER #240 @ $54AD0 - STRING #240 @ $545BD
+
+#WRITE(GBA,$54AD0)
+<$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>まだ にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0<$F4><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<GOTO_SCRIPT><$01><$F4><$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>まだ にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0-<HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><END>
+
+//POINTER #241 @ $54AD4 - STRING #241 @ $54621
+
+#WRITE(GBA,$54AD4)
+<$E0>の2ぞ<CHANGE_RIGHT_PORTRAIT><$09>まだ にもつが いっぱいだね<LINE>
+なにかを すててほしいな<$E0>タ<$E0>ョ<HERO_NAME>は<LINE>
+<COLOR><$09><$E0>け <$E0>く</COLOR>を<LINE>
+すてた<NEWBOX>
+<$E0>の2ぞ<$E0>ァ2ぞ0-<HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><END>
+
+//POINTER #242 @ $54AD8 - STRING #242 @ $54681
+
+#WRITE(GBA,$54AD8)
+<END>
+
+//POINTER #243 @ $54ADC - STRING #243 @ $54682
+
+#WRITE(GBA,$54ADC)
+<END>
+
+//POINTER #244 @ $54AE0 - STRING #244 @ $54683
+
+#WRITE(GBA,$54AE0)
+<END>
+
+//POINTER #245 @ $54AE4 - STRING #245 @ $54684
+
+#WRITE(GBA,$54AE4)
+<END>
+
+//POINTER #246 @ $54AE8 - STRING #246 @ $54685
+
+#WRITE(GBA,$54AE8)
+<END>
+
+//POINTER #247 @ $54AEC - STRING #247 @ $54686
+
+#WRITE(GBA,$54AEC)
+<CHANGE_RIGHT_PORTRAIT><$01>・・・<LINE>
+きょうは まだだめみたい<LINE>
+また こんどにしましょう<END>
+
+//POINTER #248 @ $54AF0 - STRING #248 @ $546AA
+
+#WRITE(GBA,$54AF0)
+<END>
+
+//POINTER #249 @ $54AF4 - STRING #249 @ $546AB
+
+#WRITE(GBA,$54AF4)
+<REMOVE_PORTRAITS><$E0>ず0<$FB><GOTO_SCRIPT><$01><$FB><CHANGE_LEFT_PORTRAIT><$19>またの きかいに おこしください<END>
+
+//POINTER #250 @ $54AF8 - STRING #250 @ $546B5
+
+#WRITE(GBA,$54AF8)
+<CHANGE_LEFT_PORTRAIT><$19>またの きかいに おこしください<END>
+
+//POINTER #251 @ $54AFC - STRING #251 @ $546C9
+
+#WRITE(GBA,$54AFC)
+<CHANGE_RIGHT_PORTRAIT><$01>こんかいは エキジビジョンで<LINE>
+バトルができるみたいよ<LINE>
+バトルをしますか?<LINE>
+  はい  いいえ<$E0> 040<NEWBOX>
+0<$FD><END>
+
+//POINTER #252 @ $54B00 - STRING #252 @ $54703
+
+#WRITE(GBA,$54B00)
+<END>
+
+//BLOCK #001 NAME:		Pointer Block 2 - Opening Movie (POINTER)
+
+//POINTER #0 @ $57800 - STRING #0 @ $54B04
+
+#WRITE(GBA,$57800)
+<CHANGE_RIGHT_PORTRAIT><$01>やった~!!<LINE>
+かったね~<LINE>
+おめでとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ま おたがい かちまけには<LINE>
+こだわらないように しようぜ<NEWBOX>
+なかなか たのしませてくれたから<LINE>
+こいつを やるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$02><$01><PLAY_SFX><$2C><COLOR><$0A>ブロンズメダル</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>いい バトルだったぜ<LINE>
+また やろうな!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うわー すごい!<LINE>
+メダルゲットしたじゃない<NEWBOX>
+これで <COLOR><$0A>ガチャステ</COLOR>をやれば<LINE>
+もう1たい ダイナが てにはいるわ<LINE>
+これから <COLOR><$08>ガチャステパーク</COLOR>いってみようよ<NEWBOX>
+ガチャステパークは<COLOR><$08>ガチャゲート</COLOR>から<LINE>
+てんそうしてくれるわ<$E0><$20><$00><$06><END>
+
+//POINTER #1 @ $57804 - STRING #1 @ $54B1E
+
+#WRITE(GBA,$57804)
+<CHANGE_RIGHT_PORTRAIT><$02>ま おたがい かちまけには<LINE>
+こだわらないように しようぜ<NEWBOX>
+なかなか たのしませてくれたから<LINE>
+こいつを やるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$02><$01><PLAY_SFX><$2C><COLOR><$0A>ブロンズメダル</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>いい バトルだったぜ<LINE>
+また やろうな!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うわー すごい!<LINE>
+メダルゲットしたじゃない<NEWBOX>
+これで <COLOR><$0A>ガチャステ</COLOR>をやれば<LINE>
+もう1たい ダイナが てにはいるわ<LINE>
+これから <COLOR><$08>ガチャステパーク</COLOR>いってみようよ<NEWBOX>
+ガチャステパークは<COLOR><$08>ガチャゲート</COLOR>から<LINE>
+てんそうしてくれるわ<$E0><$20><$00><$06><END>
+
+//POINTER #2 @ $57808 - STRING #2 @ $54C17
+
+#WRITE(GBA,$57808)
+<CHANGE_RIGHT_PORTRAIT><$1E>あれ? さっきわたした ちずは<LINE>
+けいじさんに わたしたのかい?<END>
+
+//POINTER #3 @ $5780C - STRING #3 @ $54C3C
+
+#WRITE(GBA,$5780C)
+<END>
+
+//POINTER #4 @ $57810 - STRING #4 @ $54C3D
+
+#WRITE(GBA,$57810)
+<END>
+
+//POINTER #5 @ $57814 - STRING #5 @ $54C3E
+
+#WRITE(GBA,$57814)
+<END>
+
+//POINTER #6 @ $57818 - STRING #6 @ $54C3F
+
+#WRITE(GBA,$57818)
+<END>
+
+//POINTER #7 @ $5781C - STRING #7 @ $54C40
+
+#WRITE(GBA,$5781C)
+<$E0><$31><$00><$23><$02><$09><$E0><$31><$00><$3D><$02><$09><CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+あら おきゃくさま おめでとうございます<LINE>
+とうてんの キャンペーンに<LINE>
+みごと とうせんなさいました<NEWBOX>
+げんざいおつかいの ダイナチャージャーを<LINE>
+さいしんのものと<LINE>
+こうかんさせていただきます<NEWBOX>
+<$E0>ュ1<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
+ダイナチャージャーは Ver<$F0><$F1>2に<LINE>
+なりました<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$1C>それでは ひきつづき てんないを<LINE>
+ごらんください<NEWBOX>
+<$E0><$20><$00><$3D><$E0>だ<END>
+
+//POINTER #8 @ $57820 - STRING #8 @ $54D38
+
+#WRITE(GBA,$57820)
+<$E0><$32><$00><$4E><$02><$09><$E0>わお18<$E0><$31><$00><$4C><$02><$09><$E0><$31><$00><$3D><$02><$0A><$E0><$31><$00><$23><$02><$09><CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+あら おきゃくさま おめでとうございます<LINE>
+とうてんの キャンペーンに<LINE>
+みごと とうせんなさいました<NEWBOX>
+げんざいおつかいの ダイナチャージャーを<LINE>
+さいしんのものと<LINE>
+こうかんさせていただきます<NEWBOX>
+<$E0>ュ1<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
+てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
+ダイナチャージャーは Ver<$F0><$F1>2に<LINE>
+なりました<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$1C>それでは ひきつづき てんないを<LINE>
+ごらんください<NEWBOX>
+<$E0><$20><$00><$3D><$E0>だ<END>
+
+//POINTER #9 @ $57824 - STRING #9 @ $54E40
+
+#WRITE(GBA,$57824)
+<CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0>だ<END>
+
+//POINTER #10 @ $57828 - STRING #10 @ $54E5C
+
+#WRITE(GBA,$57828)
+<$E0><$31><$00><$5E><$02><$09><CHANGE_RIGHT_PORTRAIT><$07>この わしが ここまで たのんでも<LINE>
+だめなのか?<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$1C>なんども もうしあげましたとおり<LINE>
+カタログに のっておりませんデバイスを<LINE>
+おとりよせすることは できません<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$07>そうか こんなみせに たのんでも<LINE>
+むだだわい<LINE>
+ちょくせつ ほんしゃに<LINE>
+のりこんで とりよせるまでじゃ<NEWBOX>
+じゃましたな<NEWBOX>
+<REMOVE_PORTRAITS><CHANGE_LEFT_PORTRAIT><$1C>あ おきゃくさま<LINE>
+いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0><$20><$00><$4C><$E0>だ<END>
+
+//POINTER #11 @ $5782C - STRING #11 @ $54F20
+
+#WRITE(GBA,$5782C)
+<END>
+
+//POINTER #12 @ $57830 - STRING #12 @ $54F21
+
+#WRITE(GBA,$57830)
+<END>
+
+//POINTER #13 @ $57834 - STRING #13 @ $54F22
+
+#WRITE(GBA,$57834)
+<END>
+
+//POINTER #14 @ $57838 - STRING #14 @ $54F23
+
+#WRITE(GBA,$57838)
+<CHANGE_RIGHT_PORTRAIT><$01>いつきても このはまべは<LINE>
+にぎわってるわね<END>
+
+//POINTER #15 @ $5783C - STRING #15 @ $54F3C
+
+#WRITE(GBA,$5783C)
+<$E0><$31><$00><$5E><$02><$0E><CHANGE_RIGHT_PORTRAIT><$01>こんな はまべに ばくだんしかけても<LINE>
+いみないわよ<LINE>
+ほかのところにいきましょう<END>
+
+//POINTER #16 @ $57840 - STRING #16 @ $54F6D
+
+#WRITE(GBA,$57840)
+<$E0><$32><$00><$4E><$02><$0F><$E0><$31><$00><$14><$01><$39><$E0>る431き<$E0>る441き<$E0>る471き<$E0>る4え1き<CHANGE_RIGHT_PORTRAIT><$01>このすなはまを みていると<LINE>
+ダイナバトルとか わすれて<LINE>
+うみで あそびたいね~<NEWBOX>
+<HERO_LEFT_PORTRAIT>あそぼうか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ううん だめよ<LINE>
+わたしたちには ほかに やらなきゃ<LINE>
+いけないことがあるんだから<NEWBOX>
+もう べつのばしょに いこう<LINE>
+ここにいると なんかよけいなこと<LINE>
+かんがえるから<NEWBOX>
+<HERO_LEFT_PORTRAIT>おう<END>
+
+//POINTER #17 @ $57844 - STRING #17 @ $55021
+
+#WRITE(GBA,$57844)
+<CHANGE_RIGHT_PORTRAIT><$01>このすなはまは ひとがゴチャゴチャ<LINE>
+してるね<NEWBOX>
+あれ?<LINE>
+おんなのひとが かいがんを<LINE>
+うろうろして なにやってるんだろう?<NEWBOX>
+ちょっといってみようよ<LINE>
+<HERO_LEFT_PORTRAIT>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは どうしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>こ こんにちは<LINE>
+ボートにのってたら うっかりして<LINE>
+ゆびわを おっことしちゃったの<LINE>
+うんよく このかいがんにでも<LINE>
+うちあげられていないか みにきてるの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>へえー それなら わたしたちに<LINE>
+まかせてください<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>え? でも ゆびわは<LINE>
+たぶん うみのなか だとおもうわ<LINE>
+<HERO_LEFT_PORTRAIT>だいじょうぶさ このダイナが<LINE>
+きっとさがしてくれるよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>まあ! それじゃ おねがいできるかしら?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃ <HERO_NAME>が<LINE>
+ダイナをつかって とってきます<LINE>
+ゆびわは どのへんで おとしたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>あのあたりよ<LINE>
+いりえの さきのほう<LINE>
+じゃあ おねがいしますね<NEWBOX>
+<HERO_LEFT_PORTRAIT>オッケー<LINE>
+まかせとけって<LINE>
+じゃ うみのなかに<LINE>
+ダイナを おくるぜ<NEWBOX>
+<REMOVE_PORTRAITS>・<NEWBOX>
+・・<NEWBOX>
+・・・<NEWBOX>
+ ・・・<NEWBOX>
+   ・・<NEWBOX>
+     ・<NEWBOX>
+<HERO_LEFT_PORTRAIT>よし ついたぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>いま かいていに ついたみたい<LINE>
+ゆびわって どんなゆびわですか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>え? けっこんゆびわよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃなくって デザインとか<LINE>
+いろとかです<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>ごくふつうの デザインで<LINE>
+シルバーよ<LINE>
+<HERO_LEFT_PORTRAIT>お なんだあれは?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ なんかみつけたみたい<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>まあ ゆびわかしら?<NEWBOX>
+<HERO_LEFT_PORTRAIT>げ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ざんねん あきかん ですって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>あら ざんねん<NEWBOX>
+<REMOVE_PORTRAITS>・<NEWBOX>
+・・<NEWBOX>
+・・・<NEWBOX>
+ ・・・<NEWBOX>
+   ・・<NEWBOX>
+     ・<NEWBOX>
+<HERO_LEFT_PORTRAIT>ぎんいろに ひかる<LINE>
+ちいさなものが あるぞ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>また なにか みつけたみたい<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>こんどは どうかしら<NEWBOX>
+<HERO_LEFT_PORTRAIT>・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>きかいの ネジですって<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>やっぱり むりなのかしら<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょっと しらべるばしょを<LINE>
+ひろげてみて<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0C>ごめんなさいね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>だいじょうぶですよ<NEWBOX>
+<HERO_NAME>が<LINE>
+かならず みつけてくれますよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>お みつけたぞ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ またなにか みつけたみたいよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>おおぉ!! やったぜーっ<LINE>
+ゆびわゲットー!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0C>・・・<NEWBOX>
+あ これ これだわ<LINE>
+みつかって よかった<LINE>
+ほんとうに ありがとう<NEWBOX>
+このゆびわは もうゆびから<LINE>
+はずさないようにするわ<LINE>
+それで おれいだけど<LINE>
+これを あげるわ わたしには<LINE>
+ひつようないものだから<NEWBOX>
+<$E0>の1ぬ<$E0>ァ1ぬ0<$E0><REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$22><COLOR><$0A><$E0>け <$E0>く</COLOR>を<LINE>
+てにいれた<$E0><$44><$14><NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<$E0><$20><$00><$14><END>
+
+//POINTER #18 @ $57848 - STRING #18 @ $55465
+
+#WRITE(GBA,$57848)
+<CHANGE_RIGHT_PORTRAIT><$1E>よろしくたのんだよ<END>
+
+//POINTER #19 @ $5784C - STRING #19 @ $55472
+
+#WRITE(GBA,$5784C)
+<END>
+
+//POINTER #20 @ $57850 - STRING #20 @ $55473
+
+#WRITE(GBA,$57850)
+<END>
+
+//POINTER #21 @ $57854 - STRING #21 @ $55474
+
+#WRITE(GBA,$57854)
+<HERO_NAME>は<LINE>
+<$E0><$73><$00><$01><PLAY_SFX><$2C><COLOR><$0A>ゴールドメダル</COLOR>を てにいれた<$E0><$44><$14><NEWBOX>
+<$E0><$20><$00><$53><CHANGE_RIGHT_PORTRAIT><$01>このメダルで ダイナを ゲットできるの<LINE>
+ダイナは <COLOR><$0A>ガチャステ</COLOR>っていうのを<LINE>
+つかって ゲットするのよ<NEWBOX>
+ガチャステは<LINE>
+<COLOR><$08>ガチャステパーク</COLOR>にあるから<LINE>
+あとで いってみようね<NEWBOX>
+あと これ じゅうようだから<LINE>
+ぜったい おぼえておいて ほしいんだけど<NEWBOX>
+<GOTO_SCRIPT><$01><$04><$E0><$31><$00><$7E><$02><$17>げんざいの じょうたいは<LINE>
+ふせいなしょりが はっせいしたと<LINE>
+かんがえられます<LINE>
+RAMないのないように いじょうがあり<LINE>
+ふせいなじょうたいです<NEWBOX>
+とりあつかいせつめいしょにある<LINE>
+ユーザーサポートにれんらくしてください<LINE>
+なお ゲームはこのままつづけられますが<END>
+
+//POINTER #22 @ $57858 - STRING #22 @ $55524
+
+#WRITE(GBA,$57858)
+<$E0><$31><$00><$7E><$02><$17>げんざいの じょうたいは<LINE>
+ふせいなしょりが はっせいしたと<LINE>
+かんがえられます<LINE>
+RAMないのないように いじょうがあり<LINE>
+ふせいなじょうたいです<NEWBOX>
+とりあつかいせつめいしょにある<LINE>
+ユーザーサポートにれんらくしてください<LINE>
+なお ゲームはこのままつづけられますが<END>
+
+//POINTER #23 @ $5785C - STRING #23 @ $555AD
+
+#WRITE(GBA,$5785C)
+<CHANGE_RIGHT_PORTRAIT><$01>へえ けっこう おかねもちなんだ<LINE>
+ゴールドメダルを あげようかと<LINE>
+おもったけど<LINE>
+そんなに あるんじゃ いらないわね<LINE>
+わたしが もらっておくわ<NEWBOX>
+<$E0><$20><$00><$53><CHANGE_RIGHT_PORTRAIT><$01>このメダルで ダイナの<COLOR><$0A>ガチャステ</COLOR>が<LINE>
+できるから あとで <COLOR><$08>ガチャステパーク</COLOR>へ<LINE>
+いってみましょう<NEWBOX>
+あと これ じゅうようだから<LINE>
+ぜったい おぼえておいて ほしいんだけど<NEWBOX>
+<GOTO_SCRIPT><$01><$04><END>
+
+//POINTER #24 @ $57860 - STRING #24 @ $55661
+
+#WRITE(GBA,$57860)
+<END>
+
+//POINTER #25 @ $57864 - STRING #25 @ $55662
+
+#WRITE(GBA,$57864)
+<END>
+
+//POINTER #26 @ $57868 - STRING #26 @ $55663
+
+#WRITE(GBA,$57868)
+<END>
+
+//POINTER #27 @ $5786C - STRING #27 @ $55664
+
+#WRITE(GBA,$5786C)
+<END>
+
+//POINTER #28 @ $57870 - STRING #28 @ $55665
+
+#WRITE(GBA,$57870)
+<END>
+
+//POINTER #29 @ $57874 - STRING #29 @ $55666
+
+#WRITE(GBA,$57874)
+<CHANGE_RIGHT_PORTRAIT><$0C>ねぇ ガチャステって いろんな<LINE>
+しゅるいがあるって しってた?<NEWBOX>
+なかには ポイントカードが<LINE>
+はいっているのが あって<LINE>
+あるていど ポイントがたまったら<LINE>
+ディノモショップで いろいろなものと<LINE>
+こうかんしてくれるのよ<LINE>
+わたしも けっこう<LINE>
+りよう しているわ<NEWBOX>
+ほかには ルーレットが ついている<LINE>
+ガチャステもあるのよ<LINE>
+おおあたりに やじるしが とまれば<LINE>
+なんかいも ガチャステができて<LINE>
+おとくなんだけど なかなか<LINE>
+おおあたりに あたらないんだけどね<NEWBOX>
+あと ないしょの はなしだけど<LINE>
+こしょうしている ガチャステから<LINE>
+いいデバイスが でることが<LINE>
+あるらしいわ<NEWBOX>
+それから ガチャステパークで<LINE>
+デバイスガチャステを えらぶとき<LINE>
+Lボタンか Rボタンで<LINE>
+ガチャステを ふったら<LINE>
+たくさん でることが あるらしいわよ<END>
+
+//POINTER #30 @ $57878 - STRING #30 @ $557CC
+
+#WRITE(GBA,$57878)
+<CHANGE_RIGHT_PORTRAIT><$01>こんにちは~<NEWBOX>
+・・・<NEWBOX>
+だれも いないみたいね<END>
+
+//POINTER #31 @ $5787C - STRING #31 @ $557EA
+
+#WRITE(GBA,$5787C)
+<CHANGE_RIGHT_PORTRAIT><$14>ダイナチャージャーの<LINE>
+バッテリーが きれたら<LINE>
+ディノモショップで<LINE>
+チャージしてくれるらしいよ<NEWBOX>
+おかねがない ときも<LINE>
+タダでやってくれるから<NEWBOX>
+ダイナバトラーには とっても<LINE>
+たすかるよね<END>
+
+//POINTER #32 @ $57880 - STRING #32 @ $5584E
+
+#WRITE(GBA,$57880)
+<CHANGE_LEFT_PORTRAIT><$19>バトルプレイスへ ようこそ<LINE>
+バトルを しますか?<LINE>
+  はい  いいえ<$E0> 041ぬ0<$FD><$E0>ず1ね<END>
+
+//POINTER #33 @ $57884 - STRING #33 @ $5587C
+
+#WRITE(GBA,$57884)
+<$E0>ず1ね<END>
+
+//POINTER #34 @ $57888 - STRING #34 @ $55881
+
+#WRITE(GBA,$57888)
+<CHANGE_RIGHT_PORTRAIT><$01><$E0>れ901ほけ1の01まけ1は01みけ1ひ01むけ1ふ01めけ1へおめでとう バトルにかったね<END>
+
+//POINTER #35 @ $5788C - STRING #35 @ $558A5
+
+#WRITE(GBA,$5788C)
+おめでとう バトルにかったね<END>
+
+//POINTER #36 @ $57890 - STRING #36 @ $558B4
+
+#WRITE(GBA,$57890)
+すっごーい<LINE>
+バトルに かったね<END>
+
+//POINTER #37 @ $57894 - STRING #37 @ $558C5
+
+#WRITE(GBA,$57894)
+わたしは かつっておもってたよ<END>
+
+//POINTER #38 @ $57898 - STRING #38 @ $558D5
+
+#WRITE(GBA,$57898)
+けっこう いいかんじで かてたね<END>
+
+//POINTER #39 @ $5789C - STRING #39 @ $558E6
+
+#WRITE(GBA,$5789C)
+すごいすご~い<LINE>
+バトルにかったね~<END>
+
+//POINTER #40 @ $578A0 - STRING #40 @ $558FA
+
+#WRITE(GBA,$578A0)
+<HERO_NAME>さ さいこーさねぇ<LINE>
+つよいんだねぇ<END>
+
+//POINTER #41 @ $578A4 - STRING #41 @ $5590F
+
+#WRITE(GBA,$578A4)
+<HERO_NAME> かっこいっけねぇ<LINE>
+つよいなや<END>
+
+//POINTER #42 @ $578A8 - STRING #42 @ $55921
+
+#WRITE(GBA,$578A8)
+<HERO_NAME> バリつよ<LINE>
+すごかね~<END>
+
+//POINTER #43 @ $578AC - STRING #43 @ $55930
+
+#WRITE(GBA,$578AC)
+めっちゃ さいこうやわ~<LINE>
+おめでとさん <HERO_NAME><END>
+
+//POINTER #44 @ $578B0 - STRING #44 @ $55948
+
+#WRITE(GBA,$578B0)
+うちのめに くるいはないで~<LINE>
+かつ おもてたもん<LINE>
+おめでとな~ <HERO_NAME><END>
+
+//POINTER #45 @ $578B4 - STRING #45 @ $5596D
+
+#WRITE(GBA,$578B4)
+<END>
+
+//POINTER #46 @ $578B8 - STRING #46 @ $5596E
+
+#WRITE(GBA,$578B8)
+<END>
+
+//POINTER #47 @ $578BC - STRING #47 @ $5596F
+
+#WRITE(GBA,$578BC)
+<END>
+
+//POINTER #48 @ $578C0 - STRING #48 @ $55970
+
+#WRITE(GBA,$578C0)
+<$E0><$31><$00><$44><$03><$52><$E0>ん2ソ<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><$E0>わそ1り<$E0><$31><$00><$23><$02><$32><GOTO_SCRIPT><$01><$7A><CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><$E0><$31><$00><$48><$03><$72><$E0>ん2ァ<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$1F>けっこう やるじゃねえか<LINE>
+え? <HERO_NAME>とかいったよな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>どうも ありがとうございました<NEWBOX>
+<HERO_LEFT_PORTRAIT>とうぜんのこと しただけだから<LINE>
+きにすんなよ<NEWBOX>
+おたがい ダイナバトラーどうし<LINE>
+なかよく いこうぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #49 @ $578C4 - STRING #49 @ $5599E
+
+#WRITE(GBA,$578C4)
+<$E0>わそ1り<$E0><$31><$00><$23><$02><$32><GOTO_SCRIPT><$01><$7A><CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><$E0><$31><$00><$48><$03><$72><$E0>ん2ァ<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$1F>けっこう やるじゃねえか<LINE>
+え? <HERO_NAME>とかいったよな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>どうも ありがとうございました<NEWBOX>
+<HERO_LEFT_PORTRAIT>とうぜんのこと しただけだから<LINE>
+きにすんなよ<NEWBOX>
+おたがい ダイナバトラーどうし<LINE>
+なかよく いこうぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #50 @ $578C8 - STRING #50 @ $559AD
+
+#WRITE(GBA,$578C8)
+<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><$E0><$31><$00><$48><$03><$72><$E0>ん2ァ<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$1F>けっこう やるじゃねえか<LINE>
+え? <HERO_NAME>とかいったよな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>どうも ありがとうございました<NEWBOX>
+<HERO_LEFT_PORTRAIT>とうぜんのこと しただけだから<LINE>
+きにすんなよ<NEWBOX>
+おたがい ダイナバトラーどうし<LINE>
+なかよく いこうぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #51 @ $578CC - STRING #51 @ $559D1
+
+#WRITE(GBA,$578CC)
+<$E0><$31><$00><$48><$03><$72><$E0>ん2ァ<CHANGE_LEFT_PORTRAIT><$19>げんざいは プラクティスの<LINE>
+しあいが おこなわれています<NEWBOX>
+<GOTO_SCRIPT><$02><$20><CHANGE_RIGHT_PORTRAIT><$1F>けっこう やるじゃねえか<LINE>
+え? <HERO_NAME>とかいったよな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>どうも ありがとうございました<NEWBOX>
+<HERO_LEFT_PORTRAIT>とうぜんのこと しただけだから<LINE>
+きにすんなよ<NEWBOX>
+おたがい ダイナバトラーどうし<LINE>
+なかよく いこうぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #52 @ $578D0 - STRING #52 @ $559FF
+
+#WRITE(GBA,$578D0)
+<CHANGE_RIGHT_PORTRAIT><$1F>けっこう やるじゃねえか<LINE>
+え? <HERO_NAME>とかいったよな<LINE>
+おまえの つよさにめんじて<LINE>
+ベイカフェの ねえちゃんには<LINE>
+もう てをださねえよ<LINE>
+これは おとこどうしの やくそくだ<NEWBOX>
+それから オレたちゃ まわりから<LINE>
+ダイナブレイカーって よばれてるが<LINE>
+じゅんすいな きもちだけじゃ<LINE>
+ダイナバトラーを つづけられねえぜ<LINE>
+ちょっとした こころの すきがあれば<LINE>
+すぐ オレたちのように<LINE>
+ダイナブレイカーって よばれちまうから<LINE>
+じゅうぶん きをつけることだな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$28>どうも ありがとうございました<NEWBOX>
+<HERO_LEFT_PORTRAIT>とうぜんのこと しただけだから<LINE>
+きにすんなよ<NEWBOX>
+おたがい ダイナバトラーどうし<LINE>
+なかよく いこうぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ だいじょうぶだった?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ なんとか だいじょうぶみたい<LINE>
+しんぱいして きてくれたんですか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+ほんとうに ケガがないみたいで よかった<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>よせやい んな きにするなって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>だって しんぱいになったから<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1F>だいじょうぶだよ あんしんしな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>れ? れれ?<LINE>
+なにそれ ありえない・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ごめんなさい<LINE>
+さっきは あんなこと いったけど<LINE>
+かれのことが きになっている<LINE>
+じぶんに やっときがついたの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そ そう<LINE>
+それなら よかったわ<LINE>
+うん こういうのも ありね・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あなたたちには ごめいわくを<LINE>
+おかけしたので<LINE>
+これを さしあげるわ<NEWBOX>
+<GOTO_SCRIPT><$03><$08><HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #53 @ $578D4 - STRING #53 @ $55C5B
+
+#WRITE(GBA,$578D4)
+<HERO_LEFT_PORTRAIT>・・・!<NEWBOX>
+みさり あれ・・・<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ このしゃしんのこ<LINE>
+まなぶくん?<NEWBOX>
+・・・てことは<LINE>
+あなたに むすこさん いませんか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>たしかにいるが それは おまえたちに<LINE>
+かんけいないだろう?<NEWBOX>
+<HERO_LEFT_PORTRAIT>いいえ むすこさんから<LINE>
+にもつを あずかってきました<LINE>
+これです みてください<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<COLOR><$0D>おとこのこの たからもの</COLOR>を<LINE>
+おとこにみせた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>む?<LINE>
+こ これは・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>まなぶくん いまでもこれを<LINE>
+たからものとして だいじに<LINE>
+もっているんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>おお まなぶ・・・<LINE>
+こんなパパのことを・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち まなぶくんと<LINE>
+やくそくしたんです<LINE>
+おとうさんを みつけたら<LINE>
+かならず もどってくるように<LINE>
+つたえるって<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>・・・まなぶが?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>はい いまでも おとうさんが<LINE>
+かえってくるのを<LINE>
+まいにちまっています<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>そうか まなぶ パパを<LINE>
+ゆるしてくれるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>かえってあげてください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0E>わかった そうしよう<LINE>
+いまから むすこのところに かえるよ<LINE>
+きみたちには なんていったらいいか<LINE>
+いまのオレには なにもないが<LINE>
+そうだ これをあげるよ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<$E0><$73><$01><$02><$E0><$73><$02><$05><PLAY_SFX><$2C><COLOR><$0A>シルバーメダル 2まい</COLOR>と<LINE>
+<COLOR><$0A>ブロンズメダル 5まい</COLOR>を てにいれた<$E0><$44><$14><$E0><$20><$00><$19><END>
+
+//POINTER #54 @ $578D8 - STRING #54 @ $55E9E
+
+#WRITE(GBA,$578D8)
+<$E0><$31><$00><$15><$01><$3B><GOTO_SCRIPT><$01><$40><CHANGE_RIGHT_PORTRAIT><$01>まちのひとたちに いろいろはなしを<LINE>
+きいてみようよ<END>
+
+//POINTER #55 @ $578DC - STRING #55 @ $55EA8
+
+#WRITE(GBA,$578DC)
+<CHANGE_RIGHT_PORTRAIT><$01>まちのひとたちに いろいろはなしを<LINE>
+きいてみようよ<END>
+
+//POINTER #56 @ $578E0 - STRING #56 @ $55EC5
+
+#WRITE(GBA,$578E0)
+<CHANGE_RIGHT_PORTRAIT><$01>ガチャステパークは ガチャゲートから<LINE>
+いけるのよ<END>
+
+//POINTER #57 @ $578E4 - STRING #57 @ $55EE3
+
+#WRITE(GBA,$578E4)
+<END>
+
+//POINTER #58 @ $578E8 - STRING #58 @ $55EE4
+
+#WRITE(GBA,$578E8)
+<END>
+
+//POINTER #59 @ $578EC - STRING #59 @ $55EE5
+
+#WRITE(GBA,$578EC)
+<END>
+
+//POINTER #60 @ $578F0 - STRING #60 @ $55EE6
+
+#WRITE(GBA,$578F0)
+<END>
+
+//POINTER #61 @ $578F4 - STRING #61 @ $55EE7
+
+#WRITE(GBA,$578F4)
+<END>
+
+//POINTER #62 @ $578F8 - STRING #62 @ $55EE8
+
+#WRITE(GBA,$578F8)
+<END>
+
+//POINTER #63 @ $578FC - STRING #63 @ $55EE9
+
+#WRITE(GBA,$578FC)
+じゃ なかにはいりましょう<NEWBOX>
+<GOTO_SCRIPT><$02><$80>バトルは デバイスとか そろってからに<LINE>
+しましょう<END>
+
+//POINTER #64 @ $57900 - STRING #64 @ $55EFB
+
+#WRITE(GBA,$57900)
+バトルは デバイスとか そろってからに<LINE>
+しましょう<END>
+
+//POINTER #65 @ $57904 - STRING #65 @ $55F15
+
+#WRITE(GBA,$57904)
+<CHANGE_RIGHT_PORTRAIT><$01>バトルより さきに デバイスゲットしに<LINE>
+ガチャステパークいこうよ<END>
+
+//POINTER #66 @ $57908 - STRING #66 @ $55F3A
+
+#WRITE(GBA,$57908)
+<$E0><$31><$00><$80><$02><$44>すいません<LINE>
+しょうしょう おまちください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$07>だから わしが きていると<LINE>
+しゃちょうに つたえれば いいんじゃ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1B>ですが そういわれましても<LINE>
+アポイントメントが ありませんと・・・<LINE>
+<CHANGE_RIGHT_PORTRAIT><$07>まったくもって ゆうずうのきかぬ<LINE>
+むすめじゃのう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>なんか もめてるから<LINE>
+またこんどにしましょう<$E0><$20><$00><$80><END>
+
+//POINTER #67 @ $5790C - STRING #67 @ $55FDB
+
+#WRITE(GBA,$5790C)
+<CHANGE_RIGHT_PORTRAIT><$01>さいしょに <COLOR><$08>ガチャステパーク</COLOR>へ<LINE>
+いきましょう<NEWBOX>
+ガチャステパークは <COLOR><$08>ガチャゲート</COLOR>から<LINE>
+いけるわよ<END>
+
+//POINTER #68 @ $57910 - STRING #68 @ $5601B
+
+#WRITE(GBA,$57910)
+<CHANGE_RIGHT_PORTRAIT><$1B>ほんじつは どなたかと<LINE>
+おやくそくが ございますか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>いいえ ないです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$1B>では おやくそくを<LINE>
+おとりになってから<LINE>
+もういちど おこしください<END>
+
+//POINTER #69 @ $57914 - STRING #69 @ $5606B
+
+#WRITE(GBA,$57914)
+<CHANGE_RIGHT_PORTRAIT><$01>まちのひとたちに いろいろはなしを<LINE>
+きいてみようよ<NEWBOX>
+ここは もうすこし あとになってから<LINE>
+りようしましょう<END>
+
+//POINTER #70 @ $57918 - STRING #70 @ $560A4
+
+#WRITE(GBA,$57918)
+<CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたしたち どろぼうさんを<LINE>
+さがしてるんですけど あやしいひと<LINE>
+みかけませんでしたか?<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$1C>ん~ どうかしら・・・<LINE>
+こちらは いろんな おきゃくさんが<LINE>
+りようされるので よく わからないわ<NEWBOX>
+<HERO_LEFT_PORTRAIT>わかりました どうもありがとう<NEWBOX>
+<CHANGE_LEFT_PORTRAIT><$1C>おちからになれなくて ごめんなさい<END>
+
+//POINTER #71 @ $5791C - STRING #71 @ $5614D
+
+#WRITE(GBA,$5791C)
+<CHANGE_LEFT_PORTRAIT><$1C>いらっしゃいませ~ ディノモショップです<NEWBOX>
+<$E0>だ<END>
+
+//POINTER #72 @ $57920 - STRING #72 @ $56169
+
+#WRITE(GBA,$57920)
+<$E0><$31><$00><$0F><$01><$07><CHANGE_RIGHT_PORTRAIT><$01>じゃあ こんどは <COLOR><$08>ゆうびんきょく</COLOR>にいって<LINE>
+おしごと もらえるか きいてみようよ<END>
+
+//POINTER #73 @ $57924 - STRING #73 @ $5619F
+
+#WRITE(GBA,$57924)
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ このおかねで<LINE>
+デバイスを ゲットしにいこうよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>よし ガチャゲートから<LINE>
+ガチャステパークへ だよな?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あったり~<END>
+
+//POINTER #74 @ $57928 - STRING #74 @ $561E8
+
+#WRITE(GBA,$57928)
+<CHANGE_RIGHT_PORTRAIT><$01>ダイナとデバイスがそろったから<LINE>
+<COLOR><$08>バトルプレイス</COLOR>に いってみようよ<END>
+
+//POINTER #75 @ $5792C - STRING #75 @ $56211
+
+#WRITE(GBA,$5792C)
+<CHANGE_RIGHT_PORTRAIT><$01>そうだ マイガチャステのつかいかた<LINE>
+おしえてないよね<LINE>
+<HERO_LEFT_PORTRAIT>マイガチャステ?<LINE>
+ああ まえにいってたやつか<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうだよ それじゃあ<LINE>
+<COLOR><$08>ガチャステパーク</COLOR>へ ゴー<END>
+
+//POINTER #76 @ $57930 - STRING #76 @ $5626C
+
+#WRITE(GBA,$57930)
+<CHANGE_RIGHT_PORTRAIT><$09>やあ みさりちゃん<LINE>
+このまえあげた デバイスは<LINE>
+ゆうこうに つかってくれたかい?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え?<LINE>
+ええ~ ゆうこうにつかわせて<LINE>
+もらったわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>まあ あげたものだから<LINE>
+じゆうに つかって くれてかまわないけど<NEWBOX>
+マイガチャステになんか<LINE>
+いれてないだろうね?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ええ せっかくいただいたものを<LINE>
+むだに つかいませんよ~<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>そうか なら いいんだよ<END>
+
+//POINTER #77 @ $57934 - STRING #77 @ $56323
+
+#WRITE(GBA,$57934)
+<END>
+
+//POINTER #78 @ $57938 - STRING #78 @ $56324
+
+#WRITE(GBA,$57938)
+<END>
+
+//POINTER #79 @ $5793C - STRING #79 @ $56325
+
+#WRITE(GBA,$5793C)
+<END>
+
+//POINTER #80 @ $57940 - STRING #80 @ $56326
+
+#WRITE(GBA,$57940)
+<$E0><$31><$00><$13><$01><$37><CHANGE_RIGHT_PORTRAIT><$12>なんじゃ かいしんして<LINE>
+わしの はなしをききにきたんじゃな<NEWBOX>
+<GOTO_SCRIPT><$01><$32><CHANGE_RIGHT_PORTRAIT><$12>おお あんたらか<LINE>
+ブロンズメダルを もってきたかい?<NEWBOX>
+<$E0>ぎ100わ<GOTO_SCRIPT><$01><$35><CHANGE_RIGHT_PORTRAIT><$02><COLOR><$08>バトルプレイス</COLOR>で<LINE>
+まってるぜ<END>
+
+//POINTER #81 @ $57944 - STRING #81 @ $56351
+
+#WRITE(GBA,$57944)
+<CHANGE_RIGHT_PORTRAIT><$12>おお あんたらか<LINE>
+ブロンズメダルを もってきたかい?<NEWBOX>
+<$E0>ぎ100わ<GOTO_SCRIPT><$01><$35><CHANGE_RIGHT_PORTRAIT><$02><COLOR><$08>バトルプレイス</COLOR>で<LINE>
+まってるぜ<END>
+
+//POINTER #82 @ $57948 - STRING #82 @ $5637A
+
+#WRITE(GBA,$57948)
+<CHANGE_RIGHT_PORTRAIT><$02><COLOR><$08>バトルプレイス</COLOR>で<LINE>
+まってるぜ<END>
+
+//POINTER #83 @ $5794C - STRING #83 @ $56391
+
+#WRITE(GBA,$5794C)
+<$E0><$31><$00><$4F><$01><$97><$E0><$31><$00><$5D><$02><$54><$E0><$31><$00><$5E><$02><$5A><$E0><$31><$00><$5F><$02><$5B><CHANGE_RIGHT_PORTRAIT><$02>なんだ まだ ばくだんを1こも<LINE>
+かいたい していないのか<NEWBOX>
+<HERO_LEFT_PORTRAIT>ばくだんの かいたいは<LINE>
+どうやったら いいんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ほんとは そのくらい じぶんで<LINE>
+かんがえろって いいたいけど<LINE>
+じかんがないから おしえてやるよ<NEWBOX>
+ばくだんをしらべると 2ほんのコードが<LINE>
+みえるんだ<NEWBOX>
+そのコードは 2ほんとも べつのいろに<LINE>
+なっている<NEWBOX>
+<HERO_LEFT_PORTRAIT>あ おれ それは TVみてしってるぞ<LINE>
+そのいろのうち どっちかのせんを<LINE>
+きるんだろ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ああ そうだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>やっぱりな<LINE>
+で なにいろのコードを<LINE>
+きればいいんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>それは TVのはなしだろ?<NEWBOX>
+<HERO_LEFT_PORTRAIT>へ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ボクたちが かいたいするばくだんは<LINE>
+それぞれ ちがういろの コードだ<NEWBOX>
+<HERO_LEFT_PORTRAIT>え~ じゃあ わかんないじゃん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>いや ダイナバトラーならわかるさ<LINE>
+ぞくせいで よわいほうの いろを<LINE>
+きればいいんだ<NEWBOX>
+ぞくせいの いろは わかるだろ?<LINE>
+  はい  いいえ<$E0> 041ヌ1ナ<$E0><$31><$00><$5E><$02><$55><$E0><$31><$00><$5F><$02><$59><CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>ダイナシティ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+<$F0><$EA>サンカルロ<$F0><$EB>と<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+まだだね<LINE>
+がんばってくれよ<END>
+
+//POINTER #84 @ $57950 - STRING #84 @ $5654D
+
+#WRITE(GBA,$57950)
+<$E0><$31><$00><$5E><$02><$55><$E0><$31><$00><$5F><$02><$59><CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>ダイナシティ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+<$F0><$EA>サンカルロ<$F0><$EB>と<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+まだだね<LINE>
+がんばってくれよ<END>
+
+//POINTER #85 @ $57954 - STRING #85 @ $56595
+
+#WRITE(GBA,$57954)
+<$E0><$31><$00><$5F><$02><$5F>よし<$F0><$EA>ダイナシティ<$F0><$EB>と<$F0><$EA>サンカルロ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+のこるは<$F0><$EA>アタカマラ<$F0><$EB>だけだ<LINE>
+がんばってくれよ<END>
+
+//POINTER #86 @ $57958 - STRING #86 @ $565D5
+
+#WRITE(GBA,$57958)
+<HERO_LEFT_PORTRAIT>ぞくせいのいろ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>おいおい!!<LINE>
+きみは いままで なにやってたんだい?<NEWBOX>
+ガンテじゃなくても<LINE>
+ダイナマスターに させたくなくなるぞ!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>いいか みみのあな かっぽじって<LINE>
+よくきけよ<NEWBOX>
+<COLOR><$0A>ほのおぞくせいは あか<LINE>
+みずぞくせいは あお<LINE>
+かみなりぞくせいは きいろ<LINE>
+だいちぞくせいは ちゃいろ</COLOR>だ<LINE>
+もういちどきくかい?<LINE>
+  はい  いいえ<$E0> 041ニ1ヌ<CHANGE_RIGHT_PORTRAIT><$02>よし オッケーだ!<LINE>
+じゃあ がんばってくれよ<END>
+
+//POINTER #87 @ $5795C - STRING #87 @ $56625
+
+#WRITE(GBA,$5795C)
+<CHANGE_RIGHT_PORTRAIT><$02>いいか みみのあな かっぽじって<LINE>
+よくきけよ<NEWBOX>
+<COLOR><$0A>ほのおぞくせいは あか<LINE>
+みずぞくせいは あお<LINE>
+かみなりぞくせいは きいろ<LINE>
+だいちぞくせいは ちゃいろ</COLOR>だ<LINE>
+もういちどきくかい?<LINE>
+  はい  いいえ<$E0> 041ニ1ヌ<CHANGE_RIGHT_PORTRAIT><$02>よし オッケーだ!<LINE>
+じゃあ がんばってくれよ<END>
+
+//POINTER #88 @ $57960 - STRING #88 @ $56695
+
+#WRITE(GBA,$57960)
+<CHANGE_RIGHT_PORTRAIT><$02>よし オッケーだ!<LINE>
+じゃあ がんばってくれよ<END>
+
+//POINTER #89 @ $57964 - STRING #89 @ $566B1
+
+#WRITE(GBA,$57964)
+<CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>ダイナシティ<$F0><$EB>と<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+のこるは<$F0><$EA>サンカルロ<$F0><$EB>だけだな<LINE>
+がんばってくれよ<END>
+
+//POINTER #90 @ $57968 - STRING #90 @ $566EF
+
+#WRITE(GBA,$57968)
+<$E0><$31><$00><$5F><$02><$5C><CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>サンカルロ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+<$F0><$EA>ダイナシティ<$F0><$EB>と<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+まだだね<LINE>
+がんばってくれよ<END>
+
+//POINTER #91 @ $5796C - STRING #91 @ $56731
+
+#WRITE(GBA,$5796C)
+<CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+<$F0><$EA>ダイナシティ<$F0><$EB>と<$F0><$EA>サンカルロ<$F0><$EB>は<LINE>
+まだだね<LINE>
+がんばってくれよ<END>
+
+//POINTER #92 @ $57970 - STRING #92 @ $5676D
+
+#WRITE(GBA,$57970)
+<CHANGE_RIGHT_PORTRAIT><$02>よし<$F0><$EA>サンカルロ<$F0><$EB>と<$F0><$EA>アタカマラ<$F0><$EB>は<LINE>
+オッケーだね<NEWBOX>
+のこるは<$F0><$EA>ダイナシティ<$F0><$EB>だけだな<LINE>
+がんばってくれよ<END>
+
+//POINTER #93 @ $57974 - STRING #93 @ $567AB
+
+#WRITE(GBA,$57974)
+<END>
+
+//POINTER #94 @ $57978 - STRING #94 @ $567AC
+
+#WRITE(GBA,$57978)
+<END>
+
+//POINTER #95 @ $5797C - STRING #95 @ $567AD
+
+#WRITE(GBA,$5797C)
+<CHANGE_RIGHT_PORTRAIT><$02>よ~し やったなー<LINE>
+ぜんぶばくだんを かいたいしたようだな<$E0>オ<PLAY_SFX><$20><$E0><$44><$FA><$E0>カ<$E0><$20><$00><$4E><$E0><$20><$00><$4F><NEWBOX>
+じゃあ これから ガンテのじいさんとこに<LINE>
+のりこむぜ!!<NEWBOX>
+<HERO_LEFT_PORTRAIT>じいさんが どこにいるのかしってるのか?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$02>ああ しらべは ついた<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01><$E0>さくん すごいのね<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ま まあね・・・<NEWBOX>
+<HERO_LEFT_PORTRAIT>ところで あのじいさんは<LINE>
+いったい なにものなんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>あのじいさんは<LINE>
+ダイナのうみのおや なんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? あのひとが<LINE>
+せかいてき はつめいかって いわれていた<LINE>
+ゼペットガンテ・・・<NEWBOX>
+あ なまえが おんなじだ・・・<LINE>
+きが つかなかったわ<NEWBOX>
+<HERO_LEFT_PORTRAIT>その ゼペットガンテが なんで<LINE>
+そんな わるいこと してるんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>まあ ひとことでいって うらみだよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>うらみ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>じぶんが はつめいした ダイナを<LINE>
+ディノモしゃに うばわれたんだ<NEWBOX>
+とちゅうまでは いっしょに<LINE>
+かいはつ してたみたいだけど<LINE>
+ダイナの コアぶぶんの こうぞうが<LINE>
+てにはいったとたん<LINE>
+じいさんを おいだしたんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>それだけ ゆうめいなひとなら<LINE>
+けいさつとか マスコミに<LINE>
+はなせば よかったのに<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>ダイナの ふぞくとして デバイスの<LINE>
+かいはつが はじまってすぐに<LINE>
+おおきな ばくはつじこが おきたんだ<NEWBOX>
+かれは そのせきにんを とらされて<LINE>
+やめさせられた みたいだね<NEWBOX>
+そのご ガンテじいさんは<LINE>
+つよいダイナバトラーを あつめて<LINE>
+クラックだんっていう しゅうだんを<LINE>
+つくって ダイナバトルを<LINE>
+のっとろうと したみたいだぜ<NEWBOX>
+<HERO_LEFT_PORTRAIT>じゃあ あの ヴァレザラムって やつも<LINE>
+その じいさんの なかまだったのか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>そうだよ しかも<LINE>
+やつは クラックだんの リーダーさ<NEWBOX>
+<HERO_LEFT_PORTRAIT>うは あんなやつが リーダーかよ・・・<NEWBOX>
+じじょうが どうでも ばくだんを<LINE>
+しかけるのは わるいことだ<LINE>
+おれは あのじいさんを ゆるさねーぜ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>そうね<LINE>
+はなしをきいたら かわいそうだけど<LINE>
+わるいことは わるいことよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$02>じゃあ バトルのじゅんびができたら<LINE>
+<$F0><$EA><COLOR><$08>おしろのいせき</COLOR><$F0><$EB>へ きてくれ<LINE>
+ボクは そこでまってるぜ<END>
+
+//POINTER #96 @ $57980 - STRING #96 @ $56B43
+
+#WRITE(GBA,$57980)
+<$E0><$32><$00><$4E><$04><$58><CHANGE_RIGHT_PORTRAIT><$01>なんか ほこりっぽいわ<LINE>
+こっちは しばらく だれも すんでない<LINE>
+みたいね<END>
+
+//POINTER #97 @ $57984 - STRING #97 @ $56B71
+
+#WRITE(GBA,$57984)
+<CHANGE_RIGHT_PORTRAIT><$0B>やあ みさりちゃん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? てんちょうさん<LINE>
+なんか げんきないみたい<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0B>ああ このふきょうの あおりで<LINE>
+おみせの うりあげがおちて<LINE>
+ついに デパートを<LINE>
+へいてんすることに したんだ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー!? そんなー<LINE>
+ちいさいころから きてたから<LINE>
+わたし とっても ざんねんだわ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>おじさんも ざんねんでしょうがないよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたし おうえんしてるよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>ありがとう みさりちゃん<NEWBOX>
+あ そうだ<LINE>
+もうすぐ へいてんセールやるから<LINE>
+そのまえに みさりちゃんたちには<LINE>
+とくべつに すきなのを わけてあげるよ<LINE>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0B>あまり いいのは のこってないけど<LINE>
+この <COLOR><$0D>あつでのぬのぶくろ</COLOR> なんか<LINE>
+じょうぶで いいものだよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ちょうどよかったわ<LINE>
+それを なんまいか ください<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>めのつけどころが いいねー<LINE>
+これは いいものなんだけど<LINE>
+なかなか にんきがなかったんだ<NEWBOX>
+<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
+<PLAY_SFX><$26><COLOR><$0D>あつでのぬのぶくろ</COLOR>を てにいれた<$E0><$20><$00><$28><$E0><$44><$10><NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ありがとう てんちょうさん<NEWBOX>
+<HERO_LEFT_PORTRAIT>ありがとう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0B>こんなこと おやすいごようだよ<NEWBOX>
+さいごに いいものを みわける<LINE>
+いいめを もった ひとにであえて<LINE>
+よかったよ<NEWBOX>
+さようなら みさりちゃん<LINE>
+<HERO_NAME>くん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>さようなら てんちょうさん<LINE>
+どうかおげんきで<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0B>ありがとう<END>
+
+//POINTER #98 @ $57988 - STRING #98 @ $56DB5
+
+#WRITE(GBA,$57988)
+<$E0><$31><$00><$17><$01><$42><$E0><$31><$00><$16><$01><$3D><$E0><$31><$00><$15><$01><$3C><$E0><$31><$00><$3A><$01><$3F><CHANGE_RIGHT_PORTRAIT><$0D>いらっしゃいませ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>わたし のどがかわいちゃった<LINE>
+ねえ しってる?<LINE>
+ここのタルト ちょーゆうめい なんだよ<LINE>
+たのんでいい? いいよね?<LINE>
+きまりっ!<NEWBOX>
+<HERO_LEFT_PORTRAIT>って のどかわいてるとか<LINE>
+いってたくせに<LINE>
+なんで タルトなんだ?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01><HERO_NAME>って おんなのこのきもち<LINE>
+ぜんっぜん わかんないのね~<NEWBOX>
+きっさてんにきて<LINE>
+のみものだけ たのむわけ<LINE>
+ないじゃない<NEWBOX>
+ね? そういうことだから<LINE>
+すいませーん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>ごちゅうもんは おきまりでしょうか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ベイタルトを 1つください<LINE>
+それと メロンソーダ2つ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>もうしわけございません<LINE>
+ここしばらく ざいりょうの<LINE>
+シスコのみが てにはいらなくなりまして<LINE>
+ベイタルトは おつくりできないんです<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>えー ありえなーい それ<LINE>
+わたし たのしみに してたのにー<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>そうですねー<LINE>
+このみなとのむこうにある むじんとうに<LINE>
+シスコのきがあるんですが<LINE>
+さいきん かんこうぎょうしゃが<LINE>
+かいがんに たいりょうの すなをひいて<LINE>
+じんこうの すなはまを<LINE>
+つくられてしまったので<LINE>
+それで ふねで おきには<LINE>
+でられなくなったんです<LINE>
+もし おきに でられれば<LINE>
+むじんとうの シスコのみを<LINE>
+てにいれることが できるんですが<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>じゃあ きまりね<LINE>
+わたしたちが そのシスコのみを<LINE>
+とってくれば ベイタルトが<LINE>
+たべられるのよね<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0D>たしかに あれば つくれますが<LINE>
+でも ふねいがいで どうやって<LINE>
+むじんとうまで いかれるんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>もちろん ダイナでよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0D>おお なるほど そのてが ありましたね<NEWBOX>
+ですが さかなけいの ダイナを<LINE>
+もっていらっしゃるんですか?<NEWBOX>
+<GOTO_SCRIPT><$01><$54><END>
+
+//POINTER #99 @ $5798C - STRING #99 @ $57098
+
+#WRITE(GBA,$5798C)
+<END>
+
+//POINTER #100 @ $57990 - STRING #100 @ $57099
+
+#WRITE(GBA,$57990)
+<END>
+
+//POINTER #101 @ $57994 - STRING #101 @ $5709A
+
+#WRITE(GBA,$57994)
+<END>
+
+//POINTER #102 @ $57998 - STRING #102 @ $5709B
+
+#WRITE(GBA,$57998)
+<END>
+
+//POINTER #103 @ $5799C - STRING #103 @ $5709C
+
+#WRITE(GBA,$5799C)
+<END>
+
+//POINTER #104 @ $579A0 - STRING #104 @ $5709D
+
+#WRITE(GBA,$579A0)
+<END>
+
+//POINTER #105 @ $579A4 - STRING #105 @ $5709E
+
+#WRITE(GBA,$579A4)
+<END>
+
+//POINTER #106 @ $579A8 - STRING #106 @ $5709F
+
+#WRITE(GBA,$579A8)
+<END>
+
+//POINTER #107 @ $579AC - STRING #107 @ $570A0
+
+#WRITE(GBA,$579AC)
+<END>
+
+//POINTER #108 @ $579B0 - STRING #108 @ $570A1
+
+#WRITE(GBA,$579B0)
+<END>
+
+//POINTER #109 @ $579B4 - STRING #109 @ $570A2
+
+#WRITE(GBA,$579B4)
+<END>
+
+//POINTER #110 @ $579B8 - STRING #110 @ $570A3
+
+#WRITE(GBA,$579B8)
+<END>
+
+//POINTER #111 @ $579BC - STRING #111 @ $570A4
+
+#WRITE(GBA,$579BC)
+<END>
+
+//POINTER #112 @ $579C0 - STRING #112 @ $570A5
+
+#WRITE(GBA,$579C0)
+<END>
+
+//POINTER #113 @ $579C4 - STRING #113 @ $570A6
+
+#WRITE(GBA,$579C4)
+<END>
+
+//POINTER #114 @ $579C8 - STRING #114 @ $570A7
+
+#WRITE(GBA,$579C8)
+<END>
+
+//POINTER #115 @ $579CC - STRING #115 @ $570A8
+
+#WRITE(GBA,$579CC)
+<END>
+
+//POINTER #116 @ $579D0 - STRING #116 @ $570A9
+
+#WRITE(GBA,$579D0)
+<END>
+
+//POINTER #117 @ $579D4 - STRING #117 @ $570AA
+
+#WRITE(GBA,$579D4)
+<END>
+
+//POINTER #118 @ $579D8 - STRING #118 @ $570AB
+
+#WRITE(GBA,$579D8)
+<END>
+
+//POINTER #119 @ $579DC - STRING #119 @ $570AC
+
+#WRITE(GBA,$579DC)
+<END>
+
+//POINTER #120 @ $579E0 - STRING #120 @ $570AD
+
+#WRITE(GBA,$579E0)
+<END>
+
+//POINTER #121 @ $579E4 - STRING #121 @ $570AE
+
+#WRITE(GBA,$579E4)
+<END>
+
+//POINTER #122 @ $579E8 - STRING #122 @ $570AF
+
+#WRITE(GBA,$579E8)
+<END>
+
+//POINTER #123 @ $579EC - STRING #123 @ $570B0
+
+#WRITE(GBA,$579EC)
+<END>
+
+//POINTER #124 @ $579F0 - STRING #124 @ $570B1
+
+#WRITE(GBA,$579F0)
+<END>
+
+//POINTER #125 @ $579F4 - STRING #125 @ $570B2
+
+#WRITE(GBA,$579F4)
+<CHANGE_RIGHT_PORTRAIT><$03>おや もしかして ボクとのバトルを<LINE>
+しにきたのかい?<NEWBOX>
+わるいけど バトルなら<LINE>
+バトルプレイスに いってくれ<LINE>
+ボクも そこでまってるよ<END>
+
+//POINTER #126 @ $579F8 - STRING #126 @ $570F9
+
+#WRITE(GBA,$579F8)
+ガチャステパークに<LINE>
+てんそうしてほしかったら<LINE>
+いつでも ここにおいでよ<END>
+
+//POINTER #127 @ $579FC - STRING #127 @ $5711E
+
+#WRITE(GBA,$579FC)
+<CHANGE_RIGHT_PORTRAIT><$03>どちらに てんそうしてほしいんだい?<LINE>
+  ガチャステパーク  ほかのまち<$E0>20あ1ぜ1ぞ  <END>
+
+//POINTER #128 @ $57A00 - STRING #128 @ $57152
+
+#WRITE(GBA,$57A00)
+<CHANGE_RIGHT_PORTRAIT><$03>やあ はじめまして<LINE>
+ボクはこのまちの かんりかんの<LINE>
+フレイビルだ<LINE>
+ボクの きょかなしに つぎのまちには<LINE>
+いけないから そのつもりでいてくれよ<NEWBOX>
+まぁ そんなわけだから<LINE>
+こんかいてんそうできるのは<LINE>
+ガチャステパークだけだね<NEWBOX>
+ガチャステパークに いくかい?<LINE>
+<$E0><$20><$00><$34>  はい  いいえ<$E0> 041ぜ1ざ<$E0><$31><$00><$53><$02><$98><CHANGE_RIGHT_PORTRAIT><$03>じゃあ ガチャステパークへ<LINE>
+てんそうするぞ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #129 @ $57A04 - STRING #129 @ $571EB
+
+#WRITE(GBA,$57A04)
+<$E0><$31><$00><$53><$02><$98><CHANGE_RIGHT_PORTRAIT><$03>じゃあ ガチャステパークへ<LINE>
+てんそうするぞ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #130 @ $57A08 - STRING #130 @ $5720E
+
+#WRITE(GBA,$57A08)
+<$E0><$31><$00><$43><$02><$83><$E0><$31><$00><$42><$02><$7D><CHANGE_RIGHT_PORTRAIT><$03>なんだ まだボクをたおしてないから<LINE>
+べつのまちには いけないよ<LINE>
+ボクとバトルして <$F0><$EA>にんていしょ<$F0><$EB>を<LINE>
+てにいれたら つぎのまちに<LINE>
+てんそうしてあげるよ<NEWBOX>
+<HERO_LEFT_PORTRAIT>なら いますぐ バトルさせてくれよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$03>え? ボクとバトルしたいって?<LINE>
+きみが このまちでいちばんつよくなったら<LINE>
+ボクが バトルしてあげるよ<NEWBOX>
+じゃあ それまで がんばって<LINE>
+つよくなっておいてくれよ<END>
+
+//POINTER #131 @ $57A0C - STRING #131 @ $572D4
+
+#WRITE(GBA,$57A0C)
+<$E0><$32><$00><$07><$02><$94><$E0><$32><$00><$0E><$02><$8F><$E0><$31><$00><$59><$02><$8E><CHANGE_RIGHT_PORTRAIT><$01><$F0><$EA>サンカルロ<$F0><$EB>へ いくまえに<LINE>
+マイガチャステのせつめいを<LINE>
+したいんだけど いいかな?<NEWBOX>
+<HERO_LEFT_PORTRAIT>マイガチャステって ガチャステパークから<LINE>
+いくんだったよな<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>うん そうだよ<END>
+
+//POINTER #132 @ $57A10 - STRING #132 @ $57344
+
+#WRITE(GBA,$57A10)
+<CHANGE_RIGHT_PORTRAIT><$03>じゃあ てんそうするよ<$E0>ぜ0<HERO_LEFT_PORTRAIT>やっぱり いいや<LINE>
+でなおしてくる<END>
+
+//POINTER #133 @ $57A14 - STRING #133 @ $57355
+
+#WRITE(GBA,$57A14)
+<HERO_LEFT_PORTRAIT>やっぱり いいや<LINE>
+でなおしてくる<END>
+
+//POINTER #134 @ $57A18 - STRING #134 @ $57369
+
+#WRITE(GBA,$57A18)
+<CHANGE_RIGHT_PORTRAIT><$05>じゃあ ガチャステパークへ<LINE>
+てんそうするぜ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #135 @ $57A1C - STRING #135 @ $57386
+
+#WRITE(GBA,$57A1C)
+じゃあ どっちの まちにいくんだ?<LINE>
+  <$F0><$EA><COLOR><$08>サンカルロ</COLOR><$F0><$EB>  <$F0><$EA><COLOR><$08>ダオスタヴィル</COLOR><$F0><$EB><$E0>2090q0r  わかったよ<LINE>
+<$F0><$EA><COLOR><$08>アタカマラ</COLOR><$F0><$EB>にてんそうね<$E0>ぜ1おっ <$F0><$EA>にんていしょ<$F0><$EB>を もってるな<NEWBOX>
+じゃあ <$F0><$EA><COLOR><$08>ダオスタヴィル</COLOR><$F0><$EB>に<LINE>
+てんそうしてやるぜ<$E0>ぜ2<CHANGE_RIGHT_PORTRAIT><$06>ガチャステパークか<LINE>
+じゃあ てんそうだ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #136 @ $57A20 - STRING #136 @ $573C5
+
+#WRITE(GBA,$57A20)
+わかったよ<LINE>
+<$F0><$EA><COLOR><$08>アタカマラ</COLOR><$F0><$EB>にてんそうね<$E0>ぜ1おっ <$F0><$EA>にんていしょ<$F0><$EB>を もってるな<NEWBOX>
+じゃあ <$F0><$EA><COLOR><$08>ダオスタヴィル</COLOR><$F0><$EB>に<LINE>
+てんそうしてやるぜ<$E0>ぜ2<CHANGE_RIGHT_PORTRAIT><$06>ガチャステパークか<LINE>
+じゃあ てんそうだ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #137 @ $57A24 - STRING #137 @ $573E2
+
+#WRITE(GBA,$57A24)
+おっ <$F0><$EA>にんていしょ<$F0><$EB>を もってるな<NEWBOX>
+じゃあ <$F0><$EA><COLOR><$08>ダオスタヴィル</COLOR><$F0><$EB>に<LINE>
+てんそうしてやるぜ<$E0>ぜ2<CHANGE_RIGHT_PORTRAIT><$06>ガチャステパークか<LINE>
+じゃあ てんそうだ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #138 @ $57A28 - STRING #138 @ $57419
+
+#WRITE(GBA,$57A28)
+<CHANGE_RIGHT_PORTRAIT><$06>ガチャステパークか<LINE>
+じゃあ てんそうだ<NEWBOX>
+<$E0>づ<END>
+
+//POINTER #139 @ $57A2C - STRING #139 @ $57434
+
+#WRITE(GBA,$57A2C)
+なら<$F0><$EA><COLOR><$08>アタカマラ</COLOR><$F0><$EB>へ<LINE>
+てんそうでいいんだな?<LINE>
+  はい  いいえ<$E0> 041ぼ1ぱじゃあな あばよ<$E0>ぜ1なら もうすこし ここにいるんだな<END>
+
+//POINTER #140 @ $57A30 - STRING #140 @ $57464
+
+#WRITE(GBA,$57A30)
+じゃあな あばよ<$E0>ぜ1なら もうすこし ここにいるんだな<END>
+
+//POINTER #141 @ $57A34 - STRING #141 @ $5746F
+
+#WRITE(GBA,$57A34)
+なら もうすこし ここにいるんだな<END>
+
+//POINTER #142 @ $57A38 - STRING #142 @ $57481
+
+#WRITE(GBA,$57A38)
+ここからは つぎのまち <COLOR><$08><$F0><$EA>サンカルロ<$F0><$EB></COLOR>へ<LINE>
+てんそうできるけど いくかい?<LINE>
+  はい  いいえ<$E0> 041ぢ1づ<CHANGE_RIGHT_PORTRAIT><$01>いまは けいじさんの おてつだいを<LINE>
+したほうが いいとおもうんだけど<END>
+
+//POINTER #143 @ $57A3C - STRING #143 @ $574BF
+
+#WRITE(GBA,$57A3C)
+<CHANGE_RIGHT_PORTRAIT><$01>いまは けいじさんの おてつだいを<LINE>
+したほうが いいとおもうんだけど<END>
+
+//POINTER #144 @ $57A40 - STRING #144 @ $574E5
+
+#WRITE(GBA,$57A40)
+<$E0><$31><$00><$4D><$02><$91><CHANGE_RIGHT_PORTRAIT><$0F>あら みさりちゃん!!<LINE>
+<HERO_NAME>くん<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あれ? フォンデュさん!!<LINE>
+こちらに そうだんに きたんですか?<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ええ<LINE>
+でも また あいてにされなかったの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>ひっどーい!!<LINE>
+わたし けいじさんに おねがいしてくる<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>あ みさりちゃん けいじさんじゃ<LINE>
+ムリなのよ<LINE>
+おしごとの なかみが ちがうの<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>え? そうなの?<LINE>
+<CHANGE_RIGHT_PORTRAIT><$0F>そうなのよ<LINE>
+でも わたしのなかにある<LINE>
+なんか モヤモヤしたきもちが<LINE>
+なかなか はれないだけだから<NEWBOX>
+<HERO_LEFT_PORTRAIT>フォンデュさんに なにかあったら<LINE>
+おれが まもりますよ<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$0F>ありがとう たのもしいわね<LINE>
+<HERO_NAME>くん<NEWBOX>
+じゃあ わたしは ベイカフェに<LINE>
+もどるわね<$E0><$20><$00><$4D><END>
+
+//POINTER #145 @ $57A44 - STRING #145 @ $5761E
+
+#WRITE(GBA,$57A44)
+<CHANGE_RIGHT_PORTRAIT><$09>わかった げんばに きゅうこうする<LINE>
+おい SADSにも たいきめいれい<LINE>
+だしておけ!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$01>あ けいじさん!!<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$09>ん? みさりちゃん!<NEWBOX>
+きょうは ゴメンよ<LINE>
+じけんで これから げんばに<LINE>
+いかなきゃ ならないんだ<END>
+
+//POINTER #146 @ $57A48 - STRING #146 @ $57692
+
+#WRITE(GBA,$57A48)
+オッケー<LINE>
+じゃあ はいりましょう<NEWBOX>
+<CHANGE_RIGHT_PORTRAIT><$03>やあ ガチャステパークに てんそうだよね<LINE>
+<GOTO_SCRIPT><$02><$31><CHANGE_RIGHT_PORTRAIT><$0F>かれは ガチャステパークに<LINE>
+いると おもいますよ<END>
+
+//POINTER #147 @ $57A4C - STRING #147 @ $576C1
+
+#WRITE(GBA,$57A4C)
+<CHANGE_RIGHT_PORTRAIT><$0F>かれは ガチャステパークに<LINE>
+いると おもいますよ<END>
+
+//POINTER #148 @ $57A50 - STRING #148 @ $576DE
+
+#WRITE(GBA,$57A50)
+<CHANGE_RIGHT_PORTRAIT><$01>まちのひとたちに いろいろはなしを<LINE>
+きいてみようよ<END>
+
+//POINTER #149 @ $57A54 - STRING #149 @ $576FB
+
+#WRITE(GBA,$57A54)
+<END>
+
+//POINTER #150 @ $57A58 - STRING #150 @ $576FC
+
+#WRITE(GBA,$57A58)
+<END>
+
+//POINTER #151 @ $57A5C - STRING #151 @ $576FD
+
+#WRITE(GBA,$57A5C)
+<END>
+
+//POINTER #152 @ $57A60 - STRING #152 @ $576FE
+
+#WRITE(GBA,$57A60)
+<CHANGE_RIGHT_PORTRAIT><$03>じゃあ ガチャステパークへ<LINE>
+てんそうするぞ<NEWBOX>
+<$E0>づ<CHANGE_RIGHT_PORTRAIT><$01>わぁ すごい<LINE>
+<$E0><$31><$00><$00><$02><$99><COLOR><$0A>エルフェーン</COLOR>ね<NEWBOX>
+<$E0><$8B><$01><END>
+
+//POINTER #153 @ $57A64 - STRING #153 @ $5773C
+
+#WRITE(GBA,$57A64)
+<COLOR><$0A>サーグレイン</COLOR>ね<NEWBOX>
+<$E0><$8B><$02><END>
+
+//POINTER #154 @ $57A68 - STRING #154 @ $5774E
+
+#WRITE(GBA,$57A68)
+<END>
+
+//POINTER #155 @ $57A6C - STRING #155 @ $5774F
+
+#WRITE(GBA,$57A6C)
+<END>
+
+//POINTER #156 @ $57A70 - STRING #156 @ $57750
+
+#WRITE(GBA,$57A70)
+<END>
+
+//POINTER #157 @ $57A74 - STRING #157 @ $57751
+
+#WRITE(GBA,$57A74)
+<END>
+
+//POINTER #158 @ $57A78 - STRING #158 @ $57752
+
+#WRITE(GBA,$57A78)
+<CHANGE_RIGHT_PORTRAIT><$01>やっぱり じぶんの いえは<LINE>
+おちつくな~<END>
+
+//POINTER #159 @ $57A7C - STRING #159 @ $5776B
+
+#WRITE(GBA,$57A7C)
+<CHANGE_RIGHT_PORTRAIT><$01><HERO_NAME>の おかげでばくだんも<LINE>
+ぶじ かいたいできたわね<END>
+
+//POINTER #160 @ $57A80 - STRING #160 @ $57789
+
+#WRITE(GBA,$57A80)
+<CHANGE_RIGHT_PORTRAIT><$01>この こやには だれも いないみたいね<END>
+
+//POINTER #161 @ $57A84 - STRING #161 @ $577A0
+
+#WRITE(GBA,$57A84)
+<END>
+
+//POINTER #162 @ $57A88 - STRING #162 @ $577A1
+
+#WRITE(GBA,$57A88)
+<END>
+
+//POINTER #163 @ $57A8C - STRING #163 @ $577A2
+
+#WRITE(GBA,$57A8C)
+<END>
+
+//POINTER #164 @ $57A90 - STRING #164 @ $577A3
+
+#WRITE(GBA,$57A90)
+<END>
+
+//POINTER #165 @ $57A94 - STRING #165 @ $577A4
+
+#WRITE(GBA,$57A94)
+<END>
+
+//POINTER #166 @ $57A98 - STRING #166 @ $577A5
+
+#WRITE(GBA,$57A98)
+<END>
+
+//POINTER #167 @ $57A9C - STRING #167 @ $577A6
+
+#WRITE(GBA,$57A9C)
+<END>
+
+//POINTER #168 @ $57AA0 - STRING #168 @ $577A7
+
+#WRITE(GBA,$57AA0)
+<END>
+
+//POINTER #169 @ $57AA4 - STRING #169 @ $577A8
+
+#WRITE(GBA,$57AA4)
+<END>
+
+//POINTER #170 @ $57AA8 - STRING #170 @ $577A9
+
+#WRITE(GBA,$57AA8)
+<END>
+
+//POINTER #171 @ $57AAC - STRING #171 @ $577AA
+
+#WRITE(GBA,$57AAC)
+<END>
+
+//POINTER #172 @ $57AB0 - STRING #172 @ $577AB
+
+#WRITE(GBA,$57AB0)
+<END>
+
+//POINTER #173 @ $57AB4 - STRING #173 @ $577AC
+
+#WRITE(GBA,$57AB4)
+<END>
+
+//POINTER #174 @ $57AB8 - STRING #174 @ $577AD
+
+#WRITE(GBA,$57AB8)
+<END>
+
+//POINTER #175 @ $57ABC - STRING #175 @ $577AE
+
+#WRITE(GBA,$57ABC)
+<END>
+
+//POINTER #176 @ $57AC0 - STRING #176 @ $577AF
+
+#WRITE(GBA,$57AC0)
+<END>
+
+//POINTER #177 @ $57AC4 - STRING #177 @ $577B0
+
+#WRITE(GBA,$57AC4)
+<END>
+
+//POINTER #178 @ $57AC8 - STRING #178 @ $577B1
+
+#WRITE(GBA,$57AC8)
+<END>
+
+//POINTER #179 @ $57ACC - STRING #179 @ $577B2
+
+#WRITE(GBA,$57ACC)
+<END>
+
+//POINTER #180 @ $57AD0 - STRING #180 @ $577B3
+
+#WRITE(GBA,$57AD0)
+<END>
+
+//POINTER #181 @ $57AD4 - STRING #181 @ $577B4
+
+#WRITE(GBA,$57AD4)
+<END>
+
+//POINTER #182 @ $57AD8 - STRING #182 @ $577B5
+
+#WRITE(GBA,$57AD8)
+<END>
+
+//POINTER #183 @ $57ADC - STRING #183 @ $577B6
+
+#WRITE(GBA,$57ADC)
+<END>
+
+//POINTER #184 @ $57AE0 - STRING #184 @ $577B7
+
+#WRITE(GBA,$57AE0)
+<END>
+
+//POINTER #185 @ $57AE4 - STRING #185 @ $577B8
+
+#WRITE(GBA,$57AE4)
+<END>
+
+//POINTER #186 @ $57AE8 - STRING #186 @ $577B9
+
+#WRITE(GBA,$57AE8)
+<END>
+
+//POINTER #187 @ $57AEC - STRING #187 @ $577BA
+
+#WRITE(GBA,$57AEC)
+<END>
+
+//POINTER #188 @ $57AF0 - STRING #188 @ $577BB
+
+#WRITE(GBA,$57AF0)
+<END>
+
+//POINTER #189 @ $57AF4 - STRING #189 @ $577BC
+
+#WRITE(GBA,$57AF4)
+<END>
+
+//POINTER #190 @ $57AF8 - STRING #190 @ $577BD
+
+#WRITE(GBA,$57AF8)
+<END>
+
+//POINTER #191 @ $57AFC - STRING #191 @ $577BE
+
+#WRITE(GBA,$57AFC)
+<END>
+
+//POINTER #192 @ $57B00 - STRING #192 @ $577BF
+
+#WRITE(GBA,$57B00)
+<END>
+
+//POINTER #193 @ $57B04 - STRING #193 @ $577C0
+
+#WRITE(GBA,$57B04)
+<END>
+
+//POINTER #194 @ $57B08 - STRING #194 @ $577C1
+
+#WRITE(GBA,$57B08)
+<END>
+
+//POINTER #195 @ $57B0C - STRING #195 @ $577C2
+
+#WRITE(GBA,$57B0C)
+<END>
+
+//POINTER #196 @ $57B10 - STRING #196 @ $577C3
+
+#WRITE(GBA,$57B10)
+<END>
+
+//POINTER #197 @ $57B14 - STRING #197 @ $577C4
+
+#WRITE(GBA,$57B14)
+<END>
+
+//POINTER #198 @ $57B18 - STRING #198 @ $577C5
+
+#WRITE(GBA,$57B18)
+<END>
+
+//POINTER #199 @ $57B1C - STRING #199 @ $577C6
+
+#WRITE(GBA,$57B1C)
+<END>
+
+//POINTER #200 @ $57B20 - STRING #200 @ $577C7
+
+#WRITE(GBA,$57B20)
+<END>
+
+//POINTER #201 @ $57B24 - STRING #201 @ $577C8
+
+#WRITE(GBA,$57B24)
+<END>
+
+//POINTER #202 @ $57B28 - STRING #202 @ $577C9
+
+#WRITE(GBA,$57B28)
+<END>
+
+//POINTER #203 @ $57B2C - STRING #203 @ $577CA
+
+#WRITE(GBA,$57B2C)
+<END>
+
+//POINTER #204 @ $57B30 - STRING #204 @ $577CB
+
+#WRITE(GBA,$57B30)
+<END>
+
+//POINTER #205 @ $57B34 - STRING #205 @ $577CC
+
+#WRITE(GBA,$57B34)
+<END>
+
+//POINTER #206 @ $57B38 - STRING #206 @ $577CD
+
+#WRITE(GBA,$57B38)
+<END>
+
+//POINTER #207 @ $57B3C - STRING #207 @ $577CE
+
+#WRITE(GBA,$57B3C)
+<END>
+
+//POINTER #208 @ $57B40 - STRING #208 @ $577CF
+
+#WRITE(GBA,$57B40)
+<END>
+
+//POINTER #209 @ $57B44 - STRING #209 @ $577D0
+
+#WRITE(GBA,$57B44)
+<END>
+
+//POINTER #210 @ $57B48 - STRING #210 @ $577D1
+
+#WRITE(GBA,$57B48)
+<END>
+
+//POINTER #211 @ $57B4C - STRING #211 @ $577D2
+
+#WRITE(GBA,$57B4C)
+<END>
+
+//POINTER #212 @ $57B50 - STRING #212 @ $577D3
+
+#WRITE(GBA,$57B50)
+<END>
+
+//POINTER #213 @ $57B54 - STRING #213 @ $577D4
+
+#WRITE(GBA,$57B54)
+<END>
+
+//POINTER #214 @ $57B58 - STRING #214 @ $577D5
+
+#WRITE(GBA,$57B58)
+<END>
+
+//POINTER #215 @ $57B5C - STRING #215 @ $577D6
+
+#WRITE(GBA,$57B5C)
+<END>
+
+//POINTER #216 @ $57B60 - STRING #216 @ $577D7
+
+#WRITE(GBA,$57B60)
+<END>
+
+//POINTER #217 @ $57B64 - STRING #217 @ $577D8
+
+#WRITE(GBA,$57B64)
+<END>
+
+//POINTER #218 @ $57B68 - STRING #218 @ $577D9
+
+#WRITE(GBA,$57B68)
+<END>
+
+//POINTER #219 @ $57B6C - STRING #219 @ $577DA
+
+#WRITE(GBA,$57B6C)
+<END>
+
+//POINTER #220 @ $57B70 - STRING #220 @ $577DB
+
+#WRITE(GBA,$57B70)
+<END>
+
+//POINTER #221 @ $57B74 - STRING #221 @ $577DC
+
+#WRITE(GBA,$57B74)
+<END>
+
+//POINTER #222 @ $57B78 - STRING #222 @ $577DD
+
+#WRITE(GBA,$57B78)
+<END>
+
+//POINTER #223 @ $57B7C - STRING #223 @ $577DE
+
+#WRITE(GBA,$57B7C)
+<END>
+
+//POINTER #224 @ $57B80 - STRING #224 @ $577DF
+
+#WRITE(GBA,$57B80)
+<END>
+
+//POINTER #225 @ $57B84 - STRING #225 @ $577E0
+
+#WRITE(GBA,$57B84)
+<END>
+
+//POINTER #226 @ $57B88 - STRING #226 @ $577E1
+
+#WRITE(GBA,$57B88)
+<END>
+
+//POINTER #227 @ $57B8C - STRING #227 @ $577E2
+
+#WRITE(GBA,$57B8C)
+<END>
+
+//POINTER #228 @ $57B90 - STRING #228 @ $577E3
+
+#WRITE(GBA,$57B90)
+<END>
+
+//POINTER #229 @ $57B94 - STRING #229 @ $577E4
+
+#WRITE(GBA,$57B94)
+<END>
+
+//POINTER #230 @ $57B98 - STRING #230 @ $577E5
+
+#WRITE(GBA,$57B98)
+<END>
+
+//POINTER #231 @ $57B9C - STRING #231 @ $577E6
+
+#WRITE(GBA,$57B9C)
+<END>
+
+//POINTER #232 @ $57BA0 - STRING #232 @ $577E7
+
+#WRITE(GBA,$57BA0)
+<END>
+
+//POINTER #233 @ $57BA4 - STRING #233 @ $577E8
+
+#WRITE(GBA,$57BA4)
+<END>
+
+//POINTER #234 @ $57BA8 - STRING #234 @ $577E9
+
+#WRITE(GBA,$57BA8)
+<END>
+
+//POINTER #235 @ $57BAC - STRING #235 @ $577EA
+
+#WRITE(GBA,$57BAC)
+<END>
+
+//POINTER #236 @ $57BB0 - STRING #236 @ $577EB
+
+#WRITE(GBA,$57BB0)
+<END>
+
+//POINTER #237 @ $57BB4 - STRING #237 @ $577EC
+
+#WRITE(GBA,$57BB4)
+<END>
+
+//POINTER #238 @ $57BB8 - STRING #238 @ $577ED
+
+#WRITE(GBA,$57BB8)
+<END>
+
+//POINTER #239 @ $57BBC - STRING #239 @ $577EE
+
+#WRITE(GBA,$57BBC)
+<END>
+
+//POINTER #240 @ $57BC0 - STRING #240 @ $577EF
+
+#WRITE(GBA,$57BC0)
+<END>
+
+//POINTER #241 @ $57BC4 - STRING #241 @ $577F0
+
+#WRITE(GBA,$57BC4)
+<END>
+
+//POINTER #242 @ $57BC8 - STRING #242 @ $577F1
+
+#WRITE(GBA,$57BC8)
+<END>
+
+//POINTER #243 @ $57BCC - STRING #243 @ $577F2
+
+#WRITE(GBA,$57BCC)
+<END>
+
+//POINTER #244 @ $57BD0 - STRING #244 @ $577F3
+
+#WRITE(GBA,$57BD0)
+<END>
+
+//POINTER #245 @ $57BD4 - STRING #245 @ $577F4
+
+#WRITE(GBA,$57BD4)
+<END>
+
+//POINTER #246 @ $57BD8 - STRING #246 @ $577F5
+
+#WRITE(GBA,$57BD8)
+<END>
+
+//POINTER #247 @ $57BDC - STRING #247 @ $577F6
+
+#WRITE(GBA,$57BDC)
+<END>
+
+//POINTER #248 @ $57BE0 - STRING #248 @ $577F7
+
+#WRITE(GBA,$57BE0)
+<END>
+
+//POINTER #249 @ $57BE4 - STRING #249 @ $577F8
+
+#WRITE(GBA,$57BE4)
+<END>
+
+//POINTER #250 @ $57BE8 - STRING #250 @ $577F9
+
+#WRITE(GBA,$57BE8)
+<END>
+
+//POINTER #251 @ $57BEC - STRING #251 @ $577FA
+
+#WRITE(GBA,$57BEC)
+<END>
+
+//POINTER #252 @ $57BF0 - STRING #252 @ $577FB
+
+#WRITE(GBA,$57BF0)
+<END>
+
+//POINTER #253 @ $57BF4 - STRING #253 @ $577FC
+
+#WRITE(GBA,$57BF4)
+<END>
+
+//POINTER #254 @ $57BF8 - STRING #254 @ $577FD
+
+#WRITE(GBA,$57BF8)
+<END>
+
+//POINTER #255 @ $57BFC - STRING #255 @ $577FE
+
+#WRITE(GBA,$57BFC)
+<END>
