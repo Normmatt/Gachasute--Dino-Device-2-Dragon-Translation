@@ -16,6 +16,17 @@ here:
 
 .org 0x0800BF40
 	bl FixBoxEnd
+	
+;Cursors
+.org 0x0800C02A
+	bl FixCursor
+	
+.org 0x0800C0AE
+	bl FixCursor
+	
+;.org 0x0800C132
+;	bl FixCursor2
+;End of Cursors
 
 .org 0x0800D244
 	bl putChar
@@ -210,7 +221,7 @@ GetNextTileAddress_skip:
 	ADD     R0, R0, R1      ; dest
 	pop {r1-r3}
 	bx lr
-
+	
 ResetOverflow:
 	; reset overflow
 	mov r0, #0
@@ -245,6 +256,23 @@ EndTextBox:
 	bl ResetOverflow
 	ldr r0, [EndTextBox_returnAdr]
 	bx r0
+	
+FixCursor:
+	; reset overflow
+	mov r0, #0
+	ldr r1, [overflow]
+	str r0, [r1]
+	
+	LDR     R0, [R4,#0x30]
+	ADD     R0, #1          ; increment map address
+	STR     R0, [R4,#0x30]
+	LDR     R1, [R4,#0x34]
+	ADD     R1, #1          ; increment tile address
+	STR     R1, [R4,#0x34]
+	LSL     R1, R1, #5 		;ORIGINAL CODE
+	bx lr
+	
+
 	
  ;Handle New Line
  ;r0 and r1 are free
