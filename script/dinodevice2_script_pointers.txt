@@ -2154,7 +2154,7 @@ EMEこうせきが はいっているいしは<LINE>
 <REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
 <$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
 てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
-ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+ダイナチャージャーは Ver.3に<LINE>
 なりました<$E0><$20><$00><$23><END>
 
 //POINTER #122 @ $548F8 - STRING #122 @ $50B49
@@ -2169,7 +2169,7 @@ EMEこうせきが はいっているいしは<LINE>
 <REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
 <$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
 てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
-ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+ダイナチャージャーは Ver.3に<LINE>
 なりました<$E0><$20><$00><$23><END>
 
 //POINTER #123 @ $548FC - STRING #123 @ $50BA7
@@ -2178,7 +2178,7 @@ EMEこうせきが はいっているいしは<LINE>
 <REMOVE_PORTRAITS><$E0>ュ2<HERO_NAME>は<LINE>
 <$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
 てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
-ダイナチャージャーは Ver<$F0><$F1>3に<LINE>
+ダイナチャージャーは Ver.3に<LINE>
 なりました<$E0><$20><$00><$23><END>
 
 //POINTER #124 @ $54900 - STRING #124 @ $50BF9
@@ -4249,7 +4249,7 @@ OK てんそうは ちゅうしだね<END>
 //POINTER #249 @ $54AF4 - STRING #249 @ $546AB
 
 #WRITE(GBA,$54AF4)
-<REMOVE_PORTRAITS><$E0>ず0<$FB><GOTO_SCRIPT><$01><$FB><CHANGE_LEFT_PORTRAIT><$19>またの きかいに おこしください<END>
+<REMOVE_PORTRAITS><$E0>ず0_<GOTO_SCRIPT><$01><$FB><CHANGE_LEFT_PORTRAIT><$19>またの きかいに おこしください<END>
 
 //POINTER #250 @ $54AF8 - STRING #250 @ $546B5
 
@@ -4352,7 +4352,7 @@ OK てんそうは ちゅうしだね<END>
 <$E0>ュ1<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
 <$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
 てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
-ダイナチャージャーは Ver<$F0><$F1>2に<LINE>
+ダイナチャージャーは Ver.2に<LINE>
 なりました<NEWBOX>
 <CHANGE_LEFT_PORTRAIT><$1C>それでは ひきつづき てんないを<LINE>
 ごらんください<NEWBOX>
@@ -4371,7 +4371,7 @@ OK てんそうは ちゅうしだね<END>
 <$E0>ュ1<REMOVE_PORTRAITS><HERO_NAME>は<LINE>
 <$E0>オ<$E0><$44><$06><PLAY_SFX><$20>あたらしい<COLOR><$0A>ダイナチャージャー</COLOR>を<LINE>
 てにいれた<$E0><$44><$FA><$E0>カ<NEWBOX>
-ダイナチャージャーは Ver<$F0><$F1>2に<LINE>
+ダイナチャージャーは Ver.2に<LINE>
 なりました<NEWBOX>
 <CHANGE_LEFT_PORTRAIT><$1C>それでは ひきつづき てんないを<LINE>
 ごらんください<NEWBOX>
@@ -6635,4 +6635,843 @@ Lボタンか Rボタンで<LINE>
 //POINTER #255 @ $57BFC - STRING #255 @ $577FE
 
 #WRITE(GBA,$57BFC)
+<END>
+
+//BLOCK #002 NAME:		Pointer Block 3 - Menus/Misc (POINTER)
+
+//POINTER #0 @ $4B3DC - STRING #0 @ $4AB10
+
+#WRITE(GBA,$4B3DC)
+0123456789<END>
+
+//POINTER #1 @ $4B3E0 - STRING #1 @ $4AB1B
+
+#WRITE(GBA,$4B3E0)
+ページきりかえテスト<LINE>
+1ページめのテキストひょうじ<NEWBOX>
+2ページめのテキストひょうじ<END>
+
+//POINTER #2 @ $4B3E4 - STRING #2 @ $4AB47
+
+#WRITE(GBA,$4B3E4)
+2たくテスト<LINE>
+  1  2<$E0>003 2 31をせんたく<END>
+
+//POINTER #3 @ $4B3E8 - STRING #3 @ $4AB5C
+
+#WRITE(GBA,$4B3E8)
+1をせんたく<END>
+
+//POINTER #4 @ $4B3EC - STRING #4 @ $4AB63
+
+#WRITE(GBA,$4B3EC)
+2をせんたく<END>
+
+//POINTER #5 @ $4B3F0 - STRING #5 @ $4AB6A
+
+#WRITE(GBA,$4B3F0)
+すうちひょうじテスト A<$F0>=<$E0>き  B<$F0>=<$E0>き0<END>
+
+//POINTER #6 @ $4B3F4 - STRING #6 @ $4AB83
+
+#WRITE(GBA,$4B3F4)
+もじれつひょうじテスト<LINE>
+<$E0>か <END>
+
+//POINTER #7 @ $4B3F8 - STRING #7 @ $4AB93
+
+#WRITE(GBA,$4B3F8)
+デバイスめいしょう ひょうじテスト<LINE>
+<$E0><$20><$00><$FF><$F0>-DEBUG DATA<$F0>-<$F9>OAM<$F0>=<$F9>CNT<$F0>=<END>
+
+//POINTER #8 @ $4B3FC - STRING #8 @ $4ABA9
+
+#WRITE(GBA,$4B3FC)
+<$F0>-DEBUG DATA<$F0>-<$F9>OAM<$F0>=<$F9>CNT<$F0>=<END>
+
+//POINTER #9 @ $4B400 - STRING #9 @ $4ABC4
+
+#WRITE(GBA,$4B400)
+R<$F0>=<$F9>L<$F0>=<$F9>B<$F0>=<END>
+
+//POINTER #10 @ $4B404 - STRING #10 @ $4ABD0
+
+#WRITE(GBA,$4B404)
+<END>
+
+//POINTER #11 @ $4B408 - STRING #11 @ $4ABD1
+
+#WRITE(GBA,$4B408)
+<END>
+
+//POINTER #12 @ $4B40C - STRING #12 @ $4ABD2
+
+#WRITE(GBA,$4B40C)
+<END>
+
+//POINTER #13 @ $4B410 - STRING #13 @ $4ABD3
+
+#WRITE(GBA,$4B410)
+<END>
+
+//POINTER #14 @ $4B414 - STRING #14 @ $4ABD4
+
+#WRITE(GBA,$4B414)
+<END>
+
+//POINTER #15 @ $4B418 - STRING #15 @ $4ABD5
+
+#WRITE(GBA,$4B418)
+<END>
+
+//POINTER #16 @ $4B41C - STRING #16 @ $4ABD6
+
+#WRITE(GBA,$4B41C)
+  せつぞくかくにんします<LINE>
+  Aボタンをおしてください<$FE><$F9> せつぞくたいきちゅうです・・・<$FE><$F9>    せつぞくしました<$FE><PLAY_SFX><$2A>つうしんエラーです<LINE>
+せつぞくかくにんをしてください<$FE><$F9>   ちゅうだんしました<$FE><PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #17 @ $4B420 - STRING #17 @ $4ABF3
+
+#WRITE(GBA,$4B420)
+<$F9> せつぞくたいきちゅうです・・・<$FE><$F9>    せつぞくしました<$FE><PLAY_SFX><$2A>つうしんエラーです<LINE>
+せつぞくかくにんをしてください<$FE><$F9>   ちゅうだんしました<$FE><PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #18 @ $4B424 - STRING #18 @ $4AC08
+
+#WRITE(GBA,$4B424)
+<$F9>    せつぞくしました<$FE><PLAY_SFX><$2A>つうしんエラーです<LINE>
+せつぞくかくにんをしてください<$FE><$F9>   ちゅうだんしました<$FE><PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #19 @ $4B428 - STRING #19 @ $4AC16
+
+#WRITE(GBA,$4B428)
+<PLAY_SFX><$2A>つうしんエラーです<LINE>
+せつぞくかくにんをしてください<$FE><$F9>   ちゅうだんしました<$FE><PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #20 @ $4B42C - STRING #20 @ $4AC34
+
+#WRITE(GBA,$4B42C)
+<$F9>   ちゅうだんしました<$FE><PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #21 @ $4B430 - STRING #21 @ $4AC42
+
+#WRITE(GBA,$4B430)
+<PLAY_SFX><$2A>あいても<$F0><$EA>ダイナデバイス2<$F0><$EB>です<LINE>
+データは おくれません<$FE><PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #22 @ $4B434 - STRING #22 @ $4AC65
+
+#WRITE(GBA,$4B434)
+<PLAY_SFX><$2A> あいてとはちがうコマンドです<LINE>
+ つうしんを キャンセルします<$FE>  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #23 @ $4B438 - STRING #23 @ $4AC88
+
+#WRITE(GBA,$4B438)
+  めいしを おくりますか?<LINE>
+    はい  いいえ<$E0> 26 せ そ<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #24 @ $4B43C - STRING #24 @ $4ACAB
+
+#WRITE(GBA,$4B43C)
+<$F9> つうしんたいきちゅうです・・・<$FE><$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #25 @ $4B440 - STRING #25 @ $4ACC0
+
+#WRITE(GBA,$4B440)
+<$F9>キャンセルたいきちゅうです・・・<$FE><$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #26 @ $4B444 - STRING #26 @ $4ACD5
+
+#WRITE(GBA,$4B444)
+<$F9>   キャンセルされました<$FE><$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #27 @ $4B448 - STRING #27 @ $4ACE4
+
+#WRITE(GBA,$4B448)
+<$F9>  つうしんちゅうです・・・<$FE><$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #28 @ $4B44C - STRING #28 @ $4ACF7
+
+#WRITE(GBA,$4B44C)
+<$F9>   しゅうりょうしました<$FE>  チョビぐるみとのつうしん  <END>
+
+//POINTER #29 @ $4B450 - STRING #29 @ $4AD06
+
+#WRITE(GBA,$4B450)
+  チョビぐるみとのつうしん  <END>
+
+//POINTER #30 @ $4B454 - STRING #30 @ $4AD17
+
+#WRITE(GBA,$4B454)
+<$E0>け <$E0>く<LINE>
+を てにいれました<END>
+
+//POINTER #31 @ $4B458 - STRING #31 @ $4AD27
+
+#WRITE(GBA,$4B458)
+<END>
+
+//POINTER #32 @ $4B45C - STRING #32 @ $4AD28
+
+#WRITE(GBA,$4B45C)
+0123456789<END>
+
+//POINTER #33 @ $4B460 - STRING #33 @ $4AD33
+
+#WRITE(GBA,$4B460)
+ つうしんメニュー<END>
+
+//POINTER #34 @ $4B464 - STRING #34 @ $4AD3E
+
+#WRITE(GBA,$4B464)
+<$E0><$32><$00><$59><$00><$32>ダイナバトル<LINE>
+マイガチャステ<LINE>
+チョビぐるみとつうしん<$FE>     ダイナバトル     <END>
+
+//POINTER #35 @ $4B468 - STRING #35 @ $4AD5F
+
+#WRITE(GBA,$4B468)
+     ダイナバトル     <END>
+
+//POINTER #36 @ $4B46C - STRING #36 @ $4AD70
+
+#WRITE(GBA,$4B46C)
+つうしんの さいごに セーブしますが<LINE>
+よろしいですか?<LINE>
+    はい  いいえ<$E0>026    あげる? もらう?<LINE>
+   あげる  もらう<$E0>216      <PLAY_SFX><$2A>あいてと おなじコマンドです<LINE>
+つうしんを キャンセルします<$FE>つうしんに せいこうしました<$FE>ガチャステに カプセルが<LINE>
+ほじゅうされるのを まっています・・・<$FE>ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #37 @ $4B470 - STRING #37 @ $4ADA1
+
+#WRITE(GBA,$4B470)
+あげる? もらう?<LINE>
+   あげる  もらう<$E0>216      <PLAY_SFX><$2A>あいてと おなじコマンドです<LINE>
+つうしんを キャンセルします<$FE>つうしんに せいこうしました<$FE>ガチャステに カプセルが<LINE>
+ほじゅうされるのを まっています・・・<$FE>ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #38 @ $4B474 - STRING #38 @ $4ADC2
+
+#WRITE(GBA,$4B474)
+<PLAY_SFX><$2A>あいてと おなじコマンドです<LINE>
+つうしんを キャンセルします<$FE>つうしんに せいこうしました<$FE>ガチャステに カプセルが<LINE>
+ほじゅうされるのを まっています・・・<$FE>ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #39 @ $4B478 - STRING #39 @ $4ADE3
+
+#WRITE(GBA,$4B478)
+つうしんに せいこうしました<$FE>ガチャステに カプセルが<LINE>
+ほじゅうされるのを まっています・・・<$FE>ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #40 @ $4B47C - STRING #40 @ $4ADF2
+
+#WRITE(GBA,$4B47C)
+ガチャステに カプセルが<LINE>
+ほじゅうされるのを まっています・・・<$FE>ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #41 @ $4B480 - STRING #41 @ $4AE16
+
+#WRITE(GBA,$4B480)
+ガチャステに カプセルを<LINE>
+ほじゅうしています・・・<$FE>あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #42 @ $4B484 - STRING #42 @ $4AE33
+
+#WRITE(GBA,$4B484)
+あいてが ガチャステをするのを<LINE>
+まっています・・・<$FE>ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #43 @ $4B488 - STRING #43 @ $4AE50
+
+#WRITE(GBA,$4B488)
+ガチャステの けっかを<LINE>
+おくっています・・・<$FE>ガチャステを しませんでした<END>
+
+//POINTER #44 @ $4B48C - STRING #44 @ $4AE6A
+
+#WRITE(GBA,$4B48C)
+ガチャステを しませんでした<END>
+
+//POINTER #45 @ $4B490 - STRING #45 @ $4AE79
+
+#WRITE(GBA,$4B490)
+もちきれなかったので<LINE>
+あいてに かえしました<END>
+
+//POINTER #46 @ $4B494 - STRING #46 @ $4AE90
+
+#WRITE(GBA,$4B494)
+おかねが たりません<LINE>
+ガチャステを するには<LINE>
+500ビットひつようです<END>
+
+//POINTER #47 @ $4B498 - STRING #47 @ $4AEB4
+
+#WRITE(GBA,$4B498)
+ガチャステに いれたカプセルが<LINE>
+ぜんぶもどってきました<END>
+
+//POINTER #48 @ $4B49C - STRING #48 @ $4AED0
+
+#WRITE(GBA,$4B49C)
+ガチャステに カプセルを<LINE>
+ほじゅうしませんでした<END>
+
+//POINTER #49 @ $4B4A0 - STRING #49 @ $4AEE9
+
+#WRITE(GBA,$4B4A0)
+ガチャステに カプセルが<LINE>
+ほじゅうされませんでした<END>
+
+//POINTER #50 @ $4B4A4 - STRING #50 @ $4AF03
+
+#WRITE(GBA,$4B4A4)
+ダイナバトル<LINE>
+<COLOR><$04>マイガチャステ<LINE>
+</COLOR>チョビぐるみとつうしん<$FE><END>
+
+//POINTER #51 @ $4B4A8 - STRING #51 @ $4AF24
+
+#WRITE(GBA,$4B4A8)
+<END>
+
+//POINTER #52 @ $4B4AC - STRING #52 @ $4AF25
+
+#WRITE(GBA,$4B4AC)
+<END>
+
+//POINTER #53 @ $4B4B0 - STRING #53 @ $4AF26
+
+#WRITE(GBA,$4B4B0)
+<END>
+
+//POINTER #54 @ $4B4B4 - STRING #54 @ $4AF27
+
+#WRITE(GBA,$4B4B4)
+<END>
+
+//POINTER #55 @ $4B4B8 - STRING #55 @ $4AF28
+
+#WRITE(GBA,$4B4B8)
+<END>
+
+//POINTER #56 @ $4B4BC - STRING #56 @ $4AF29
+
+#WRITE(GBA,$4B4BC)
+<END>
+
+//POINTER #57 @ $4B4C0 - STRING #57 @ $4AF2A
+
+#WRITE(GBA,$4B4C0)
+<END>
+
+//POINTER #58 @ $4B4C4 - STRING #58 @ $4AF2B
+
+#WRITE(GBA,$4B4C4)
+<END>
+
+//POINTER #59 @ $4B4C8 - STRING #59 @ $4AF2C
+
+#WRITE(GBA,$4B4C8)
+<END>
+
+//POINTER #60 @ $4B4CC - STRING #60 @ $4AF2D
+
+#WRITE(GBA,$4B4CC)
+<END>
+
+//POINTER #61 @ $4B4D0 - STRING #61 @ $4AF2E
+
+#WRITE(GBA,$4B4D0)
+<END>
+
+//POINTER #62 @ $4B4D4 - STRING #62 @ $4AF2F
+
+#WRITE(GBA,$4B4D4)
+<END>
+
+//POINTER #63 @ $4B4D8 - STRING #63 @ $4AF30
+
+#WRITE(GBA,$4B4D8)
+<END>
+
+//POINTER #64 @ $4B4DC - STRING #64 @ $4AF31
+
+#WRITE(GBA,$4B4DC)
+ なまえをにゅうりょくしてください  <END>
+
+//POINTER #65 @ $4B4E0 - STRING #65 @ $4AF45
+
+#WRITE(GBA,$4B4E0)
+もどる<END>
+
+//POINTER #66 @ $4B4E4 - STRING #66 @ $4AF49
+
+#WRITE(GBA,$4B4E4)
+けってい<END>
+
+//POINTER #67 @ $4B4E8 - STRING #67 @ $4AF4E
+
+#WRITE(GBA,$4B4E8)
+これで いいですか?<LINE>
+  はい  いいえ<$E0> 04    じぶんとおなじなまえです<END>
+
+//POINTER #68 @ $4B4EC - STRING #68 @ $4AF6B
+
+#WRITE(GBA,$4B4EC)
+じぶんとおなじなまえです<END>
+
+//POINTER #69 @ $4B4F0 - STRING #69 @ $4AF78
+
+#WRITE(GBA,$4B4F0)
+<$F0>-<$F0>-<$F0>-<$F0>-<$F0>-<$F0>-<$F0>-<$F0>-<END>
+
+//POINTER #70 @ $4B4F4 - STRING #70 @ $4AF89
+
+#WRITE(GBA,$4B4F4)
+STARTボタンでしゅうりょうします <END>
+
+//POINTER #71 @ $4B4F8 - STRING #71 @ $4AF9D
+
+#WRITE(GBA,$4B4F8)
+パスワードをにゅうりょくしてください <END>
+
+//POINTER #72 @ $4B4FC - STRING #72 @ $4AFB2
+
+#WRITE(GBA,$4B4FC)
+たんじょうびをにゅうりょくしてください<END>
+
+//POINTER #73 @ $4B500 - STRING #73 @ $4AFC6
+
+#WRITE(GBA,$4B500)
+<END>
+
+//POINTER #74 @ $4B504 - STRING #74 @ $4AFC7
+
+#WRITE(GBA,$4B504)
+<END>
+
+//POINTER #75 @ $4B508 - STRING #75 @ $4AFC8
+
+#WRITE(GBA,$4B508)
+<END>
+
+//POINTER #76 @ $4B50C - STRING #76 @ $4AFC9
+
+#WRITE(GBA,$4B50C)
+<END>
+
+//POINTER #77 @ $4B510 - STRING #77 @ $4AFCA
+
+#WRITE(GBA,$4B510)
+<END>
+
+//POINTER #78 @ $4B514 - STRING #78 @ $4AFCB
+
+#WRITE(GBA,$4B514)
+<END>
+
+//POINTER #79 @ $4B518 - STRING #79 @ $4AFCC
+
+#WRITE(GBA,$4B518)
+<END>
+
+//POINTER #80 @ $4B51C - STRING #80 @ $4AFCD
+
+#WRITE(GBA,$4B51C)
+いどうさきを えらんでください<END>
+
+//POINTER #81 @ $4B520 - STRING #81 @ $4AFDD
+
+#WRITE(GBA,$4B520)
+ここで いいですか?<LINE>
+  はい  いいえ<$E0> 04    
+
+//POINTER #82 @ $4B524 - STRING #82 @ $4AFFA
+
+#WRITE(GBA,$4B524)
+Status<LINE>
+Catalog<LINE>
+Charger<LINE>
+Save<END>
+
+//POINTER #83 @ $4B528 - STRING #83 @ $4B017
+
+#WRITE(GBA,$4B528)
+//セーブしますか?<LINE>
+//  はい  いいえ<$E0> 04 テ  <$E0><$32><$00><$A0><$00><$55>まえに ほぞんしたデータが あります<LINE>
+//うわがきしていいですか?<LINE>
+//  はい  いいえ<$E0>004 ト  セーブちゅうです<LINE>
+//でんげんを きらないでください<$E0>ぢ ナ<$E0><$44><$02><PLAY_SFX><$34><$E0>エセーブが しゅうりょうしました<$E0><$44><$1E><END>
+Do you want to save?<LINE>
+      Yes    No<$E0> 04 テ  
+
+//POINTER #84 @ $4B52C - STRING #84 @ $4B033
+
+#WRITE(GBA,$4B52C)
+<$E0><$32><$00><$A0><$00><$55>Do you want to overwrite<LINE>
+previous save?<LINE>
+      Yes    No<$E0>004 ト  
+
+//POINTER #85 @ $4B530 - STRING #85 @ $4B06C
+
+#WRITE(GBA,$4B530)
+Saving...<LINE>
+Do not turn off the power.<$E0>ぢ ナ
+
+//POINTER #86 @ $4B534 - STRING #86 @ $4B0A5
+
+#WRITE(GBA,$4B534)
+<$E0><$44><$02><$E0>エ<PLAY_SFX><$2A><COLOR><$09>Saved Successfully!<END>
+
+//POINTER #87 @ $4B538 - STRING #87 @ $4B0C3
+
+#WRITE(GBA,$4B538)
+キャンセルしますか?<LINE>
+  はい  いいえ<$E0>004 ト  <END>
+
+//POINTER #88 @ $4B53C - STRING #88 @ $4B0E1
+
+#WRITE(GBA,$4B53C)
+<END>
+
+//POINTER #89 @ $4B540 - STRING #89 @ $4B0E2
+
+#WRITE(GBA,$4B540)
+<END>
+
+//POINTER #90 @ $4B544 - STRING #90 @ $4B0E3
+
+#WRITE(GBA,$4B544)
+<END>
+
+//POINTER #91 @ $4B548 - STRING #91 @ $4B0E4
+
+#WRITE(GBA,$4B548)
+<END>
+
+//POINTER #92 @ $4B54C - STRING #92 @ $4B0E5
+
+#WRITE(GBA,$4B54C)
+<END>
+
+//POINTER #93 @ $4B550 - STRING #93 @ $4B0E6
+
+#WRITE(GBA,$4B550)
+<END>
+
+//POINTER #94 @ $4B554 - STRING #94 @ $4B0E7
+
+#WRITE(GBA,$4B554)
+<END>
+
+//POINTER #95 @ $4B558 - STRING #95 @ $4B0E8
+
+#WRITE(GBA,$4B558)
+<END>
+
+//POINTER #96 @ $4B55C - STRING #96 @ $4B0E9
+
+#WRITE(GBA,$4B55C)
+<$E0><$31><$00><$52><$00><$61>エントリーしますか?<LINE>
+    はい  いいえ<$E0> 26 ミ  <$E0>け <$E0>く<LINE>
+をエントリーしました<END>
+
+//POINTER #97 @ $4B560 - STRING #97 @ $4B10F
+
+#WRITE(GBA,$4B560)
+<$E0>け <$E0>く<LINE>
+をエントリーしました<END>
+
+//POINTER #98 @ $4B564 - STRING #98 @ $4B121
+
+#WRITE(GBA,$4B564)
+このスロットはエントリーされています<LINE>
+ デバイスセットへ  エントリーへんこう<$E0>2 9      エントリーをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    エントリーがめんへ もどりますか?<LINE>
+    はい  いいえ<$E0> 26    バッテリーをオートチャージしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9> バッテリーをチャージしてください<$FE>チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #99 @ $4B568 - STRING #99 @ $4B154
+
+#WRITE(GBA,$4B568)
+エントリーをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    エントリーがめんへ もどりますか?<LINE>
+    はい  いいえ<$E0> 26    バッテリーをオートチャージしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9> バッテリーをチャージしてください<$FE>チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #100 @ $4B56C - STRING #100 @ $4B17B
+
+#WRITE(GBA,$4B56C)
+エントリーがめんへ もどりますか?<LINE>
+    はい  いいえ<$E0> 26    バッテリーをオートチャージしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9> バッテリーをチャージしてください<$FE>チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #101 @ $4B570 - STRING #101 @ $4B1A2
+
+#WRITE(GBA,$4B570)
+バッテリーをオートチャージしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9> バッテリーをチャージしてください<$FE>チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #102 @ $4B574 - STRING #102 @ $4B1CC
+
+#WRITE(GBA,$4B574)
+<$F9> バッテリーをチャージしてください<$FE>チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #103 @ $4B578 - STRING #103 @ $4B1E1
+
+#WRITE(GBA,$4B578)
+チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0> 26    <$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #104 @ $4B57C - STRING #104 @ $4B207
+
+#WRITE(GBA,$4B57C)
+<$F9>   チャージちゅうです・・・<$FE>0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #105 @ $4B580 - STRING #105 @ $4B21C
+
+#WRITE(GBA,$4B580)
+0123456789<$F0><$E5>9<$F0>-<END>
+
+//POINTER #106 @ $4B584 - STRING #106 @ $4B229
+
+#WRITE(GBA,$4B584)
+<$F0>-<END>
+
+//POINTER #107 @ $4B588 - STRING #107 @ $4B22C
+
+#WRITE(GBA,$4B588)
+こうどうできるダイナがないので<LINE>
+しゅうりょうすると まけになります<LINE>
+チャージをしゅうりょうしますか?<LINE>
+    はい  いいえ<$E0>026    <$F9>ダイナのエントリーをしゅうりょうします<END>
+
+//POINTER #108 @ $4B58C - STRING #108 @ $4B274
+
+#WRITE(GBA,$4B58C)
+<$F9>ダイナのエントリーをしゅうりょうします<END>
+
+//POINTER #109 @ $4B590 - STRING #109 @ $4B28A
+
+#WRITE(GBA,$4B590)
+<$F9> ダイナが エントリーされていません<END>
+
+//POINTER #110 @ $4B594 - STRING #110 @ $4B29F
+
+#WRITE(GBA,$4B594)
+<$F9> このバトルは キャンセルできません<END>
+
+//POINTER #111 @ $4B598 - STRING #111 @ $4B2B3
+
+#WRITE(GBA,$4B598)
+バトルをキャンセルしますか?<LINE>
+    はい  いいえ<$E0> 26    <END>
+
+//POINTER #112 @ $4B59C - STRING #112 @ $4B2D7
+
+#WRITE(GBA,$4B59C)
+つうしんバトルなので バッテリーチャージは<LINE>
+サービスで フルチャージされます<NEWBOX>
+<$FE><END>
+
+//POINTER #113 @ $4B5A0 - STRING #113 @ $4B303
+
+#WRITE(GBA,$4B5A0)
+<END>
+
+//POINTER #114 @ $4B5A4 - STRING #114 @ $4B304
+
+#WRITE(GBA,$4B5A4)
+<END>
+
+//POINTER #115 @ $4B5A8 - STRING #115 @ $4B305
+
+#WRITE(GBA,$4B5A8)
+<END>
+
+//POINTER #116 @ $4B5AC - STRING #116 @ $4B306
+
+#WRITE(GBA,$4B5AC)
+<END>
+
+//POINTER #117 @ $4B5B0 - STRING #117 @ $4B307
+
+#WRITE(GBA,$4B5B0)
+<END>
+
+//POINTER #118 @ $4B5B4 - STRING #118 @ $4B308
+
+#WRITE(GBA,$4B5B4)
+<END>
+
+//POINTER #119 @ $4B5B8 - STRING #119 @ $4B309
+
+#WRITE(GBA,$4B5B8)
+<END>
+
+//POINTER #120 @ $4B5BC - STRING #120 @ $4B30A
+
+#WRITE(GBA,$4B5BC)
+<END>
+
+//POINTER #121 @ $4B5C0 - STRING #121 @ $4B30B
+
+#WRITE(GBA,$4B5C0)
+<END>
+
+//POINTER #122 @ $4B5C4 - STRING #122 @ $4B30C
+
+#WRITE(GBA,$4B5C4)
+<END>
+
+//POINTER #123 @ $4B5C8 - STRING #123 @ $4B30D
+
+#WRITE(GBA,$4B5C8)
+<END>
+
+//POINTER #124 @ $4B5CC - STRING #124 @ $4B30E
+
+#WRITE(GBA,$4B5CC)
+<END>
+
+//POINTER #125 @ $4B5D0 - STRING #125 @ $4B30F
+
+#WRITE(GBA,$4B5D0)
+<END>
+
+//POINTER #126 @ $4B5D4 - STRING #126 @ $4B310
+
+#WRITE(GBA,$4B5D4)
+<END>
+
+//POINTER #127 @ $4B5D8 - STRING #127 @ $4B311
+
+#WRITE(GBA,$4B5D8)
+<END>
+
+//POINTER #128 @ $4B5DC - STRING #128 @ $4B312
+
+#WRITE(GBA,$4B5DC)
+PUSH START BUTTON<END>
+
+//POINTER #129 @ $4B5E0 - STRING #129 @ $4B324
+
+#WRITE(GBA,$4B5E0)
+                 <END>
+
+//POINTER #130 @ $4B5E4 - STRING #130 @ $4B336
+
+#WRITE(GBA,$4B5E4)
+ <$F0><$F9>2003 ロケットカンパニー<END>
+
+//POINTER #131 @ $4B5E8 - STRING #131 @ $4B349
+
+#WRITE(GBA,$4B5E8)
+フェニックスバージョン<END>
+
+//POINTER #132 @ $4B5EC - STRING #132 @ $4B356
+
+#WRITE(GBA,$4B5EC)
+  ドラゴンバージョン<END>
+
+//POINTER #133 @ $4B5F0 - STRING #133 @ $4B363
+
+#WRITE(GBA,$4B5F0)
+New Game<LINE>
+Continue<LINE>
+Link<END>
+
+//POINTER #134 @ $4B5F4 - STRING #134 @ $4B374
+
+#WRITE(GBA,$4B5F4)
+DINO CHARGE<END>
+
+//POINTER #135 @ $4B5F8 - STRING #135 @ $4B380
+
+#WRITE(GBA,$4B5F8)
+Setup Dinomo Entry 1st<END>
+
+//POINTER #136 @ $4B5FC - STRING #136 @ $4B397
+
+#WRITE(GBA,$4B5FC)
+Setup Dinomo Entry 2nd<END>
+
+//POINTER #137 @ $4B600 - STRING #137 @ $4B3AE
+
+#WRITE(GBA,$4B600)
+Setup Dinomo Entry 3rd<END>
+
+//POINTER #138 @ $4B604 - STRING #138 @ $4B3C5
+
+#WRITE(GBA,$4B604)
+OK<END>
+
+//POINTER #139 @ $4B608 - STRING #139 @ $4B3C8
+
+#WRITE(GBA,$4B608)
+Good Luck!!<END>
+
+//POINTER #140 @ $4B60C - STRING #140 @ $4B3D6
+
+#WRITE(GBA,$4B60C)
+<END>
+
+//POINTER #141 @ $4B610 - STRING #141 @ $4B3D7
+
+#WRITE(GBA,$4B610)
+<END>
+
+//POINTER #142 @ $4B614 - STRING #142 @ $4B3D8
+
+#WRITE(GBA,$4B614)
+<END>
+
+//POINTER #143 @ $4B618 - STRING #143 @ $4B3D9
+
+#WRITE(GBA,$4B618)
 <END>
