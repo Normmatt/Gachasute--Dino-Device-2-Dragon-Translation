@@ -46,9 +46,9 @@ putChar:
 	mov     r7, r2 ;store bg color
     BL      Copy1BppCharacter
 	
-	mov r2, #8	; r2 = width, replace this with lookup table
-	;ldr r2, =WidthTable
-	;ldrb r2, [r2,r6]
+	;mov r2, #4	; r2 = width, replace this with lookup table
+	ldr r2, =WidthTable
+	ldrb r2, [r2,r6]
 	
 	LDRH    R0, [R4,#0xC]
 	LSL     R0, R0, #5
@@ -179,8 +179,8 @@ overflow:  .word 0x03000000  ; my notes say this is free
 mask:      .word 0x11111111  ; mask
 .pool
 
-;WidthTable:
-;.incbin asm/bin/menuWidthTable.bin
+WidthTable:
+.incbin asm/bin/menuWidthTable.bin
 
 .close
 
